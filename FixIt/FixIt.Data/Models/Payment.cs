@@ -12,6 +12,7 @@ namespace FixIt.Data.Models
         public string? CreditCardNumber { get; set; }
 #nullable enable
         public string? CVV { get; set; }
+#nullable enable
         public DateTime PaymentDate { get; set; }
     }
 }
