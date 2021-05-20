@@ -5,9 +5,9 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FixIt", "FixIt\FixIt.csproj", "{8F437502-60E9-4031-AAE4-F9CBF5C7DF21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FixIt.Data", "FixIt.Data\FixIt.Data.csproj", "{7DDA6A4B-A5AE-4C7F-857B-4CB18E8FE218}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FixIt.Data", "FixIt.Data\FixIt.Data.csproj", "{7DDA6A4B-A5AE-4C7F-857B-4CB18E8FE218}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FixIt.Services", "FixIt.Services\FixIt.Services.csproj", "{8E35548F-5F78-47D7-9E4D-8B2C4BEBC6C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FixIt.Services", "FixIt.Services\FixIt.Services.csproj", "{8E35548F-5F78-47D7-9E4D-8B2C4BEBC6C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
