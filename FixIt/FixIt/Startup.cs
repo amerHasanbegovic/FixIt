@@ -1,4 +1,6 @@
 using FixIt.Data;
+using FixIt.Services.Interfaces;
+using FixIt.Services.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -23,6 +25,9 @@ namespace FixIt
             services.AddControllers();
             services.AddSwaggerGen();
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("FixIt")));
+
+
+            services.AddScoped<IUser, UserService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
