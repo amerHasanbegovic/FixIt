@@ -10,11 +10,11 @@ namespace FixIt.Controllers
     public class UserController : ControllerBase
     {
         protected IUser _userService;
-
         public UserController(IUser userService)
         {
             _userService = userService;
         }
+
         [HttpGet]
         public IEnumerable<User> Get()
         {
