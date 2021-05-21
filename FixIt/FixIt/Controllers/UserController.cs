@@ -9,8 +9,8 @@ namespace FixIt.Controllers
     [ApiController]
     public class UserController : ControllerBase
     {
-        protected IUser _userService;
-        public UserController(IUser userService)
+        protected IUserService _userService;
+        public UserController(IUserService userService)
         {
             _userService = userService;
         }

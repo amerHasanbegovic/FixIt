@@ -27,7 +27,7 @@ namespace FixIt
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("FixIt")));
 
 
-            services.AddScoped<IUser, UserService>();
+            services.AddScoped<IUserService, UserService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

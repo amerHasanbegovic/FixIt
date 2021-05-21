@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace FixIt.Services.Interfaces
 {
-    public interface IUser
+    public interface IUserService
     {
         List<User> Get();
     }

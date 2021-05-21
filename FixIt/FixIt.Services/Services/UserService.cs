@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace FixIt.Services.Services
 {
-    public class UserService : IUser
+    public class UserService : IUserService
     {
         private readonly ApplicationDbContext _applicationDbContext;
 
