@@ -5,6 +5,6 @@ namespace FixIt.Services.Interfaces
 {
     public interface IUserService
     {
-        List<User> Get();
+        IEnumerable<User> Get();
     }
 }

@@ -14,7 +14,7 @@ namespace FixIt.Services.Services
         {
             _applicationDbContext = applicationDbContext;
         }
-        public List<User> Get()
+        public IEnumerable<User> Get()
         {
             return _applicationDbContext.Users.ToList();
         }
