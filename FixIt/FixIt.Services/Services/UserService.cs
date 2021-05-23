@@ -1,22 +1,14 @@
-﻿using FixIt.Data;
+﻿using AutoMapper;
+using FixIt.Data;
 using FixIt.Data.Models;
 using FixIt.Services.Interfaces;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace FixIt.Services.Services
 {
-    public class UserService : IUserService
+    public class UserService : BaseCRUDService<User>, IUserService
     {
-        private readonly ApplicationDbContext _applicationDbContext;
-
-        public UserService(ApplicationDbContext applicationDbContext)
+        public UserService(ApplicationDbContext applicationDbContext, IMapper mapper) : base(applicationDbContext, mapper)
         {
-            _applicationDbContext = applicationDbContext;
-        }
-        public IEnumerable<User> Get()
-        {
-            return _applicationDbContext.Users.ToList();
         }
     }
 }

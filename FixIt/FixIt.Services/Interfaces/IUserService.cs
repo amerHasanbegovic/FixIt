@@ -1,10 +1,8 @@
 ﻿using FixIt.Data.Models;
-using System.Collections.Generic;
 
 namespace FixIt.Services.Interfaces
 {
-    public interface IUserService
+    public interface IUserService : IBaseCRUDService<User>
     {
-        IEnumerable<User> Get();
     }
 }
