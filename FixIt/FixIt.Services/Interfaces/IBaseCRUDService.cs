@@ -6,8 +6,7 @@ namespace FixIt.Services.Interfaces
     {
         IEnumerable<TMap> Get();
         TMap GetById(int id);
-        //T Insert();
-        //T Update(int id)
-        //T Delete(int id)
+        //TMap Insert();
+        //TMap Update(int id)
     }
 }
