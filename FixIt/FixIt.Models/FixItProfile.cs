@@ -9,8 +9,12 @@ namespace FixIt.Models
     {
         public FixItProfile()
         {
+            //user
             CreateMap<User, UserViewModel>();
+
+            //service
             CreateMap<Service, ServiceViewModel>();
+            CreateMap<ServiceInsertModel, Service>();
         }
     }
 }

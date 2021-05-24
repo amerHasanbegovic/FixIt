@@ -6,7 +6,7 @@ using FixIt.Services.Interfaces;
 
 namespace FixIt.Services.Services
 {
-    public class ServiceService : BaseCRUDService<Service, ServiceViewModel>, IServiceService
+    public class ServiceService : BaseCRUDService<Service, ServiceViewModel, ServiceInsertModel>, IServiceService
     {
         public ServiceService(ApplicationDbContext applicationDbContext, IMapper mapper) : base(applicationDbContext, mapper)
         {

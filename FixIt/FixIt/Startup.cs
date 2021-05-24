@@ -30,8 +30,8 @@ namespace FixIt
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("FixIt")));
             services.AddAutoMapper(typeof(Startup));
 
-            services.AddScoped<IBaseCRUDService<UserViewModel>, BaseCRUDService<User, UserViewModel>>();
-            services.AddScoped<IBaseCRUDService<ServiceViewModel>, BaseCRUDService<Service, ServiceViewModel>>();
+            services.AddScoped<IBaseCRUDService<UserViewModel, object>, BaseCRUDService<User, UserViewModel, object>>();
+            services.AddScoped<IBaseCRUDService<ServiceViewModel, ServiceInsertModel>, BaseCRUDService<Service, ServiceViewModel, ServiceInsertModel>>();
 
         }
 
