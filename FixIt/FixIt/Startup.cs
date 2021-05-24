@@ -1,6 +1,7 @@
 using FixIt.Data;
 using FixIt.Data.Models;
 using FixIt.Models.ViewModels.Service;
+using FixIt.Models.ViewModels.ServiceType;
 using FixIt.Models.ViewModels.User;
 using FixIt.Services.Interfaces;
 using FixIt.Services.Services;
@@ -10,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System;
 
 namespace FixIt
 {
@@ -29,9 +31,11 @@ namespace FixIt
             services.AddSwaggerGen();
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("FixIt")));
             services.AddAutoMapper(typeof(Startup));
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             services.AddScoped<IBaseCRUDService<UserViewModel, object>, BaseCRUDService<User, UserViewModel, object>>();
             services.AddScoped<IBaseCRUDService<ServiceViewModel, ServiceInsertModel>, BaseCRUDService<Service, ServiceViewModel, ServiceInsertModel>>();
+            services.AddScoped<IBaseCRUDService<ServiceTypeViewModel, ServiceTypeInsertModel>, BaseCRUDService<ServiceType, ServiceTypeViewModel, ServiceTypeInsertModel>>();
 
         }
 

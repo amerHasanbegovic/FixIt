@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace FixIt.Services.Services
 {
-    public class BaseCRUDService<T, TMap, TInsert> : IBaseCRUDService<TMap, TInsert> where T : class where TMap: class where TInsert: class
+    public class BaseCRUDService<T, TMap, TInsert> : IBaseCRUDService<TMap, TInsert> where T: class where TMap: class where TInsert: class
     {
         protected ApplicationDbContext _applicationDbContext;
         protected IMapper _mapper;

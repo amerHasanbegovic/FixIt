@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using FixIt.Data.Models;
 using FixIt.Models.ViewModels.Service;
+using FixIt.Models.ViewModels.ServiceType;
 using FixIt.Models.ViewModels.User;
 
 namespace FixIt.Models
@@ -15,6 +16,10 @@ namespace FixIt.Models
             //service
             CreateMap<Service, ServiceViewModel>();
             CreateMap<ServiceInsertModel, Service>();
+
+            //serviceType
+            CreateMap<ServiceType, ServiceTypeViewModel>();
+            CreateMap<ServiceTypeInsertModel, ServiceType>();
         }
     }
 }
