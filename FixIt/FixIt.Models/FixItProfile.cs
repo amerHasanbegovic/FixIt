@@ -16,10 +16,12 @@ namespace FixIt.Models
             //service
             CreateMap<Service, ServiceViewModel>();
             CreateMap<ServiceInsertModel, Service>();
+            CreateMap<ServiceUpdateModel, Service>();
 
             //serviceType
             CreateMap<ServiceType, ServiceTypeViewModel>();
             CreateMap<ServiceTypeInsertModel, ServiceType>();
+            CreateMap<ServiceTypeUpdateModel, ServiceType>();
         }
     }
 }

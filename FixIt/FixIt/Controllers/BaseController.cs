@@ -6,11 +6,11 @@ namespace FixIt.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BaseController<TMap, TInsert> : ControllerBase
+    public class BaseController<TMap, TInsert, TUpdate> : ControllerBase
     {
-        protected readonly IBaseCRUDService<TMap, TInsert> _service;
+        protected readonly IBaseCRUDService<TMap, TInsert, TUpdate> _service;
 
-        public BaseController(IBaseCRUDService<TMap, TInsert> service)
+        public BaseController(IBaseCRUDService<TMap, TInsert, TUpdate> service)
         {
             _service = service;
         }
@@ -31,6 +31,12 @@ namespace FixIt.Controllers
         public TMap Insert(TInsert model)
         {
             return _service.Insert(model);
+        }
+
+        [HttpPut("{id}")]
+        public TMap Update(int id, TUpdate model)
+        {
+            return _service.Update(id, model);
         }
     }
 }

@@ -2,11 +2,11 @@
 
 namespace FixIt.Services.Interfaces
 {
-    public interface IBaseCRUDService<TMap, TInsert>
+    public interface IBaseCRUDService<TMap, TInsert, TUpdate>
     {
         IEnumerable<TMap> Get();
         TMap GetById(int id);
         TMap Insert(TInsert model);
-        //TMap Update(int id)
+        TMap Update(int id, TUpdate model);
     }
 }

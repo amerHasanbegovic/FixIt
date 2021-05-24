@@ -33,9 +33,9 @@ namespace FixIt
             services.AddAutoMapper(typeof(Startup));
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-            services.AddScoped<IBaseCRUDService<UserViewModel, object>, BaseCRUDService<User, UserViewModel, object>>();
-            services.AddScoped<IBaseCRUDService<ServiceViewModel, ServiceInsertModel>, BaseCRUDService<Service, ServiceViewModel, ServiceInsertModel>>();
-            services.AddScoped<IBaseCRUDService<ServiceTypeViewModel, ServiceTypeInsertModel>, BaseCRUDService<ServiceType, ServiceTypeViewModel, ServiceTypeInsertModel>>();
+            services.AddScoped<IBaseCRUDService<UserViewModel, object, object>, BaseCRUDService<User, UserViewModel, object, object>>();
+            services.AddScoped<IBaseCRUDService<ServiceViewModel, ServiceInsertModel, ServiceUpdateModel>, BaseCRUDService<Service, ServiceViewModel, ServiceInsertModel, ServiceUpdateModel>>();
+            services.AddScoped<IBaseCRUDService<ServiceTypeViewModel, ServiceTypeInsertModel, ServiceTypeUpdateModel>, BaseCRUDService<ServiceType, ServiceTypeViewModel, ServiceTypeInsertModel, ServiceTypeUpdateModel>>();
 
         }
 

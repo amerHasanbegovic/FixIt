@@ -6,7 +6,8 @@ using System.Linq;
 
 namespace FixIt.Services.Services
 {
-    public class BaseCRUDService<T, TMap, TInsert> : IBaseCRUDService<TMap, TInsert> where T: class where TMap: class where TInsert: class
+    public class BaseCRUDService<T, TMap, TInsert, TUpdate> : IBaseCRUDService<TMap, TInsert, TUpdate> 
+        where T: class where TMap: class where TInsert: class where TUpdate: class
     {
         protected ApplicationDbContext _applicationDbContext;
         protected IMapper _mapper;
@@ -33,6 +34,14 @@ namespace FixIt.Services.Services
         {
             var entity = _mapper.Map<T>(model);
             _applicationDbContext.Add(entity);
+            _applicationDbContext.SaveChanges();
+            return _mapper.Map<TMap>(entity);
+        }
+
+        public virtual TMap Update(int id, TUpdate model)
+        {
+            var entity = _applicationDbContext.Set<T>().Find(id);
+            _mapper.Map(model, entity);
             _applicationDbContext.SaveChanges();
             return _mapper.Map<TMap>(entity);
         }
