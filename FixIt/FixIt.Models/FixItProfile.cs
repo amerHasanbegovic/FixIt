@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using FixIt.Data.Models;
-using FixIt.Models.ViewModels;
+using FixIt.Models.ViewModels.Service;
+using FixIt.Models.ViewModels.User;
 
 namespace FixIt.Models
 {
@@ -9,6 +10,7 @@ namespace FixIt.Models
         public FixItProfile()
         {
             CreateMap<User, UserViewModel>();
+            CreateMap<Service, ServiceViewModel>();
         }
     }
 }

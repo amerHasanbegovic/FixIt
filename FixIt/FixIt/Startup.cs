@@ -1,6 +1,7 @@
 using FixIt.Data;
 using FixIt.Data.Models;
-using FixIt.Models.ViewModels;
+using FixIt.Models.ViewModels.Service;
+using FixIt.Models.ViewModels.User;
 using FixIt.Services.Interfaces;
 using FixIt.Services.Services;
 using Microsoft.AspNetCore.Builder;
@@ -30,7 +31,8 @@ namespace FixIt
             services.AddAutoMapper(typeof(Startup));
 
             services.AddScoped<IBaseCRUDService<UserViewModel>, BaseCRUDService<User, UserViewModel>>();
-            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IBaseCRUDService<ServiceViewModel>, BaseCRUDService<Service, ServiceViewModel>>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
