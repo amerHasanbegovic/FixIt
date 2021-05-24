@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
 using FixIt.Data.Models;
-using FixIt.Models.ViewModels.Service;
-using FixIt.Models.ViewModels.ServiceType;
-using FixIt.Models.ViewModels.User;
+using FixIt.Models.Models.Service;
+using FixIt.Models.Models.ServiceType;
+using FixIt.Models.Models.User;
 
 namespace FixIt.Models
 {

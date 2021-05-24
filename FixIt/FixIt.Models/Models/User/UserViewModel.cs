@@ -1,7 +1,7 @@
 ﻿using FixIt.Data.Models;
 using System;
 
-namespace FixIt.Models.ViewModels.User
+namespace FixIt.Models.Models.User
 {
     public class UserViewModel
     {

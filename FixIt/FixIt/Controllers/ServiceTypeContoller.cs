@@ -1,4 +1,4 @@
-﻿using FixIt.Models.ViewModels.ServiceType;
+﻿using FixIt.Models.Models.ServiceType;
 using FixIt.Services.Interfaces;
 
 namespace FixIt.Controllers

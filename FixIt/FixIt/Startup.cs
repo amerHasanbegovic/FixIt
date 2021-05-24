@@ -1,8 +1,8 @@
 using FixIt.Data;
 using FixIt.Data.Models;
-using FixIt.Models.ViewModels.Service;
-using FixIt.Models.ViewModels.ServiceType;
-using FixIt.Models.ViewModels.User;
+using FixIt.Models.Models.User;
+using FixIt.Models.Models.Service;
+using FixIt.Models.Models.ServiceType;
 using FixIt.Services.Interfaces;
 using FixIt.Services.Services;
 using Microsoft.AspNetCore.Builder;

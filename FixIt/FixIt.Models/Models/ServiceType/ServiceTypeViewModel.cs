@@ -1,4 +1,4 @@
-﻿namespace FixIt.Models.ViewModels.ServiceType
+﻿namespace FixIt.Models.Models.ServiceType
 {
     public class ServiceTypeViewModel
     {

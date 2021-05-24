@@ -1,4 +1,4 @@
-﻿using FixIt.Models.ViewModels.User;
+﻿using FixIt.Models.Models.User;
 
 namespace FixIt.Services.Interfaces
 {
