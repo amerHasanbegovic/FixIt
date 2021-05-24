@@ -1,4 +1,6 @@
 using FixIt.Data;
+using FixIt.Data.Models;
+using FixIt.Models.ViewModels;
 using FixIt.Services.Interfaces;
 using FixIt.Services.Services;
 using Microsoft.AspNetCore.Builder;
@@ -25,8 +27,9 @@ namespace FixIt
             services.AddControllers();
             services.AddSwaggerGen();
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("FixIt")));
+            services.AddAutoMapper(typeof(Startup));
 
-
+            services.AddScoped<IBaseCRUDService<UserViewModel>, BaseCRUDService<User, UserViewModel>>();
             services.AddScoped<IUserService, UserService>();
         }
 

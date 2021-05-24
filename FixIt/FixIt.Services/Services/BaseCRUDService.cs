@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace FixIt.Services.Services
 {
-    public class BaseCRUDService<T> : IBaseCRUDService<T> where T : class
+    public class BaseCRUDService<T, TMap> : IBaseCRUDService<TMap> where T : class where TMap: class
     {
         protected ApplicationDbContext _applicationDbContext;
         protected IMapper _mapper;
@@ -17,16 +17,16 @@ namespace FixIt.Services.Services
             _mapper = mapper;
         }
 
-        public virtual IEnumerable<T> Get()
+        public virtual IEnumerable<TMap> Get()
         {
-            //mapper
-            return _applicationDbContext.Set<T>().ToList();
+            var res = _applicationDbContext.Set<T>().ToList();
+            return _mapper.Map<IEnumerable<TMap>>(res);
         }
 
-        public virtual T GetById(int id)
+        public virtual TMap GetById(int id)
         {
-            return _applicationDbContext.Set<T>().Find(id);
-            //mapper
+            var res = _applicationDbContext.Set<T>().Find(id);
+            return _mapper.Map<TMap>(res);
         }
     }
 }
