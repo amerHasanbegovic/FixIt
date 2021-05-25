@@ -6,8 +6,8 @@ namespace FixIt.Data.Models
     {
         public int Id { get; set; }
         public DateTime RequestDate { get; set; }
-        public virtual Service Service { get; set; }
-        public virtual User User { get; set; }
-        public virtual Payment Payment { get; set; }
+        public Service Service { get; set; }
+        public User User { get; set; }
+        public Payment Payment { get; set; }
     }
 }
