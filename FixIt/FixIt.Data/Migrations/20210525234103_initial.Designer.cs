@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FixIt.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210521013348_v1")]
-    partial class v1
+    [Migration("20210525234103_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
