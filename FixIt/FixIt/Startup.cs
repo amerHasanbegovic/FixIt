@@ -36,7 +36,7 @@ namespace FixIt
             services.AddScoped<IBaseCRUDService<UserViewModel, object, object>, BaseCRUDService<User, UserViewModel, object, object>>();
             services.AddScoped<IBaseCRUDService<ServiceViewModel, ServiceInsertModel, ServiceUpdateModel>, BaseCRUDService<Service, ServiceViewModel, ServiceInsertModel, ServiceUpdateModel>>();
             services.AddScoped<IBaseCRUDService<ServiceTypeViewModel, ServiceTypeInsertModel, ServiceTypeUpdateModel>, BaseCRUDService<ServiceType, ServiceTypeViewModel, ServiceTypeInsertModel, ServiceTypeUpdateModel>>();
-
+            services.AddScoped<IServiceService, ServiceService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
