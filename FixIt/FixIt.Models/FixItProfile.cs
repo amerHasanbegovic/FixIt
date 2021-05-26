@@ -2,6 +2,7 @@
 using FixIt.Data.Models;
 using FixIt.Models.Models.City;
 using FixIt.Models.Models.Employee;
+using FixIt.Models.Models.JobStatus;
 using FixIt.Models.Models.PaymentType;
 using FixIt.Models.Models.Profession;
 using FixIt.Models.Models.Service;
@@ -43,6 +44,9 @@ namespace FixIt.Models
 
             //payment type
             CreateMap<PaymentType, PaymentTypeViewModel>();
+
+            //job status
+            CreateMap<JobStatus, JobStatusViewModel>();
         }
     }
 }
