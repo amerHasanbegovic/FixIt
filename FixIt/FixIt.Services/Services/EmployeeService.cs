@@ -29,7 +29,7 @@ namespace FixIt.Services.Services
                 .Include(x => x.City)
                 .Include(x => x.Profession)
                 .Include(x => x.Sex)
-                .ToList();
+                .FirstOrDefault(x => x.Id == id);
             return _mapper.Map<EmployeeViewModel>(res);
         }
     }
