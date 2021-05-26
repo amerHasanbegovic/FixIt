@@ -17,6 +17,7 @@ namespace FixIt.Data.Models
         public string PhoneNumber { get; set; }
         public string Biography { get; set; }
         public DateTime BirthDate { get; set; }
+        public int SexId { get; set; }
         public virtual Sex Sex { get; set; }
     }
 }
