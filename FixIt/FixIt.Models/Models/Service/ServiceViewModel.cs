@@ -9,6 +9,6 @@ namespace FixIt.Models.Models.Service
         public double Price { get; set; }
         public double Rating { get; set; }
         public int ServiceTypeId { get; set; }
-        public virtual ServiceTypeViewModel ServiceType { get; set; }
+        public virtual ServiceTypeModel ServiceType { get; set; }
     }
 }

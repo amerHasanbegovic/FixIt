@@ -2,7 +2,7 @@
 
 namespace FixIt.Services.Interfaces
 {
-    public interface IServiceTypeService: IBaseCRUDService<ServiceTypeViewModel, ServiceTypeInsertModel, ServiceTypeUpdateModel>
+    public interface IServiceTypeService: IBaseCRUDService<ServiceTypeModel, ServiceTypeModel, ServiceTypeModel>
     {
     }
 }

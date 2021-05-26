@@ -3,9 +3,9 @@ using FixIt.Services.Interfaces;
 
 namespace FixIt.Controllers
 {
-    public class ServiceTypeContoller : BaseController<ServiceTypeViewModel, ServiceTypeInsertModel, ServiceTypeUpdateModel>
+    public class ServiceTypeContoller : BaseController<ServiceTypeModel, ServiceTypeModel, ServiceTypeModel>
     {
-        public ServiceTypeContoller(IBaseCRUDService<ServiceTypeViewModel, ServiceTypeInsertModel, ServiceTypeUpdateModel> service) : base(service)
+        public ServiceTypeContoller(IBaseCRUDService<ServiceTypeModel, ServiceTypeModel, ServiceTypeModel> service) : base(service)
         {
         }
     }

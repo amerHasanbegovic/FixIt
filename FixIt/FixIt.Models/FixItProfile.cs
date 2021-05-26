@@ -19,9 +19,8 @@ namespace FixIt.Models
             CreateMap<ServiceUpdateModel, Service>();
 
             //serviceType
-            CreateMap<ServiceType, ServiceTypeViewModel>();
-            CreateMap<ServiceTypeInsertModel, ServiceType>();
-            CreateMap<ServiceTypeUpdateModel, ServiceType>();
+            CreateMap<ServiceType, ServiceTypeModel>();
+            CreateMap<ServiceTypeModel, ServiceType>();
         }
     }
 }

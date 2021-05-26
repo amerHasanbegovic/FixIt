@@ -35,7 +35,7 @@ namespace FixIt
 
             services.AddScoped<IBaseCRUDService<UserViewModel, object, object>, BaseCRUDService<User, UserViewModel, object, object>>();
             services.AddScoped<IBaseCRUDService<ServiceViewModel, ServiceInsertModel, ServiceUpdateModel>, BaseCRUDService<Service, ServiceViewModel, ServiceInsertModel, ServiceUpdateModel>>();
-            services.AddScoped<IBaseCRUDService<ServiceTypeViewModel, ServiceTypeInsertModel, ServiceTypeUpdateModel>, BaseCRUDService<ServiceType, ServiceTypeViewModel, ServiceTypeInsertModel, ServiceTypeUpdateModel>>();
+            services.AddScoped<IBaseCRUDService<ServiceTypeModel, ServiceTypeModel, ServiceTypeModel>, BaseCRUDService<ServiceType, ServiceTypeModel, ServiceTypeModel, ServiceTypeModel>>();
             services.AddScoped<IServiceService, ServiceService>();
         }
 
