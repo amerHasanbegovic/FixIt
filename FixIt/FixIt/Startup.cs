@@ -13,6 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
 using FixIt.Models.Models.City;
+using FixIt.Models.Models.Sex;
 
 namespace FixIt
 {
@@ -38,6 +39,8 @@ namespace FixIt
             services.AddScoped<IBaseCRUDService<ServiceViewModel, ServiceInsertModel, ServiceUpdateModel>, BaseCRUDService<Service, ServiceViewModel, ServiceInsertModel, ServiceUpdateModel>>();
             services.AddScoped<IBaseCRUDService<ServiceTypeModel, ServiceTypeModel, ServiceTypeModel>, BaseCRUDService<ServiceType, ServiceTypeModel, ServiceTypeModel, ServiceTypeModel>>();
             services.AddScoped<IBaseCRUDService<CityViewModel, object, object>, BaseCRUDService<City, CityViewModel, object, object>>();
+            services.AddScoped<IBaseCRUDService<SexViewModel, object, object>, BaseCRUDService<Sex, SexViewModel, object, object>>();
+
             services.AddScoped<IServiceService, ServiceService>();
         }
 
