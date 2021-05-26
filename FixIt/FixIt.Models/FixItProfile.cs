@@ -1,8 +1,11 @@
 ﻿using AutoMapper;
 using FixIt.Data.Models;
 using FixIt.Models.Models.City;
+using FixIt.Models.Models.Employee;
+using FixIt.Models.Models.Profession;
 using FixIt.Models.Models.Service;
 using FixIt.Models.Models.ServiceType;
+using FixIt.Models.Models.Sex;
 using FixIt.Models.Models.User;
 
 namespace FixIt.Models
@@ -25,6 +28,17 @@ namespace FixIt.Models
 
             //city
             CreateMap<City, CityViewModel>();
+
+            //sex
+            CreateMap<Sex, SexViewModel>();
+
+            //profession
+            CreateMap<Profession, ProfessionViewModel>();
+
+            //employee
+            CreateMap<Employee, EmployeeViewModel>();
+            CreateMap<EmployeeInsertModel, Employee>();
+            CreateMap<EmployeeUpdateModel, Employee>();
         }
     }
 }
