@@ -42,10 +42,10 @@ namespace FixIt
             services.AddScoped<IBaseCRUDService<ServiceTypeModel, ServiceTypeModel, ServiceTypeModel>, BaseCRUDService<ServiceType, ServiceTypeModel, ServiceTypeModel, ServiceTypeModel>>();
             services.AddScoped<IBaseCRUDService<CityViewModel, object, object>, BaseCRUDService<City, CityViewModel, object, object>>();
             services.AddScoped<IBaseCRUDService<SexViewModel, object, object>, BaseCRUDService<Sex, SexViewModel, object, object>>();
-            services.AddScoped<IBaseCRUDService<EmployeeViewModel, EmployeeInsertModel, EmployeeUpdateModel>, BaseCRUDService<Employee, EmployeeViewModel, EmployeeInsertModel, EmployeeUpdateModel>>();
+            //services.AddScoped<IBaseCRUDService<EmployeeViewModel, EmployeeInsertModel, EmployeeUpdateModel>, BaseCRUDService<Employee, EmployeeViewModel, EmployeeInsertModel, EmployeeUpdateModel>>();
             services.AddScoped<IBaseCRUDService<ProfessionViewModel, object, object>, BaseCRUDService<Profession, ProfessionViewModel, object, object>>();
 
-
+            services.AddScoped<IEmployeeService, EmployeeService>();
             services.AddScoped<IServiceService, ServiceService>();
         }
 

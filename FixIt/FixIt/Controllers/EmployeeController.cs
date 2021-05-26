@@ -5,8 +5,9 @@ namespace FixIt.Controllers
 {
     public class EmployeeController : BaseController<EmployeeViewModel, EmployeeInsertModel, EmployeeUpdateModel>
     {
-        public EmployeeController(IBaseCRUDService<EmployeeViewModel, EmployeeInsertModel, EmployeeUpdateModel> service) : base(service)
+        public EmployeeController(IEmployeeService service) : base(service)
         {
+
         }
     }
 }
