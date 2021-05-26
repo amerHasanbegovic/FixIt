@@ -21,7 +21,7 @@ namespace FixIt.Services.Services
         }
         public override ServiceViewModel GetById(int id)
         {
-            var res = _applicationDbContext.Set<Service>().Include(x => x.ServiceType).ToList();
+            var res = _applicationDbContext.Set<Service>().Include(x => x.ServiceType).FirstOrDefault(x => x.Id == id);
             return _mapper.Map<ServiceViewModel>(res);
         }
     }
