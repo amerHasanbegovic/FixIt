@@ -10,7 +10,8 @@ namespace FixIt.Data.Models
         public DateTime CreatedAt { get; set; }
         public double Price { get; set; }
         public double Rating { get; set; }
-        public virtual ServiceType Type { get; set; }
+        public int ServiceTypeId { get; set; }
+        public virtual ServiceType ServiceType { get; set; }
         public int TimesRequested { get; set; }
     }
 }
