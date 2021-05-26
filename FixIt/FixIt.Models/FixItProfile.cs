@@ -6,6 +6,7 @@ using FixIt.Models.Models.JobStatus;
 using FixIt.Models.Models.PaymentType;
 using FixIt.Models.Models.Profession;
 using FixIt.Models.Models.Service;
+using FixIt.Models.Models.ServiceRating;
 using FixIt.Models.Models.ServiceType;
 using FixIt.Models.Models.Sex;
 using FixIt.Models.Models.User;
@@ -24,7 +25,7 @@ namespace FixIt.Models
             CreateMap<ServiceInsertModel, Service>();
             CreateMap<ServiceUpdateModel, Service>();
 
-            //serviceType
+            //service type
             CreateMap<ServiceType, ServiceTypeModel>();
             CreateMap<ServiceTypeModel, ServiceType>();
 
@@ -47,6 +48,11 @@ namespace FixIt.Models
 
             //job status
             CreateMap<JobStatus, JobStatusViewModel>();
+
+            //service rating
+            CreateMap<ServiceRating, ServiceRatingViewModel>();
+            CreateMap<ServiceRatingInsertModel, ServiceRating>();
+            CreateMap<ServiceRatingUpdateModel, ServiceRating>();
         }
     }
 }
