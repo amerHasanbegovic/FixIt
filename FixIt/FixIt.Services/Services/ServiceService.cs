@@ -19,5 +19,10 @@ namespace FixIt.Services.Services
             var res = _applicationDbContext.Set<Service>().Include(x => x.ServiceType).ToList();
             return _mapper.Map<IEnumerable<ServiceViewModel>>(res);
         }
+        public override ServiceViewModel GetById(int id)
+        {
+            var res = _applicationDbContext.Set<Service>().Include(x => x.ServiceType).ToList();
+            return _mapper.Map<ServiceViewModel>(res);
+        }
     }
 }
