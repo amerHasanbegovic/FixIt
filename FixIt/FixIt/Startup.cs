@@ -18,6 +18,7 @@ using FixIt.Models.Models.Profession;
 using FixIt.Models.Models.PaymentType;
 using FixIt.Models.Models.JobStatus;
 using FixIt.Models.Models.ServiceRating;
+using FixIt.Models.Models.Payment;
 
 namespace FixIt
 {
@@ -48,6 +49,7 @@ namespace FixIt
             services.AddScoped<IBaseCRUDService<PaymentTypeViewModel, object, object>, BaseCRUDService<PaymentType, PaymentTypeViewModel, object, object>>();
             services.AddScoped<IBaseCRUDService<JobStatusViewModel, object, object>, BaseCRUDService<JobStatus, JobStatusViewModel, object, object>>();
             services.AddScoped<IBaseCRUDService<ServiceRatingViewModel, ServiceRatingInsertModel, ServiceRatingUpdateModel>, BaseCRUDService<ServiceRating, ServiceRatingViewModel, ServiceRatingInsertModel, ServiceRatingUpdateModel>>();
+            services.AddScoped<IBaseCRUDService<PaymentViewModel, PaymentInsertModel, object>, BaseCRUDService<Payment, PaymentViewModel, PaymentInsertModel, object>>();
 
             services.AddScoped<IEmployeeService, EmployeeService>();
             services.AddScoped<IServiceService, ServiceService>();
