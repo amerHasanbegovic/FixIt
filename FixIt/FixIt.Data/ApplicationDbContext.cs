@@ -11,7 +11,6 @@ namespace FixIt.Data
         public DbSet<City> Cities { get; set; }
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Job> Jobs { get; set; }
-        public DbSet<JobDetail> JobDetails { get; set; }
         public DbSet<JobStatus> JobStatuses { get; set; }
         public DbSet<Payment> Payments { get; set; }
         public DbSet<PaymentType> PaymentTypes { get; set; }

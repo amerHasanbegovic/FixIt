@@ -12,5 +12,6 @@ namespace FixIt.Data.Models
         public virtual User User { get; set; }
         public int PaymentId { get; set; }
         public virtual Payment Payment { get; set; }
+        public string JobDescription { get; set; }
     }
 }
