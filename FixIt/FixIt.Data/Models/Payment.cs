@@ -5,6 +5,7 @@ namespace FixIt.Data.Models
     public class Payment
     {
         public int Id { get; set; }
+        public double Total { get; set; }
         public int PaymentTypeId { get; set; }
         public virtual PaymentType PaymentType { get; set; }
 #nullable enable
