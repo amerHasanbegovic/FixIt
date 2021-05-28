@@ -3,10 +3,11 @@ using FixIt.Services.Interfaces;
 
 namespace FixIt.Controllers
 {
-    public class JobController : BaseController<JobViewModel, JobInsertModel, JobUpdateModel>
+    public class JobController : BaseController<JobViewModel, JobInsertModel, JobUpdateModel, JobSearchModel>
     {
-        public JobController(IBaseCRUDService<JobViewModel, JobInsertModel, JobUpdateModel> service) : base(service)
+        public JobController(IJobService service) : base(service)
         {
+
         }
     }
 }

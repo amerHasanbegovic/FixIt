@@ -2,7 +2,7 @@
 
 namespace FixIt.Services.Interfaces
 {
-    public interface ICityService: IBaseCRUDService<CityViewModel, object, object>
+    public interface ICityService: IBaseCRUDService<CityViewModel, object, object, object>
     {
     }
 }

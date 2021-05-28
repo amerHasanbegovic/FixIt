@@ -2,7 +2,7 @@
 
 namespace FixIt.Services.Interfaces
 {
-    public interface ISexService : IBaseCRUDService<SexViewModel, object, object>
+    public interface ISexService : IBaseCRUDService<SexViewModel, object, object, object>
     {
     }
 }

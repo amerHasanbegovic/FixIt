@@ -3,9 +3,9 @@ using FixIt.Services.Interfaces;
 
 namespace FixIt.Controllers
 {
-    public class UserController : BaseController<UserViewModel, object, object>
+    public class UserController : BaseController<UserViewModel, object, object, UserSearchModel>
     {
-        public UserController(IBaseCRUDService<UserViewModel, object, object> userService) : base(userService)
+        public UserController(IBaseCRUDService<UserViewModel, object, object, UserSearchModel> userService) : base(userService)
         {
         }
     }

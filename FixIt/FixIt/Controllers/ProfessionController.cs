@@ -3,9 +3,9 @@ using FixIt.Services.Interfaces;
 
 namespace FixIt.Controllers
 {
-    public class ProfessionController : BaseController<ProfessionViewModel, object, object>
+    public class ProfessionController : BaseController<ProfessionViewModel, object, object, object>
     {
-        public ProfessionController(IBaseCRUDService<ProfessionViewModel, object, object> service) : base(service)
+        public ProfessionController(IBaseCRUDService<ProfessionViewModel, object, object, object> service) : base(service)
         {
         }
     }

@@ -2,7 +2,7 @@
 
 namespace FixIt.Services.Interfaces
 {
-    public interface IEmployeeService : IBaseCRUDService<EmployeeViewModel, EmployeeInsertModel, EmployeeUpdateModel>
+    public interface IEmployeeService : IBaseCRUDService<EmployeeViewModel, EmployeeInsertModel, EmployeeUpdateModel, EmployeeSearchModel>
     {
     }
 }

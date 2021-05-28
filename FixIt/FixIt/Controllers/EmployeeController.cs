@@ -3,7 +3,7 @@ using FixIt.Services.Interfaces;
 
 namespace FixIt.Controllers
 {
-    public class EmployeeController : BaseController<EmployeeViewModel, EmployeeInsertModel, EmployeeUpdateModel>
+    public class EmployeeController : BaseController<EmployeeViewModel, EmployeeInsertModel, EmployeeUpdateModel, EmployeeSearchModel>
     {
         public EmployeeController(IEmployeeService service) : base(service)
         {

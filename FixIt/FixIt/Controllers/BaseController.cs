@@ -6,19 +6,19 @@ namespace FixIt.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BaseController<TMap, TInsert, TUpdate> : ControllerBase
+    public class BaseController<TMap, TInsert, TUpdate, TSearch> : ControllerBase
     {
-        protected readonly IBaseCRUDService<TMap, TInsert, TUpdate> _service;
+        protected readonly IBaseCRUDService<TMap, TInsert, TUpdate, TSearch> _service;
 
-        public BaseController(IBaseCRUDService<TMap, TInsert, TUpdate> service)
+        public BaseController(IBaseCRUDService<TMap, TInsert, TUpdate, TSearch> service)
         {
             _service = service;
         }
 
         [HttpGet]
-        public IEnumerable<TMap> Get()
+        public IEnumerable<TMap> Get([FromQuery] TSearch search)
         {
-            return _service.Get();
+            return _service.Get(search);
         }
 
         [HttpGet("{id}")]

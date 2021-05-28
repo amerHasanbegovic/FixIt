@@ -42,21 +42,23 @@ namespace FixIt
             services.AddAutoMapper(typeof(Startup));
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
-            services.AddScoped<IBaseCRUDService<UserViewModel, object, object>, BaseCRUDService<User, UserViewModel, object, object>>();
-            services.AddScoped<IBaseCRUDService<ServiceViewModel, ServiceInsertModel, ServiceUpdateModel>, BaseCRUDService<Service, ServiceViewModel, ServiceInsertModel, ServiceUpdateModel>>();
-            services.AddScoped<IBaseCRUDService<ServiceTypeModel, ServiceTypeModel, ServiceTypeModel>, BaseCRUDService<ServiceType, ServiceTypeModel, ServiceTypeModel, ServiceTypeModel>>();
-            services.AddScoped<IBaseCRUDService<CityViewModel, object, object>, BaseCRUDService<City, CityViewModel, object, object>>();
-            services.AddScoped<IBaseCRUDService<SexViewModel, object, object>, BaseCRUDService<Sex, SexViewModel, object, object>>();
-            services.AddScoped<IBaseCRUDService<ProfessionViewModel, object, object>, BaseCRUDService<Profession, ProfessionViewModel, object, object>>();
-            services.AddScoped<IBaseCRUDService<PaymentTypeViewModel, object, object>, BaseCRUDService<PaymentType, PaymentTypeViewModel, object, object>>();
-            services.AddScoped<IBaseCRUDService<JobStatusViewModel, object, object>, BaseCRUDService<JobStatus, JobStatusViewModel, object, object>>();
-            services.AddScoped<IBaseCRUDService<ServiceRatingViewModel, ServiceRatingInsertModel, ServiceRatingUpdateModel>, BaseCRUDService<ServiceRating, ServiceRatingViewModel, ServiceRatingInsertModel, ServiceRatingUpdateModel>>();
-            services.AddScoped<IBaseCRUDService<PaymentViewModel, PaymentInsertModel, object>, BaseCRUDService<Payment, PaymentViewModel, PaymentInsertModel, object>>();
-            services.AddScoped<IBaseCRUDService<ServiceRequestViewModel, ServiceRequestInsertModel, object>, BaseCRUDService<ServiceRequest, ServiceRequestViewModel, ServiceRequestInsertModel, object>>();
-            services.AddScoped<IBaseCRUDService<JobViewModel, JobInsertModel, object>, BaseCRUDService<Job, JobViewModel, JobInsertModel, object>>();
+            services.AddScoped<IBaseCRUDService<UserViewModel, object, object, UserSearchModel>, BaseCRUDService<User, UserViewModel, object, object, UserSearchModel>>();
+            services.AddScoped<IBaseCRUDService<ServiceViewModel, ServiceInsertModel, ServiceUpdateModel, ServiceSearchModel>, BaseCRUDService<Service, ServiceViewModel, ServiceInsertModel, ServiceUpdateModel, ServiceSearchModel>>();
+            services.AddScoped<IBaseCRUDService<ServiceTypeModel, ServiceTypeModel, ServiceTypeModel, object>, BaseCRUDService<ServiceType, ServiceTypeModel, ServiceTypeModel, ServiceTypeModel, object>>();
+            services.AddScoped<IBaseCRUDService<CityViewModel, object, object, object>, BaseCRUDService<City, CityViewModel, object, object, object>>();
+            services.AddScoped<IBaseCRUDService<SexViewModel, object, object, object>, BaseCRUDService<Sex, SexViewModel, object, object, object>>();
+            services.AddScoped<IBaseCRUDService<ProfessionViewModel, object, object, object>, BaseCRUDService<Profession, ProfessionViewModel, object, object, object>>();
+            services.AddScoped<IBaseCRUDService<PaymentTypeViewModel, object, object, object>, BaseCRUDService<PaymentType, PaymentTypeViewModel, object, object, object>>();
+            services.AddScoped<IBaseCRUDService<JobStatusViewModel, object, object, object>, BaseCRUDService<JobStatus, JobStatusViewModel, object, object, object>>();
+            services.AddScoped<IBaseCRUDService<ServiceRatingViewModel, ServiceRatingInsertModel, ServiceRatingUpdateModel, object>, BaseCRUDService<ServiceRating, ServiceRatingViewModel, ServiceRatingInsertModel, ServiceRatingUpdateModel, object>>();
+            services.AddScoped<IBaseCRUDService<PaymentViewModel, PaymentInsertModel, object, object>, BaseCRUDService<Payment, PaymentViewModel, PaymentInsertModel, object, object>>();
+            services.AddScoped<IBaseCRUDService<ServiceRequestViewModel, ServiceRequestInsertModel, object, object>, BaseCRUDService<ServiceRequest, ServiceRequestViewModel, ServiceRequestInsertModel, object, object>>();
+            services.AddScoped<IBaseCRUDService<JobViewModel, JobInsertModel, object, JobSearchModel>, BaseCRUDService<Job, JobViewModel, JobInsertModel, object, JobSearchModel>>();
 
             services.AddScoped<IEmployeeService, EmployeeService>();
             services.AddScoped<IServiceService, ServiceService>();
+            services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IJobService, JobService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -2,7 +2,7 @@
 
 namespace FixIt.Services.Interfaces
 {
-    public interface IPaymentService : IBaseCRUDService<PaymentViewModel, PaymentInsertModel, object>
+    public interface IPaymentService : IBaseCRUDService<PaymentViewModel, PaymentInsertModel, object, object>
     {
 
     }

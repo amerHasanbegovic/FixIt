@@ -2,7 +2,7 @@
 
 namespace FixIt.Services.Interfaces
 {
-    public interface IProfessionService : IBaseCRUDService<ProfessionViewModel, object, object>
+    public interface IProfessionService : IBaseCRUDService<ProfessionViewModel, object, object, object>
     {
     }
 }

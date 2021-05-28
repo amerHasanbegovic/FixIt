@@ -2,7 +2,7 @@
 
 namespace FixIt.Services.Interfaces
 {
-    public interface IJobStatusService : IBaseCRUDService<JobStatusViewModel, object, object>
+    public interface IJobStatusService : IBaseCRUDService<JobStatusViewModel, object, object, object>
     {
     }
 }

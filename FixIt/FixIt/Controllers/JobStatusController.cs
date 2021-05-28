@@ -3,9 +3,9 @@ using FixIt.Services.Interfaces;
 
 namespace FixIt.Controllers
 {
-    public class JobStatusController : BaseController<JobStatusViewModel, object, object>
+    public class JobStatusController : BaseController<JobStatusViewModel, object, object, object>
     {
-        public JobStatusController(IBaseCRUDService<JobStatusViewModel, object, object> service) : base(service)
+        public JobStatusController(IBaseCRUDService<JobStatusViewModel, object, object, object> service) : base(service)
         {
         }
     }

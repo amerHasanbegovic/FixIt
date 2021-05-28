@@ -6,7 +6,7 @@ using FixIt.Services.Interfaces;
 
 namespace FixIt.Services.Services
 {
-    public class PaymentTypeService : BaseCRUDService<PaymentType, PaymentTypeViewModel, object, object>, IPaymentTypeService
+    public class PaymentTypeService : BaseCRUDService<PaymentType, PaymentTypeViewModel, object, object, object>, IPaymentTypeService
     {
         public PaymentTypeService(ApplicationDbContext applicationDbContext, IMapper mapper) : base(applicationDbContext, mapper)
         {
