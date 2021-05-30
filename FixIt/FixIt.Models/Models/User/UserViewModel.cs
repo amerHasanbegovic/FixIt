@@ -11,6 +11,7 @@ namespace FixIt.Models.Models.User
         public byte[] Photo { get; set; }
         public DateTime MemberSince { get; set; }
         public string Address { get; set; }
+        public string Email { get; set; }
         public virtual CityViewModel City { get; set; }
         public SexViewModel Sex { get; set; }
     }

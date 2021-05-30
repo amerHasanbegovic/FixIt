@@ -16,7 +16,7 @@ namespace FixIt.Controllers
         }
 
         [HttpGet]
-        public IEnumerable<UserViewModel> Get(UserSearchModel model = null)
+        public IEnumerable<UserViewModel> Get([FromQuery] UserSearchModel model = null)
         {
             return _service.Get(model);
         }

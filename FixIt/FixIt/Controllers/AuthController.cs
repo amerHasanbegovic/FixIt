@@ -41,12 +41,25 @@ namespace FixIt.Controllers
                 Lastname = model.LastName,
                 Email = model.Email,
                 SecurityStamp = Guid.NewGuid().ToString(),
-                UserName = model.UserName
+                UserName = model.UserName,
+                SexId = 1,
+                CityId = 1,
+                MemberSince = DateTime.Now
             };
             var result = await _userManager.CreateAsync(user, model.Password);
             if (!result.Succeeded)
                 return StatusCode(StatusCodes.Status500InternalServerError, new ResponseModel { Status = "Error", 
                     Message = "User creation failed! Please check user details and try again." });
+
+            if (!await _roleManager.RoleExistsAsync(UserRoles.user))
+                await _roleManager.CreateAsync(new IdentityRole(UserRoles.user));
+            if (!await _roleManager.RoleExistsAsync(UserRoles.admin))
+                await _roleManager.CreateAsync(new IdentityRole(UserRoles.admin));
+
+            if (await _roleManager.RoleExistsAsync(UserRoles.user))
+            {
+                await _userManager.AddToRoleAsync(user, UserRoles.user);
+            }
 
             return Ok(new ResponseModel { Status = "Success", Message = "User created successfully!" });
         }
