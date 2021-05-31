@@ -3,6 +3,9 @@ using FixIt.Data;
 using FixIt.Data.Models;
 using FixIt.Models.Models.ServiceRequest;
 using FixIt.Services.Interfaces;
+using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace FixIt.Services.Services
 {
@@ -10,6 +13,27 @@ namespace FixIt.Services.Services
     {
         public ServiceRequestService(ApplicationDbContext applicationDbContext, IMapper mapper) : base(applicationDbContext, mapper)
         {
+        }
+
+        public override IEnumerable<ServiceRequestViewModel> Get(object search = null)
+        {
+            var res = _applicationDbContext.Set<ServiceRequest>().AsQueryable();
+            var list = res
+                .Include(x => x.Service)
+                .Include(x => x.User)
+                .Include(x => x.Payment).ThenInclude(x => x.PaymentType)
+                .ToList();
+            return _mapper.Map<IEnumerable<ServiceRequestViewModel>>(list);
+        }
+
+        public override ServiceRequestViewModel GetById(int id)
+        {
+            var res = _applicationDbContext.Set<ServiceRequest>()
+                .Include(x => x.Payment).ThenInclude(x => x.PaymentType)
+                .Include(x => x.Service).ThenInclude(x => x.ServiceType)
+                .Include(x => x.User)
+                .FirstOrDefault(x => x.Id == id);
+            return _mapper.Map<ServiceRequestViewModel>(res);
         }
     }
 }
