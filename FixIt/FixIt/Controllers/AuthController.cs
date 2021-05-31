@@ -42,8 +42,6 @@ namespace FixIt.Controllers
                 Email = model.Email,
                 SecurityStamp = Guid.NewGuid().ToString(),
                 UserName = model.UserName,
-                SexId = 1,
-                CityId = 1,
                 MemberSince = DateTime.Now
             };
             var result = await _userManager.CreateAsync(user, model.Password);
