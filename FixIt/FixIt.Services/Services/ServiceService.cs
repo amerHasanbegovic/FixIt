@@ -6,6 +6,7 @@ using FixIt.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace FixIt.Services.Services
 {
@@ -14,6 +15,14 @@ namespace FixIt.Services.Services
         public ServiceService(ApplicationDbContext applicationDbContext, IMapper mapper) : base(applicationDbContext, mapper)
         {
         }
+
+        public async Task Delete(int id)
+        {
+            var entity = _applicationDbContext.Set<Service>().Find(id);
+            _applicationDbContext.Remove(entity);
+            await _applicationDbContext.SaveChangesAsync();
+        }
+
         public override IEnumerable<ServiceViewModel> Get(ServiceSearchModel model)
         {
             var query = _applicationDbContext.Set<Service>().AsQueryable();
