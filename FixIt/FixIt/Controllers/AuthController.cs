@@ -64,6 +64,36 @@ namespace FixIt.Controllers
             return Ok(new ResponseModel { Status = "Success", Message = "User created successfully!" });
         }
 
+        [HttpPost]
+        [Route("register-admin")]
+        public async Task<IActionResult> RegisterAdmin([FromBody] RegisterAdminModel model)
+        {
+            var userExists = await _userManager.FindByNameAsync(model.UserName);
+            if (userExists != null)
+                return StatusCode(StatusCodes.Status500InternalServerError, new ResponseModel { Status = "Error", Message = "Admin user already exists!" });
+
+            User user = new User()
+            {
+                SecurityStamp = Guid.NewGuid().ToString(),
+                UserName = model.UserName,
+            };
+            var result = await _userManager.CreateAsync(user, model.Password);
+            if (!result.Succeeded)
+                return StatusCode(StatusCodes.Status500InternalServerError, new ResponseModel { Status = "Error", Message = "Admin user creation failed! Please check user details and try again." });
+
+            if (!await _roleManager.RoleExistsAsync(UserRoles.admin))
+                await _roleManager.CreateAsync(new IdentityRole(UserRoles.admin));
+            if (!await _roleManager.RoleExistsAsync(UserRoles.user))
+                await _roleManager.CreateAsync(new IdentityRole(UserRoles.user));
+
+            if (await _roleManager.RoleExistsAsync(UserRoles.admin))
+            {
+                await _userManager.AddToRoleAsync(user, UserRoles.admin);
+            }
+
+            return Ok(new ResponseModel { Status = "Success", Message = "Admin user created successfully!" });
+        }
+
         [HttpPost("login")]
         public async Task<IActionResult> Login([FromBody] LoginModel model)
         {
