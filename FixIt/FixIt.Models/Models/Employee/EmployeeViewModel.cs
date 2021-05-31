@@ -7,6 +7,7 @@ namespace FixIt.Models.Models.Employee
 {
     public class EmployeeViewModel
     {
+        public int Id { get; set; }
         public string Firstname { get; set; }
         public string Lastname { get; set; }
         public int ProfessionId { get; set; }

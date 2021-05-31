@@ -7,6 +7,7 @@ namespace FixIt.Models.Models.ServiceRequest
 {
     public class ServiceRequestViewModel
     {
+        public int Id { get; set; }
         public DateTime RequestDate { get; set; }
         public int ServiceId { get; set; }
         public virtual ServiceViewModel Service { get; set; }

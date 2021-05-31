@@ -7,6 +7,7 @@ namespace FixIt.Models.Models.Job
 {
     public class JobViewModel
     {
+        public int Id { get; set; }
         public int EmployeeId { get; set; }
         public virtual EmployeeViewModel Employee { get; set; }
         public int ServiceRequestId { get; set; }
