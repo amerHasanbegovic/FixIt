@@ -6,7 +6,7 @@ namespace FixIt.Models.Models.User
 {
     public class UserViewModel
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string Firstname { get; set; }
         public string Lastname { get; set; }
         public byte[] Photo { get; set; }
@@ -14,6 +14,6 @@ namespace FixIt.Models.Models.User
         public string Address { get; set; }
         public string Email { get; set; }
         public virtual CityViewModel City { get; set; }
-        public SexViewModel Sex { get; set; }
+        public virtual SexViewModel Sex { get; set; }
     }
 }
