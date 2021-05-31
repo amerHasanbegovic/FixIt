@@ -22,6 +22,7 @@ namespace FixIt.Models
         {
             //user
             CreateMap<User, UserViewModel>();
+            CreateMap<UserUpdateModel, User>();
 
             //service
             CreateMap<Service, ServiceViewModel>();
