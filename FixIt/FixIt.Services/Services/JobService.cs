@@ -14,7 +14,7 @@ namespace FixIt.Services.Services
         public JobService(ApplicationDbContext applicationDbContext, IMapper mapper) : base(applicationDbContext, mapper)
         {
         }
-        public override IEnumerable<JobViewModel> Get(JobSearchModel model = null)
+        public override IEnumerable<JobViewModel> Get(JobSearchModel model)
         {
             var query = _applicationDbContext.Set<Job>().AsQueryable();
 

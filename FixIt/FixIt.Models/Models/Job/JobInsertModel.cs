@@ -4,7 +4,6 @@ namespace FixIt.Models.Models.Job
 {
     public class JobInsertModel
     {
-        public int Id { get; set; }
         public int EmployeeId { get; set; }
         public int ServiceRequestId { get; set; }
         public string JobDescription { get; set; }

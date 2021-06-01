@@ -97,7 +97,7 @@ namespace FixIt
             services.AddScoped<IServiceService, ServiceService>();
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<IJobService, JobService>();
-
+            services.AddScoped<IServiceRequestService, ServiceRequestService>();
             
         }
 
