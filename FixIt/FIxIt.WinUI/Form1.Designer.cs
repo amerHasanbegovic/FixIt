@@ -1,5 +1,5 @@
 ﻿
-namespace FIxIt.WinUI
+namespace FixIt.WinUI
 {
     partial class Form1
     {

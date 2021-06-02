@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("FIxIt.WinUI")]
+[assembly: AssemblyTitle("FixIt.WinUI")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("FIxIt.WinUI")]
+[assembly: AssemblyProduct("FixIt.WinUI")]
 [assembly: AssemblyCopyright("Copyright ©  2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("8b736a22-9ce9-4035-8619-1edfc8d0c5a2")]
+[assembly: Guid("efb9e9ec-d724-4f38-9841-049c6f5bb5c3")]
 
 // Version information for an assembly consists of the following four values:
 //

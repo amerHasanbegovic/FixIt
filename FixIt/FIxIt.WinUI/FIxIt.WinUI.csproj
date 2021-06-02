@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8B736A22-9CE9-4035-8619-1EDFC8D0C5A2}</ProjectGuid>
+    <ProjectGuid>{EFB9E9EC-D724-4F38-9841-049C6F5BB5C3}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>FIxIt.WinUI</RootNamespace>
-    <AssemblyName>FIxIt.WinUI</AssemblyName>
+    <RootNamespace>FixIt.WinUI</RootNamespace>
+    <AssemblyName>FixIt.WinUI</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
