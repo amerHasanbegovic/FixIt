@@ -4,6 +4,7 @@ using FixIt.Data.Models;
 using FixIt.Models.Models.ServiceRequest;
 using FixIt.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -34,6 +35,22 @@ namespace FixIt.Services.Services
                 .Include(x => x.User)
                 .FirstOrDefault(x => x.Id == id);
             return _mapper.Map<ServiceRequestViewModel>(res);
+        }
+
+        public override ServiceRequestViewModel Insert(ServiceRequestInsertModel model)
+        {
+            var entity = _mapper.Map<ServiceRequest>(model);
+            _applicationDbContext.Add(entity);
+            CalculateServiceTimesRequested(entity.ServiceId);
+            _applicationDbContext.SaveChanges();
+            return _mapper.Map<ServiceRequestViewModel>(entity);
+        }
+
+        private void CalculateServiceTimesRequested(int serviceId)
+        {
+            var entity = _applicationDbContext.Set<Service>().Find(serviceId);
+            entity.TimesRequested++;
+            _applicationDbContext.Update(entity);
         }
     }
 }
