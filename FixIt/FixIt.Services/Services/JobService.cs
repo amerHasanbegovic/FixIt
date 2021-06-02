@@ -50,5 +50,21 @@ namespace FixIt.Services.Services
 
             return _mapper.Map<JobViewModel>(res);
         }
+
+        public override JobViewModel Insert(JobInsertModel model)
+        {
+            var entity = _mapper.Map<Job>(model);
+            _applicationDbContext.Add(entity);
+            SetServiceRequestProcessedTrue(entity.ServiceRequestId);
+            _applicationDbContext.SaveChanges();
+            return _mapper.Map<JobViewModel>(entity);
+        }
+
+        private void SetServiceRequestProcessedTrue(int serviceRequestId)
+        {
+            var entity = _applicationDbContext.Set<ServiceRequest>().Find(serviceRequestId);
+            entity.Processed = true;
+            _applicationDbContext.Update(entity);
+        }
     }
 }
