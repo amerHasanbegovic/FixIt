@@ -26,14 +26,14 @@ namespace FixIt.Services.Services
         public override IEnumerable<EmployeeViewModel> Get(EmployeeSearchModel model = null)
         {
             var query = _applicationDbContext.Set<Employee>().AsQueryable();
-            
+
             if (!string.IsNullOrEmpty(model?.FirstOrLastName))
                 query = query.Where(x => x.Firstname.ToLower().Contains(model.FirstOrLastName.ToLower())
                 || x.Lastname.ToLower().Contains(model.FirstOrLastName.ToLower()));
-            
-            if(model?.ProfessionId != 0)
+
+            if (model?.ProfessionId != 0)
                 query = query.Where(x => x.ProfessionId == model.ProfessionId);
-            
+
             var res = query.Include(x => x.Profession).ToList();
 
             return _mapper.Map<IEnumerable<EmployeeViewModel>>(res);

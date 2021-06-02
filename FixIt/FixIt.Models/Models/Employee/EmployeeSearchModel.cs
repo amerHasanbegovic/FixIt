@@ -4,6 +4,6 @@
     {
         //search employee by first or last name
         public string FirstOrLastName { get; set; }
-        public int? ProfessionId { get; set; }
+        public int ProfessionId { get; set; }
     }
 }
