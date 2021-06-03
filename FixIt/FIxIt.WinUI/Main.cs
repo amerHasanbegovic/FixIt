@@ -1,4 +1,6 @@
-﻿using FixIt.WinUI.Forms.Service;
+﻿using FixIt.WinUI.Forms.Employee;
+using FixIt.WinUI.Forms.Service;
+using FixIt.WinUI.Forms.ServiceRequests;
 using System.Windows.Forms;
 
 namespace FixIt.WinUI
@@ -12,7 +14,8 @@ namespace FixIt.WinUI
 
         private void Main_Load(object sender, System.EventArgs e)
         {
-
+            var form = new frmServiceRequest();
+            LoadForm(form);
         }
 
         private void button5_Click(object sender, System.EventArgs e)
@@ -35,6 +38,18 @@ namespace FixIt.WinUI
             panel2.Controls.Add(form);
             form.FormBorderStyle = FormBorderStyle.None;
             form.Show();
+        }
+
+        private void button1_Click(object sender, System.EventArgs e)
+        {
+            var form = new frmServiceRequest();
+            LoadForm(form);
+        }
+
+        private void button3_Click(object sender, System.EventArgs e)
+        {
+            var form = new frmEmployee();
+            LoadForm(form);
         }
     }
 }
