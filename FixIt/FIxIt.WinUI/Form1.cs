@@ -16,5 +16,6 @@ namespace FixIt.WinUI
         {
             InitializeComponent();
         }
+
     }
 }
