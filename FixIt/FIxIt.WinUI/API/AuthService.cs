@@ -1,4 +1,9 @@
 ﻿using FixIt.WinUI.Properties;
+using Flurl.Http;
+using System.Collections.Generic;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace FixIt.WinUI.API
 {
@@ -12,23 +17,25 @@ namespace FixIt.WinUI.API
             _resource = resource;
         }
 
-        //public async Task<T> Get<T>(object searchModel = null)
-        //{
-        //    var query = "";
-        //    if (searchModel != null)
-        //        query = await searchModel?.ToQueryString();
+        public async Task<T> Login<T>(object loginModel)
+        {
+            try
+            {
+                return await $"{endpoint}/{_resource}/login".PostJsonAsync(loginModel).ReceiveJson<T>();
+            }
+            catch (FlurlHttpException ex)
+            {
+                var errors = await ex.GetResponseJsonAsync<Dictionary<string, string[]>>();
 
-        //    var list = await $"{endpoint}{_resource}?{query}".GetJsonAsync<T>();
+                var stringBuilder = new StringBuilder();
+                foreach (var error in errors)
+                {
+                    stringBuilder.AppendLine($"{error.Key}, ${string.Join(",", error.Value)}");
+                }
 
-        //    return list;
-        //}
-
-        //public async Task<T> Login<T>(object loginModel)
-        //{
-        //    return await $"{endpoint}{_resource}/login".PostUrlEncodedAsync(new LoginModel
-        //    {
-
-        //    });
-        //}
+                MessageBox.Show(stringBuilder.ToString(), "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return default(T);
+            }
+        }
     }
 }

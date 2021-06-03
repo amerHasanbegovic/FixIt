@@ -24,20 +24,20 @@ namespace FixIt.WinUI.API
             if (searchModel != null)
                 query = await searchModel?.ToQueryString();
 
-            var list = await $"{endpoint}{_resource}?{query}".GetJsonAsync<T>();
+            var list = await $"{endpoint}/{_resource}?{query}".GetJsonAsync<T>();
 
             return list;
         }
 
         public async Task<T> GetById<T>(object id)
         {
-            var url = $"{endpoint}{_resource}/{id}";
+            var url = $"{endpoint}/{_resource}/{id}";
             return await url.GetJsonAsync<T>();
         }
 
         public async Task<T> Insert<T>(object request)
         {
-            var url = $"{endpoint}{_resource}";
+            var url = $"{endpoint}/{_resource}";
 
             try
             {
@@ -63,7 +63,7 @@ namespace FixIt.WinUI.API
         {
             try
             {
-                var url = $"{endpoint}{_resource}/{id}";
+                var url = $"{endpoint}/{_resource}/{id}";
 
                 return await url.PutJsonAsync(model).ReceiveJson<T>();
             }
