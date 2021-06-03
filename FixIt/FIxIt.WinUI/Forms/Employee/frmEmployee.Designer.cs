@@ -56,6 +56,7 @@ namespace FixIt.WinUI.Forms.Employee
             this.textBox1.PlaceholderText = "Pretraga uposlenika po imenu i prezimenu";
             this.textBox1.Size = new System.Drawing.Size(1064, 27);
             this.textBox1.TabIndex = 2;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label2
             // 
@@ -81,6 +82,7 @@ namespace FixIt.WinUI.Forms.Employee
             this.cmbProfession.Name = "cmbProfession";
             this.cmbProfession.Size = new System.Drawing.Size(151, 28);
             this.cmbProfession.TabIndex = 6;
+            this.cmbProfession.SelectedIndexChanged += new System.EventHandler(this.cmbProfession_SelectedIndexChanged);
             // 
             // btnListOfEmployees
             // 
@@ -122,6 +124,7 @@ namespace FixIt.WinUI.Forms.Employee
             this.Controls.Add(this.textBox1);
             this.Name = "frmEmployee";
             this.Text = "frmEmployee";
+            this.Load += new System.EventHandler(this.frmEmployee_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
