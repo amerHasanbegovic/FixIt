@@ -1,4 +1,6 @@
 ﻿using FixIt.WinUI.Forms.Employee;
+using FixIt.WinUI.Forms.Job;
+using FixIt.WinUI.Forms.Report;
 using FixIt.WinUI.Forms.Service;
 using FixIt.WinUI.Forms.ServiceRequests;
 using System.Windows.Forms;
@@ -49,6 +51,18 @@ namespace FixIt.WinUI
         private void button3_Click(object sender, System.EventArgs e)
         {
             var form = new frmEmployee();
+            LoadForm(form);
+        }
+
+        private void button4_Click(object sender, System.EventArgs e)
+        {
+            var form = new frmJob();
+            LoadForm(form);
+        }
+
+        private void button6_Click(object sender, System.EventArgs e)
+        {
+            var form = new frmReport();
             LoadForm(form);
         }
     }

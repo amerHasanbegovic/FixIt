@@ -62,6 +62,7 @@ namespace FixIt.WinUI
             this.button6.TabIndex = 2;
             this.button6.Text = "Izvještaji";
             this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button5
             // 
@@ -81,6 +82,7 @@ namespace FixIt.WinUI
             this.button4.TabIndex = 2;
             this.button4.Text = "Poslovi";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
