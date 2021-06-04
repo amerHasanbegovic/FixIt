@@ -17,6 +17,12 @@ namespace FixIt.Models.Models.Job
         public virtual JobStatusViewModel Status { get; set; }
         public DateTime CreatedAt { get; set; }
         public bool? Paid { get; set; }
+
+        public string EmployeeFullName => $"{Employee?.Firstname} {Employee?.Lastname}";
+        public string ServiceName => ServiceRequest?.Service?.Name;
+        public string UserFullName => $"{ServiceRequest?.User?.Firstname} {ServiceRequest?.User?.Lastname}";
+        public string ServicePrice => $"{ServiceRequest?.Service?.Price.ToString()} KM";
+        public string JobStatus => Status?.Status;
     }
 }
 

@@ -1,5 +1,6 @@
 ﻿using FixIt.Data.Models;
 using FixIt.Models.Models.Employee;
+using FixIt.Models.Models.Profession;
 using FixIt.WinUI.API;
 using System;
 using System.Collections.Generic;
@@ -40,7 +41,7 @@ namespace FixIt.WinUI.Forms.Employee
                 employeeSearchModel.ProfessionId = professionId;
 
 
-            var list = await _employeeService.Get<List<Data.Models.Employee>>(employeeSearchModel);
+            var list = await _employeeService.Get<List<EmployeeViewModel>>(employeeSearchModel);
             foreach (var x in list)
                 DisplayPanel(x.Firstname, x.Lastname, x.Photo, x.Profession.Name);
         }
@@ -93,8 +94,8 @@ namespace FixIt.WinUI.Forms.Employee
 
         private async Task LoadProfessions()
         {
-            var list = await _professionService.Get<List<Profession>>();
-            list.Insert(0, new Profession());
+            var list = await _professionService.Get<List<ProfessionViewModel>>();
+            list.Insert(0, new ProfessionViewModel());
             cmbProfession.DataSource = list;
             cmbProfession.DisplayMember = "Name";
             cmbProfession.ValueMember = "Id";
