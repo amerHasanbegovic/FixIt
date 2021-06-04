@@ -1,17 +1,17 @@
 ﻿using System.Windows.Forms;
 
-namespace FixIt.WinUI.Forms.Service
+namespace FixIt.WinUI.Forms.Employee
 {
-    public partial class frmService: Form
+    public partial class frmAddEmployee : Form
     {
-        public frmService()
+        public frmAddEmployee()
         {
             InitializeComponent();
         }
 
-        private void btnAddService_Click(object sender, System.EventArgs e)
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            var form = new frmAddService();
+            var form = new frmEmployee();
             form.TopLevel = false;
             form.Dock = DockStyle.Fill;
             form.FormBorderStyle = FormBorderStyle.None;

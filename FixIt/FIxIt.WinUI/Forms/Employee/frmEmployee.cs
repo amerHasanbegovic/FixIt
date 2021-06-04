@@ -115,5 +115,16 @@ namespace FixIt.WinUI.Forms.Employee
                 await LoadEmployees(id);
             }
         }
+
+        private void btnAddEmployee_Click(object sender, EventArgs e)
+        {
+            var form = new frmAddEmployee();
+            form.TopLevel = false;
+            form.Dock = DockStyle.Fill;
+            form.FormBorderStyle = FormBorderStyle.None;
+            this.Controls.Clear();
+            this.Controls.Add(form);
+            form.Show();
+        }
     }
 }

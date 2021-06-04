@@ -34,7 +34,6 @@ namespace FixIt.WinUI.Forms.Employee
             this.label2 = new System.Windows.Forms.Label();
             this.btnAddEmployee = new System.Windows.Forms.Button();
             this.cmbProfession = new System.Windows.Forms.ComboBox();
-            this.btnListOfEmployees = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.SuspendLayout();
@@ -74,29 +73,21 @@ namespace FixIt.WinUI.Forms.Employee
             this.btnAddEmployee.TabIndex = 5;
             this.btnAddEmployee.Text = "Dodaj novog uposlenika";
             this.btnAddEmployee.UseVisualStyleBackColor = true;
+            this.btnAddEmployee.Click += new System.EventHandler(this.btnAddEmployee_Click);
             // 
             // cmbProfession
             // 
             this.cmbProfession.FormattingEnabled = true;
-            this.cmbProfession.Location = new System.Drawing.Point(766, 147);
+            this.cmbProfession.Location = new System.Drawing.Point(925, 147);
             this.cmbProfession.Name = "cmbProfession";
             this.cmbProfession.Size = new System.Drawing.Size(151, 28);
             this.cmbProfession.TabIndex = 6;
             this.cmbProfession.SelectedIndexChanged += new System.EventHandler(this.cmbProfession_SelectedIndexChanged);
             // 
-            // btnListOfEmployees
-            // 
-            this.btnListOfEmployees.Location = new System.Drawing.Point(923, 147);
-            this.btnListOfEmployees.Name = "btnListOfEmployees";
-            this.btnListOfEmployees.Size = new System.Drawing.Size(153, 28);
-            this.btnListOfEmployees.TabIndex = 7;
-            this.btnListOfEmployees.Text = "Lista uposlenika";
-            this.btnListOfEmployees.UseVisualStyleBackColor = true;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(632, 151);
+            this.label3.Location = new System.Drawing.Point(791, 151);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(128, 20);
             this.label3.TabIndex = 8;
@@ -116,7 +107,6 @@ namespace FixIt.WinUI.Forms.Employee
             this.ClientSize = new System.Drawing.Size(1088, 669);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnListOfEmployees);
             this.Controls.Add(this.cmbProfession);
             this.Controls.Add(this.btnAddEmployee);
             this.Controls.Add(this.label2);
@@ -137,7 +127,6 @@ namespace FixIt.WinUI.Forms.Employee
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnAddEmployee;
         private System.Windows.Forms.ComboBox cmbProfession;
-        private System.Windows.Forms.Button btnListOfEmployees;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
