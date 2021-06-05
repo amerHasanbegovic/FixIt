@@ -25,10 +25,53 @@ namespace FixIt.WinUI.Forms.Job
             await LoadJobs();
         }
 
-        private async Task LoadJobs()
+        private async Task LoadJobs(int jobStatusId = 0)
         {
-            var list = await _jobService.Get<IEnumerable<JobViewModel>>();
+            JobSearchModel jobSearchModel = new JobSearchModel()
+            {
+                Query = textBox1.Text
+            };
+            if (jobStatusId != 0)
+                jobSearchModel.JobStatusId = jobStatusId;
+
+            var list = await _jobService.Get<IEnumerable<JobViewModel>>(jobSearchModel);
             dataGridView1.DataSource = list;
+        }
+
+        private async void textBox1_TextChanged(object sender, System.EventArgs e)
+        {
+            dataGridView1.DataSource = null;
+            if (cbActiveJobs.Checked)
+                await LoadJobs(1);
+            else if (cbFinishedJobs.Checked)
+                await LoadJobs(2);
+            else await LoadJobs();
+        }
+
+        private async void cbActiveJobs_CheckedChanged(object sender, System.EventArgs e)
+        {
+            bool isChecked = cbActiveJobs.Checked;
+            cbFinishedJobs.Enabled = false;
+            if (isChecked)
+                await LoadJobs(1);
+            else
+            {
+                cbFinishedJobs.Enabled = true;
+                await LoadJobs();
+            }
+        }
+
+        private async void cbFinishedJobs_CheckedChanged(object sender, System.EventArgs e)
+        {
+            bool isChecked = cbFinishedJobs.Checked;
+            cbActiveJobs.Enabled = false;
+            if (isChecked)
+                await LoadJobs(2);
+            else
+            {
+                cbActiveJobs.Enabled = true;
+                await LoadJobs();
+            }
         }
     }
 }

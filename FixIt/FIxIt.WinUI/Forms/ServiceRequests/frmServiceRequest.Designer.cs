@@ -34,6 +34,11 @@ namespace FixIt.WinUI.Forms.ServiceRequests
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UserFullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ServiceName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PaymentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DateRequested = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,6 +55,12 @@ namespace FixIt.WinUI.Forms.ServiceRequests
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Id,
+            this.UserFullName,
+            this.ServiceName,
+            this.PaymentName,
+            this.DateRequested});
             this.dataGridView1.Location = new System.Drawing.Point(12, 197);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -84,6 +95,46 @@ namespace FixIt.WinUI.Forms.ServiceRequests
             this.label4.Size = new System.Drawing.Size(1095, 2);
             this.label4.TabIndex = 6;
             // 
+            // Id
+            // 
+            this.Id.DataPropertyName = "Id";
+            this.Id.HeaderText = "Redni br.";
+            this.Id.MinimumWidth = 6;
+            this.Id.Name = "Id";
+            this.Id.Width = 125;
+            // 
+            // UserFullName
+            // 
+            this.UserFullName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.UserFullName.DataPropertyName = "UserFullName";
+            this.UserFullName.HeaderText = "Klijent";
+            this.UserFullName.MinimumWidth = 6;
+            this.UserFullName.Name = "UserFullName";
+            // 
+            // ServiceName
+            // 
+            this.ServiceName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ServiceName.DataPropertyName = "ServiceName";
+            this.ServiceName.HeaderText = "Naziv usluge";
+            this.ServiceName.MinimumWidth = 6;
+            this.ServiceName.Name = "ServiceName";
+            // 
+            // PaymentName
+            // 
+            this.PaymentName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.PaymentName.DataPropertyName = "PaymentTypeName";
+            this.PaymentName.HeaderText = "Način plaćanja";
+            this.PaymentName.MinimumWidth = 6;
+            this.PaymentName.Name = "PaymentName";
+            // 
+            // DateRequested
+            // 
+            this.DateRequested.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DateRequested.DataPropertyName = "RequestDate";
+            this.DateRequested.HeaderText = "Datum zahtjeva";
+            this.DateRequested.MinimumWidth = 6;
+            this.DateRequested.Name = "DateRequested";
+            // 
             // frmServiceRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -96,6 +147,7 @@ namespace FixIt.WinUI.Forms.ServiceRequests
             this.Controls.Add(this.label1);
             this.Name = "frmServiceRequest";
             this.Text = "frmServiceRequest";
+            this.Load += new System.EventHandler(this.frmServiceRequest_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -109,5 +161,10 @@ namespace FixIt.WinUI.Forms.ServiceRequests
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UserFullName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ServiceName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PaymentName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DateRequested;
     }
 }

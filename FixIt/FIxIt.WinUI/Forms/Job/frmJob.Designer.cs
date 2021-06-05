@@ -72,6 +72,7 @@ namespace FixIt.WinUI.Forms.Job
             this.textBox1.PlaceholderText = "Pretraga poslova";
             this.textBox1.Size = new System.Drawing.Size(1064, 27);
             this.textBox1.TabIndex = 3;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // cbActiveJobs
             // 
@@ -82,6 +83,7 @@ namespace FixIt.WinUI.Forms.Job
             this.cbActiveJobs.TabIndex = 6;
             this.cbActiveJobs.Text = "Aktivni";
             this.cbActiveJobs.UseVisualStyleBackColor = true;
+            this.cbActiveJobs.CheckedChanged += new System.EventHandler(this.cbActiveJobs_CheckedChanged);
             // 
             // cbFinishedJobs
             // 
@@ -92,6 +94,7 @@ namespace FixIt.WinUI.Forms.Job
             this.cbFinishedJobs.TabIndex = 7;
             this.cbFinishedJobs.Text = "Završeni";
             this.cbFinishedJobs.UseVisualStyleBackColor = true;
+            this.cbFinishedJobs.CheckedChanged += new System.EventHandler(this.cbFinishedJobs_CheckedChanged);
             // 
             // label3
             // 
