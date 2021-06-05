@@ -11,5 +11,8 @@ namespace FixIt.Models.Models.Service
         public double Rating { get; set; }
         public int ServiceTypeId { get; set; }
         public virtual ServiceTypeModel ServiceType { get; set; }
+        public int TimesRequested { get; set; }
+
+        public string ServiceTypeName => ServiceType?.Name;
     }
 }

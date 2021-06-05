@@ -48,6 +48,9 @@ namespace FixIt.WinUI.Forms.Service
             this.lblCijena3 = new System.Windows.Forms.Label();
             this.lblNaziv3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.ServiceName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ServiceType = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvServices)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -61,6 +64,7 @@ namespace FixIt.WinUI.Forms.Service
             this.textBox1.PlaceholderText = "Pretraga usluga po nazivu";
             this.textBox1.Size = new System.Drawing.Size(1064, 27);
             this.textBox1.TabIndex = 0;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -93,6 +97,10 @@ namespace FixIt.WinUI.Forms.Service
             // dgvServices
             // 
             this.dgvServices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvServices.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ServiceName,
+            this.ServiceType,
+            this.Price});
             this.dgvServices.Location = new System.Drawing.Point(12, 312);
             this.dgvServices.Name = "dgvServices";
             this.dgvServices.RowHeadersWidth = 51;
@@ -233,6 +241,30 @@ namespace FixIt.WinUI.Forms.Service
             this.label4.TabIndex = 9;
             this.label4.Text = "Najtraženije usluge";
             // 
+            // ServiceName
+            // 
+            this.ServiceName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ServiceName.DataPropertyName = "Name";
+            this.ServiceName.HeaderText = "Naziv usluge";
+            this.ServiceName.MinimumWidth = 6;
+            this.ServiceName.Name = "ServiceName";
+            // 
+            // ServiceType
+            // 
+            this.ServiceType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ServiceType.DataPropertyName = "ServiceTypeName";
+            this.ServiceType.HeaderText = "Tip";
+            this.ServiceType.MinimumWidth = 6;
+            this.ServiceType.Name = "ServiceType";
+            // 
+            // Price
+            // 
+            this.Price.DataPropertyName = "Price";
+            this.Price.HeaderText = "Cijena (KM)";
+            this.Price.MinimumWidth = 6;
+            this.Price.Name = "Price";
+            this.Price.Width = 125;
+            // 
             // frmService
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -250,6 +282,7 @@ namespace FixIt.WinUI.Forms.Service
             this.Controls.Add(this.textBox1);
             this.MinimizeBox = false;
             this.Name = "frmService";
+            this.Load += new System.EventHandler(this.frmService_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvServices)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -283,5 +316,8 @@ namespace FixIt.WinUI.Forms.Service
         private System.Windows.Forms.Label lblDescrition1;
         private System.Windows.Forms.Label lblDescrition2;
         private System.Windows.Forms.Label lblDescription3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ServiceName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ServiceType;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
     }
 }
