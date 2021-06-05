@@ -38,7 +38,8 @@ namespace FixIt.WinUI.Forms.Service
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // textBox1
@@ -48,6 +49,7 @@ namespace FixIt.WinUI.Forms.Service
             this.textBox1.PlaceholderText = "Pretraga klijenata po imenu i prezimenu";
             this.textBox1.Size = new System.Drawing.Size(1064, 27);
             this.textBox1.TabIndex = 0;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label1
             // 
@@ -69,12 +71,13 @@ namespace FixIt.WinUI.Forms.Service
             // 
             // btnShowAll
             // 
-            this.btnShowAll.Location = new System.Drawing.Point(12, 175);
+            this.btnShowAll.Location = new System.Drawing.Point(12, 177);
             this.btnShowAll.Name = "btnShowAll";
             this.btnShowAll.Size = new System.Drawing.Size(164, 35);
             this.btnShowAll.TabIndex = 3;
             this.btnShowAll.Text = "Svi klijenti";
             this.btnShowAll.UseVisualStyleBackColor = true;
+            this.btnShowAll.Click += new System.EventHandler(this.btnShowAll_Click);
             // 
             // dtpFrom
             // 
@@ -82,6 +85,7 @@ namespace FixIt.WinUI.Forms.Service
             this.dtpFrom.Name = "dtpFrom";
             this.dtpFrom.Size = new System.Drawing.Size(250, 27);
             this.dtpFrom.TabIndex = 6;
+            this.dtpFrom.ValueChanged += new System.EventHandler(this.dtpFrom_ValueChanged);
             // 
             // dtpTo
             // 
@@ -89,6 +93,7 @@ namespace FixIt.WinUI.Forms.Service
             this.dtpTo.Name = "dtpTo";
             this.dtpTo.Size = new System.Drawing.Size(250, 27);
             this.dtpTo.TabIndex = 7;
+            this.dtpTo.ValueChanged += new System.EventHandler(this.dtpTo_ValueChanged);
             // 
             // label4
             // 
@@ -111,25 +116,35 @@ namespace FixIt.WinUI.Forms.Service
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(522, 154);
+            this.label6.Location = new System.Drawing.Point(522, 153);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(285, 20);
             this.label6.TabIndex = 10;
             this.label6.Text = "Filtriranje klijenata po datumu registracije";
             // 
-            // panel1
+            // flowLayoutPanel1
             // 
-            this.panel1.Location = new System.Drawing.Point(12, 237);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1064, 420);
-            this.panel1.TabIndex = 11;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 242);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1064, 415);
+            this.flowLayoutPanel1.TabIndex = 11;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 153);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(92, 20);
+            this.label3.TabIndex = 12;
+            this.label3.Text = "Resetuj filter";
             // 
             // frmUsers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1088, 669);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -141,6 +156,7 @@ namespace FixIt.WinUI.Forms.Service
             this.Controls.Add(this.textBox1);
             this.MinimizeBox = false;
             this.Name = "frmUsers";
+            this.Load += new System.EventHandler(this.frmUsers_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,6 +173,7 @@ namespace FixIt.WinUI.Forms.Service
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private System.Windows.Forms.Label label3;
     }
 }

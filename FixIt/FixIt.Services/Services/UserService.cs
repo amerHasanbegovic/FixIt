@@ -27,6 +27,12 @@ namespace FixIt.Services.Services
                 res = res.Where(x => x.Firstname.ToLower().Contains(model.FirstOrLastName.ToLower())
                     || x.Lastname.ToLower().Contains(model.FirstOrLastName.ToLower()));
 
+            if (model?.RegisterDateFrom != null && model?.RegisterDateTo == null)
+                res = res.Where(x => x.MemberSince >= model.RegisterDateFrom);
+
+            if (model?.RegisterDateTo != null && model?.RegisterDateFrom == null)
+                res = res.Where(x => x.MemberSince <= model.RegisterDateTo);
+
             if (model?.RegisterDateFrom != null && model?.RegisterDateTo != null)
                 res = res.Where(x => x.MemberSince >= model.RegisterDateFrom && x.MemberSince <= model.RegisterDateTo);
 
