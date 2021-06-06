@@ -82,5 +82,27 @@ namespace FixIt.WinUI.API
             }
 
         }
+
+        public async Task<T> Delete<T>(int id)
+        {
+            try
+            {
+                var url = $"{endpoint}/{_resource}/{id}";
+                return await url.DeleteAsync().ReceiveJson<T>();
+            }
+            catch (FlurlHttpException ex)
+            {
+                var errors = await ex.GetResponseJsonAsync<Dictionary<string, string[]>>();
+
+                var stringBuilder = new StringBuilder();
+                foreach (var error in errors)
+                {
+                    stringBuilder.AppendLine($"{error.Key}, ${string.Join(",", error.Value)}");
+                }
+
+                MessageBox.Show(stringBuilder.ToString(), "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return default(T);
+            }
+        }
     }
 }

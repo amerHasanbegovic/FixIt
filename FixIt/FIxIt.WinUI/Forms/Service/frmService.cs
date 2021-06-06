@@ -22,6 +22,11 @@ namespace FixIt.WinUI.Forms.Service
         private void btnAddService_Click(object sender, System.EventArgs e)
         {
             var form = new frmAddService();
+            LoadForm(form);
+        }
+
+        private void LoadForm(Form form)
+        {
             form.TopLevel = false;
             form.Dock = DockStyle.Fill;
             form.FormBorderStyle = FormBorderStyle.None;
@@ -29,7 +34,6 @@ namespace FixIt.WinUI.Forms.Service
             this.Controls.Add(form);
             form.Show();
         }
-
         private void DisplayPanel(string serviceName, double servicePrice, double serviceRating)
         {
             Panel p = new Panel();
@@ -81,6 +85,7 @@ namespace FixIt.WinUI.Forms.Service
             var res = list.AsQueryable();
             res = res.OrderByDescending(x => x.TimesRequested);
             int count = 0;
+            if(res.Count() > 3)
             foreach(var x in res)
             {
                 count++;
@@ -111,12 +116,7 @@ namespace FixIt.WinUI.Forms.Service
         {
             var service = dgvServices.SelectedRows[0].DataBoundItem as ServiceViewModel;
             var form = new frmAddService(service);
-            form.TopLevel = false;
-            form.Dock = DockStyle.Fill;
-            form.FormBorderStyle = FormBorderStyle.None;
-            this.Controls.Clear();
-            this.Controls.Add(form);
-            form.Show();
+            LoadForm(form);
         }
     }
 }

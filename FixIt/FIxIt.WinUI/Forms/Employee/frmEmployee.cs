@@ -1,5 +1,4 @@
-﻿using FixIt.Data.Models;
-using FixIt.Models.Models.Employee;
+﻿using FixIt.Models.Models.Employee;
 using FixIt.Models.Models.Profession;
 using FixIt.WinUI.API;
 using System;
@@ -43,10 +42,10 @@ namespace FixIt.WinUI.Forms.Employee
 
             var list = await _employeeService.Get<List<EmployeeViewModel>>(employeeSearchModel);
             foreach (var x in list)
-                DisplayPanel(x.Firstname, x.Lastname, x.Photo, x.Profession.Name);
+                DisplayPanel(x.Id, x.Firstname, x.Lastname, x.Photo, x.Profession.Name);
         }
 
-        private void DisplayPanel(string firstName, string lastName, byte[] photo, string professionName)
+        private void DisplayPanel(int id, string firstName, string lastName, byte[] photo, string professionName)
         {
             Panel p = new Panel();
             p.BorderStyle = BorderStyle.FixedSingle;
@@ -82,7 +81,8 @@ namespace FixIt.WinUI.Forms.Employee
             details.Height = 40;
             details.Width = 100;
             details.Text = "Detalji";
-            //details.Click += new System.EventHandler(this.btn_Click)
+            //details.Click += EventHandler(id);
+            details.Click += (sender, e) => GetId(id);
 
 
             p.Controls.Add(pbx);
@@ -90,6 +90,18 @@ namespace FixIt.WinUI.Forms.Employee
             p.Controls.Add(profession);
             p.Controls.Add(details);
             flowLayoutPanel1.Controls.Add(p);
+        }
+
+        private async void GetId(int id)
+        {
+            var employee = await _employeeService.GetById<EmployeeViewModel>(id);
+            var form = new frmAddEmployee(employee);
+            form.TopLevel = false;
+            form.Dock = DockStyle.Fill;
+            form.FormBorderStyle = FormBorderStyle.None;
+            this.Controls.Clear();
+            this.Controls.Add(form);
+            form.Show();
         }
 
         private async Task LoadProfessions()

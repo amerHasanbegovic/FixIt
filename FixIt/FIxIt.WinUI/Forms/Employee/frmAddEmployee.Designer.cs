@@ -29,33 +29,36 @@ namespace FixIt.WinUI.Forms.Employee
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnSave = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnNewEmployee = new System.Windows.Forms.Button();
-            this.btnDeleteEmployee = new System.Windows.Forms.Button();
+            this.pbImage = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.btnAddImage = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
             this.lblfirstName = new System.Windows.Forms.Label();
             this.lbllastName = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtLastName = new System.Windows.Forms.TextBox();
+            this.cbProfession = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lblAddress = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cmbCity = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.cbSex = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtBio = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.txtPath = new System.Windows.Forms.TextBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSave
@@ -66,42 +69,17 @@ namespace FixIt.WinUI.Forms.Employee
             this.btnSave.TabIndex = 0;
             this.btnSave.Text = "Sačuvaj";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // pictureBox1
+            // pbImage
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(13, 172);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(291, 332);
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(12, 55);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(209, 28);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Novi uposlenik / Uredi";
-            // 
-            // btnNewEmployee
-            // 
-            this.btnNewEmployee.Location = new System.Drawing.Point(12, 94);
-            this.btnNewEmployee.Name = "btnNewEmployee";
-            this.btnNewEmployee.Size = new System.Drawing.Size(237, 29);
-            this.btnNewEmployee.TabIndex = 3;
-            this.btnNewEmployee.Text = "Novi uposlenik";
-            this.btnNewEmployee.UseVisualStyleBackColor = true;
-            // 
-            // btnDeleteEmployee
-            // 
-            this.btnDeleteEmployee.Location = new System.Drawing.Point(255, 94);
-            this.btnDeleteEmployee.Name = "btnDeleteEmployee";
-            this.btnDeleteEmployee.Size = new System.Drawing.Size(237, 29);
-            this.btnDeleteEmployee.TabIndex = 4;
-            this.btnDeleteEmployee.Text = "Obriši uposlenika";
-            this.btnDeleteEmployee.UseVisualStyleBackColor = true;
+            this.pbImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbImage.Location = new System.Drawing.Point(13, 172);
+            this.pbImage.Name = "pbImage";
+            this.pbImage.Size = new System.Drawing.Size(291, 332);
+            this.pbImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbImage.TabIndex = 1;
+            this.pbImage.TabStop = false;
             // 
             // label2
             // 
@@ -130,13 +108,14 @@ namespace FixIt.WinUI.Forms.Employee
             this.btnAddImage.TabIndex = 7;
             this.btnAddImage.Text = "Dodaj sliku";
             this.btnAddImage.UseVisualStyleBackColor = true;
+            this.btnAddImage.Click += new System.EventHandler(this.btnAddImage_Click);
             // 
-            // textBox1
+            // txtName
             // 
-            this.textBox1.Location = new System.Drawing.Point(546, 172);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(289, 27);
-            this.textBox1.TabIndex = 8;
+            this.txtName.Location = new System.Drawing.Point(546, 172);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(289, 27);
+            this.txtName.TabIndex = 8;
             // 
             // lblfirstName
             // 
@@ -156,20 +135,20 @@ namespace FixIt.WinUI.Forms.Employee
             this.lbllastName.TabIndex = 11;
             this.lbllastName.Text = "Prezime:";
             // 
-            // textBox2
+            // txtLastName
             // 
-            this.textBox2.Location = new System.Drawing.Point(546, 211);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(289, 27);
-            this.textBox2.TabIndex = 10;
+            this.txtLastName.Location = new System.Drawing.Point(546, 211);
+            this.txtLastName.Name = "txtLastName";
+            this.txtLastName.Size = new System.Drawing.Size(289, 27);
+            this.txtLastName.TabIndex = 10;
             // 
-            // comboBox1
+            // cbProfession
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(546, 254);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(289, 28);
-            this.comboBox1.TabIndex = 12;
+            this.cbProfession.FormattingEnabled = true;
+            this.cbProfession.Location = new System.Drawing.Point(546, 254);
+            this.cbProfession.Name = "cbProfession";
+            this.cbProfession.Size = new System.Drawing.Size(289, 28);
+            this.cbProfession.TabIndex = 12;
             // 
             // label3
             // 
@@ -189,12 +168,12 @@ namespace FixIt.WinUI.Forms.Employee
             this.lblAddress.TabIndex = 15;
             this.lblAddress.Text = "Adresa:";
             // 
-            // textBox3
+            // txtAddress
             // 
-            this.textBox3.Location = new System.Drawing.Point(546, 300);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(289, 27);
-            this.textBox3.TabIndex = 14;
+            this.txtAddress.Location = new System.Drawing.Point(546, 300);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(289, 27);
+            this.txtAddress.TabIndex = 14;
             // 
             // label4
             // 
@@ -238,20 +217,20 @@ namespace FixIt.WinUI.Forms.Employee
             this.label6.TabIndex = 20;
             this.label6.Text = "Broj telefona:";
             // 
-            // textBox4
+            // txtPhone
             // 
-            this.textBox4.Location = new System.Drawing.Point(547, 431);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(289, 27);
-            this.textBox4.TabIndex = 21;
+            this.txtPhone.Location = new System.Drawing.Point(547, 431);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(289, 27);
+            this.txtPhone.TabIndex = 21;
             // 
-            // comboBox2
+            // cbSex
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(547, 474);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(288, 28);
-            this.comboBox2.TabIndex = 22;
+            this.cbSex.FormattingEnabled = true;
+            this.cbSex.Location = new System.Drawing.Point(547, 474);
+            this.cbSex.Name = "cbSex";
+            this.cbSex.Size = new System.Drawing.Size(288, 28);
+            this.cbSex.TabIndex = 22;
             // 
             // label7
             // 
@@ -262,13 +241,13 @@ namespace FixIt.WinUI.Forms.Employee
             this.label7.TabIndex = 23;
             this.label7.Text = "Spol:";
             // 
-            // textBox5
+            // txtBio
             // 
-            this.textBox5.Location = new System.Drawing.Point(332, 550);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(504, 93);
-            this.textBox5.TabIndex = 24;
+            this.txtBio.Location = new System.Drawing.Point(332, 550);
+            this.txtBio.Multiline = true;
+            this.txtBio.Name = "txtBio";
+            this.txtBio.Size = new System.Drawing.Size(504, 93);
+            this.txtBio.TabIndex = 24;
             // 
             // label8
             // 
@@ -279,40 +258,63 @@ namespace FixIt.WinUI.Forms.Employee
             this.label8.TabIndex = 25;
             this.label8.Text = "Biografija:";
             // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
+            // 
+            // txtPath
+            // 
+            this.txtPath.Location = new System.Drawing.Point(13, 555);
+            this.txtPath.Name = "txtPath";
+            this.txtPath.Size = new System.Drawing.Size(291, 27);
+            this.txtPath.TabIndex = 26;
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(13, 36);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(291, 99);
+            this.panel1.TabIndex = 27;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // frmAddEmployee
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1088, 669);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.txtPath);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.txtBio);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.cbSex);
+            this.Controls.Add(this.txtPhone);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cmbCity);
             this.Controls.Add(this.lblAddress);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtAddress);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbProfession);
             this.Controls.Add(this.lbllastName);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtLastName);
             this.Controls.Add(this.lblfirstName);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtName);
             this.Controls.Add(this.btnAddImage);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btnDeleteEmployee);
-            this.Controls.Add(this.btnNewEmployee);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbImage);
             this.Controls.Add(this.btnSave);
             this.Name = "frmAddEmployee";
             this.Text = "frmAddEmployee";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.Load += new System.EventHandler(this.frmAddEmployee_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbImage)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -321,30 +323,31 @@ namespace FixIt.WinUI.Forms.Employee
         #endregion
 
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnNewEmployee;
-        private System.Windows.Forms.Button btnDeleteEmployee;
+        private System.Windows.Forms.PictureBox pbImage;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Button btnAddImage;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label lblfirstName;
         private System.Windows.Forms.Label lbllastName;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txtLastName;
+        private System.Windows.Forms.ComboBox cbProfession;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lblAddress;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cmbCity;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.TextBox txtPhone;
+        private System.Windows.Forms.ComboBox cbSex;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtBio;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.TextBox txtPath;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
