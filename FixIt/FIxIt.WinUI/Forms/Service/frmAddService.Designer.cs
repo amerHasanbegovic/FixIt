@@ -29,9 +29,8 @@ namespace FixIt.WinUI.Forms.Service
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.btnNewService = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -40,6 +39,12 @@ namespace FixIt.WinUI.Forms.Service
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.cbTypes = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // linkLabel1
@@ -53,25 +58,6 @@ namespace FixIt.WinUI.Forms.Service
             this.linkLabel1.Text = "Nazad";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // btnNewService
-            // 
-            this.btnNewService.Location = new System.Drawing.Point(11, 90);
-            this.btnNewService.Name = "btnNewService";
-            this.btnNewService.Size = new System.Drawing.Size(237, 29);
-            this.btnNewService.TabIndex = 8;
-            this.btnNewService.Text = "Nova usluga";
-            this.btnNewService.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(11, 51);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(187, 28);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Nova usluga / Uredi";
-            // 
             // btnSave
             // 
             this.btnSave.Location = new System.Drawing.Point(982, 628);
@@ -80,6 +66,7 @@ namespace FixIt.WinUI.Forms.Service
             this.btnSave.TabIndex = 11;
             this.btnSave.Text = "Sačuvaj";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // label2
             // 
@@ -101,7 +88,7 @@ namespace FixIt.WinUI.Forms.Service
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 215);
+            this.label4.Location = new System.Drawing.Point(12, 221);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(57, 20);
             this.label4.TabIndex = 14;
@@ -110,7 +97,7 @@ namespace FixIt.WinUI.Forms.Service
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 262);
+            this.label5.Location = new System.Drawing.Point(12, 330);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(42, 20);
             this.label5.TabIndex = 15;
@@ -125,24 +112,63 @@ namespace FixIt.WinUI.Forms.Service
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(99, 208);
+            this.textBox2.Location = new System.Drawing.Point(99, 214);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(279, 27);
             this.textBox2.TabIndex = 17;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(12, 299);
+            this.textBox3.Location = new System.Drawing.Point(12, 363);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(558, 214);
             this.textBox3.TabIndex = 18;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(12, 275);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(33, 20);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Tip:";
+            // 
+            // cbTypes
+            // 
+            this.cbTypes.FormattingEnabled = true;
+            this.cbTypes.Location = new System.Drawing.Point(99, 267);
+            this.cbTypes.Name = "cbTypes";
+            this.cbTypes.Size = new System.Drawing.Size(279, 28);
+            this.cbTypes.TabIndex = 20;
+            // 
+            // panel1
+            // 
+            this.panel1.Location = new System.Drawing.Point(623, 161);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(453, 416);
+            this.panel1.TabIndex = 21;
+            // 
+            // panel2
+            // 
+            this.panel2.Location = new System.Drawing.Point(12, 53);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1064, 77);
+            this.panel2.TabIndex = 22;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // frmAddService
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1088, 669);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.cbTypes);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -152,10 +178,10 @@ namespace FixIt.WinUI.Forms.Service
             this.Controls.Add(this.label2);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.linkLabel1);
-            this.Controls.Add(this.btnNewService);
-            this.Controls.Add(this.label1);
             this.Name = "frmAddService";
             this.Text = "frmAddService";
+            this.Load += new System.EventHandler(this.frmAddService_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -164,8 +190,6 @@ namespace FixIt.WinUI.Forms.Service
         #endregion
 
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.Button btnNewService;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -174,5 +198,10 @@ namespace FixIt.WinUI.Forms.Service
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.ComboBox cbTypes;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
