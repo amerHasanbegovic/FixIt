@@ -35,6 +35,19 @@ namespace FixIt.WinUI.Forms.Service
             await LoadTypes();
             if (service != null)
                 LoadServiceDetails(service);
+            else LoadHeading();
+        }
+
+        private void LoadHeading()
+        {
+            Font myFont = new Font("Segoe UI", 16.0f);
+            Label heading = new Label
+            {
+                Text = "Nova usluga",
+                Font = myFont,
+                AutoSize = true
+            };
+            panel2.Controls.Add(heading);
         }
 
         private void LoadServiceDetails(ServiceViewModel service)
