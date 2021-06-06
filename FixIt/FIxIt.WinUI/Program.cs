@@ -1,7 +1,5 @@
+using FixIt.WinUI.Forms.Auth;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace FixIt.WinUI
@@ -17,7 +15,7 @@ namespace FixIt.WinUI
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Main());
+            Application.Run(new Login());
         }
     }
 }
