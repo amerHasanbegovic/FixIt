@@ -123,6 +123,7 @@ namespace FixIt.WinUI.Forms.Job
             this.dataGridView1.RowTemplate.Height = 29;
             this.dataGridView1.Size = new System.Drawing.Size(1064, 345);
             this.dataGridView1.TabIndex = 8;
+            this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
             // 
             // Id
             // 

@@ -13,6 +13,7 @@ namespace FixIt.WinUI.Forms.Job
         {
             InitializeComponent();
             dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
         private async void frmJob_Load(object sender, System.EventArgs e)
@@ -72,6 +73,12 @@ namespace FixIt.WinUI.Forms.Job
                 cbActiveJobs.Enabled = true;
                 await LoadJobs();
             }
+        }
+        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var job = dataGridView1.SelectedRows[0].DataBoundItem as JobViewModel;
+            var form = new frmJobDetails(job);
+            form.Show();
         }
     }
 }

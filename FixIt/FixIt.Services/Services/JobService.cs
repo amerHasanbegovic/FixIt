@@ -41,11 +41,11 @@ namespace FixIt.Services.Services
         public override JobViewModel GetById(int id)
         {
             var res = _applicationDbContext.Set<Job>()
-                .Include(x => x.Employee)
+                .Include(x => x.Employee).ThenInclude(x => x.Profession)
                 .Include(x => x.Status)
                 .Include(x => x.ServiceRequest).ThenInclude(x => x.User)
                 .Include(x => x.ServiceRequest).ThenInclude(x => x.Service)
-                .Include(x => x.ServiceRequest).ThenInclude(x => x.Payment)
+                .Include(x => x.ServiceRequest).ThenInclude(x => x.Payment).ThenInclude(x => x.PaymentType)
                 .FirstOrDefault(x => x.Id == id);
 
             return _mapper.Map<JobViewModel>(res);
