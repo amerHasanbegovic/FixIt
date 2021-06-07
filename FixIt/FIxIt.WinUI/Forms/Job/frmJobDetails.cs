@@ -64,5 +64,19 @@ namespace FixIt.WinUI.Forms.Job
             txtPaymentType.Text = job.ServiceRequest?.Payment?.PaymentType.Name;
             txtPaymentDate.Text = job.ServiceRequest?.Payment?.PaymentDate.ToString("dd/MM/yyyy");
         }
+
+        private void btnEditJob_Click(object sender, System.EventArgs e)
+        {
+            if (job != null)
+            {
+                var form = new frmEditJob(job);
+                form.Show();
+            }
+        }
+
+        private async void button1_Click(object sender, System.EventArgs e)
+        {
+            await LoadData();
+        }
     }
 }

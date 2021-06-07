@@ -64,13 +64,15 @@ namespace FixIt.WinUI.Forms.Job
             this.label18 = new System.Windows.Forms.Label();
             this.txtPaymentDate = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
+            this.btnEditJob = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblID
             // 
             this.lblID.AutoSize = true;
             this.lblID.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblID.Location = new System.Drawing.Point(13, 32);
+            this.lblID.Location = new System.Drawing.Point(9, 73);
             this.lblID.Name = "lblID";
             this.lblID.Size = new System.Drawing.Size(64, 28);
             this.lblID.TabIndex = 0;
@@ -79,7 +81,7 @@ namespace FixIt.WinUI.Forms.Job
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(13, 92);
+            this.label1.Location = new System.Drawing.Point(9, 133);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(114, 20);
             this.label1.TabIndex = 1;
@@ -88,7 +90,7 @@ namespace FixIt.WinUI.Forms.Job
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 125);
+            this.label2.Location = new System.Drawing.Point(8, 166);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(122, 20);
             this.label2.TabIndex = 2;
@@ -97,7 +99,7 @@ namespace FixIt.WinUI.Forms.Job
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(16, 188);
+            this.label3.Location = new System.Drawing.Point(12, 229);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 20);
             this.label3.TabIndex = 3;
@@ -105,14 +107,14 @@ namespace FixIt.WinUI.Forms.Job
             // 
             // txtStart
             // 
-            this.txtStart.Location = new System.Drawing.Point(155, 89);
+            this.txtStart.Location = new System.Drawing.Point(151, 130);
             this.txtStart.Name = "txtStart";
             this.txtStart.Size = new System.Drawing.Size(258, 27);
             this.txtStart.TabIndex = 4;
             // 
             // txtEnd
             // 
-            this.txtEnd.Location = new System.Drawing.Point(155, 122);
+            this.txtEnd.Location = new System.Drawing.Point(151, 163);
             this.txtEnd.Name = "txtEnd";
             this.txtEnd.Size = new System.Drawing.Size(258, 27);
             this.txtEnd.TabIndex = 5;
@@ -120,7 +122,7 @@ namespace FixIt.WinUI.Forms.Job
             // cbPaid
             // 
             this.cbPaid.AutoSize = true;
-            this.cbPaid.Location = new System.Drawing.Point(155, 188);
+            this.cbPaid.Location = new System.Drawing.Point(151, 229);
             this.cbPaid.Name = "cbPaid";
             this.cbPaid.Size = new System.Drawing.Size(18, 17);
             this.cbPaid.TabIndex = 6;
@@ -128,7 +130,7 @@ namespace FixIt.WinUI.Forms.Job
             // 
             // txtJobStatus
             // 
-            this.txtJobStatus.Location = new System.Drawing.Point(155, 155);
+            this.txtJobStatus.Location = new System.Drawing.Point(151, 196);
             this.txtJobStatus.Name = "txtJobStatus";
             this.txtJobStatus.Size = new System.Drawing.Size(258, 27);
             this.txtJobStatus.TabIndex = 7;
@@ -136,7 +138,7 @@ namespace FixIt.WinUI.Forms.Job
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(16, 158);
+            this.label4.Location = new System.Drawing.Point(12, 199);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 20);
             this.label4.TabIndex = 8;
@@ -146,7 +148,7 @@ namespace FixIt.WinUI.Forms.Job
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(16, 345);
+            this.label5.Location = new System.Drawing.Point(12, 401);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 28);
             this.label5.TabIndex = 9;
@@ -155,7 +157,7 @@ namespace FixIt.WinUI.Forms.Job
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 396);
+            this.label6.Location = new System.Drawing.Point(12, 452);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(103, 20);
             this.label6.TabIndex = 10;
@@ -163,14 +165,14 @@ namespace FixIt.WinUI.Forms.Job
             // 
             // txtFullName
             // 
-            this.txtFullName.Location = new System.Drawing.Point(155, 393);
+            this.txtFullName.Location = new System.Drawing.Point(151, 449);
             this.txtFullName.Name = "txtFullName";
             this.txtFullName.Size = new System.Drawing.Size(258, 27);
             this.txtFullName.TabIndex = 11;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(155, 426);
+            this.txtEmail.Location = new System.Drawing.Point(151, 482);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(258, 27);
             this.txtEmail.TabIndex = 13;
@@ -178,7 +180,7 @@ namespace FixIt.WinUI.Forms.Job
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(16, 429);
+            this.label7.Location = new System.Drawing.Point(12, 485);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 20);
             this.label7.TabIndex = 12;
@@ -186,7 +188,7 @@ namespace FixIt.WinUI.Forms.Job
             // 
             // txtPhoneNumber
             // 
-            this.txtPhoneNumber.Location = new System.Drawing.Point(155, 459);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(151, 515);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(258, 27);
             this.txtPhoneNumber.TabIndex = 15;
@@ -194,7 +196,7 @@ namespace FixIt.WinUI.Forms.Job
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(16, 462);
+            this.label8.Location = new System.Drawing.Point(12, 518);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(58, 20);
             this.label8.TabIndex = 14;
@@ -202,7 +204,7 @@ namespace FixIt.WinUI.Forms.Job
             // 
             // txtServiceName
             // 
-            this.txtServiceName.Location = new System.Drawing.Point(599, 89);
+            this.txtServiceName.Location = new System.Drawing.Point(598, 130);
             this.txtServiceName.Name = "txtServiceName";
             this.txtServiceName.Size = new System.Drawing.Size(258, 27);
             this.txtServiceName.TabIndex = 17;
@@ -210,7 +212,7 @@ namespace FixIt.WinUI.Forms.Job
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(463, 92);
+            this.label9.Location = new System.Drawing.Point(462, 133);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(96, 20);
             this.label9.TabIndex = 16;
@@ -220,7 +222,7 @@ namespace FixIt.WinUI.Forms.Job
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label10.Location = new System.Drawing.Point(463, 32);
+            this.label10.Location = new System.Drawing.Point(462, 73);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(76, 28);
             this.label10.TabIndex = 18;
@@ -228,7 +230,7 @@ namespace FixIt.WinUI.Forms.Job
             // 
             // txtServiceRequestDate
             // 
-            this.txtServiceRequestDate.Location = new System.Drawing.Point(599, 125);
+            this.txtServiceRequestDate.Location = new System.Drawing.Point(598, 166);
             this.txtServiceRequestDate.Name = "txtServiceRequestDate";
             this.txtServiceRequestDate.Size = new System.Drawing.Size(258, 27);
             this.txtServiceRequestDate.TabIndex = 20;
@@ -236,7 +238,7 @@ namespace FixIt.WinUI.Forms.Job
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(463, 128);
+            this.label11.Location = new System.Drawing.Point(462, 169);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(116, 20);
             this.label11.TabIndex = 19;
@@ -246,7 +248,7 @@ namespace FixIt.WinUI.Forms.Job
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label12.Location = new System.Drawing.Point(463, 396);
+            this.label12.Location = new System.Drawing.Point(462, 437);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(87, 28);
             this.label12.TabIndex = 21;
@@ -254,7 +256,7 @@ namespace FixIt.WinUI.Forms.Job
             // 
             // txtPaymentType
             // 
-            this.txtPaymentType.Location = new System.Drawing.Point(599, 438);
+            this.txtPaymentType.Location = new System.Drawing.Point(598, 479);
             this.txtPaymentType.Name = "txtPaymentType";
             this.txtPaymentType.Size = new System.Drawing.Size(258, 27);
             this.txtPaymentType.TabIndex = 23;
@@ -262,7 +264,7 @@ namespace FixIt.WinUI.Forms.Job
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(463, 441);
+            this.label13.Location = new System.Drawing.Point(462, 482);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(110, 20);
             this.label13.TabIndex = 22;
@@ -270,7 +272,7 @@ namespace FixIt.WinUI.Forms.Job
             // 
             // txtServicePrice
             // 
-            this.txtServicePrice.Location = new System.Drawing.Point(599, 169);
+            this.txtServicePrice.Location = new System.Drawing.Point(598, 210);
             this.txtServicePrice.Name = "txtServicePrice";
             this.txtServicePrice.Size = new System.Drawing.Size(258, 27);
             this.txtServicePrice.TabIndex = 25;
@@ -278,7 +280,7 @@ namespace FixIt.WinUI.Forms.Job
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(463, 172);
+            this.label14.Location = new System.Drawing.Point(462, 213);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(53, 20);
             this.label14.TabIndex = 24;
@@ -286,7 +288,7 @@ namespace FixIt.WinUI.Forms.Job
             // 
             // txtEmployeeFullName
             // 
-            this.txtEmployeeFullName.Location = new System.Drawing.Point(599, 297);
+            this.txtEmployeeFullName.Location = new System.Drawing.Point(598, 338);
             this.txtEmployeeFullName.Name = "txtEmployeeFullName";
             this.txtEmployeeFullName.Size = new System.Drawing.Size(258, 27);
             this.txtEmployeeFullName.TabIndex = 27;
@@ -294,7 +296,7 @@ namespace FixIt.WinUI.Forms.Job
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(463, 300);
+            this.label15.Location = new System.Drawing.Point(462, 341);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(103, 20);
             this.label15.TabIndex = 26;
@@ -304,7 +306,7 @@ namespace FixIt.WinUI.Forms.Job
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label16.Location = new System.Drawing.Point(463, 246);
+            this.label16.Location = new System.Drawing.Point(462, 287);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(103, 28);
             this.label16.TabIndex = 28;
@@ -312,7 +314,7 @@ namespace FixIt.WinUI.Forms.Job
             // 
             // txtProfessionName
             // 
-            this.txtProfessionName.Location = new System.Drawing.Point(599, 342);
+            this.txtProfessionName.Location = new System.Drawing.Point(598, 383);
             this.txtProfessionName.Name = "txtProfessionName";
             this.txtProfessionName.Size = new System.Drawing.Size(258, 27);
             this.txtProfessionName.TabIndex = 30;
@@ -320,7 +322,7 @@ namespace FixIt.WinUI.Forms.Job
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(463, 345);
+            this.label17.Location = new System.Drawing.Point(462, 386);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(69, 20);
             this.label17.TabIndex = 29;
@@ -328,7 +330,7 @@ namespace FixIt.WinUI.Forms.Job
             // 
             // txtJobDesc
             // 
-            this.txtJobDesc.Location = new System.Drawing.Point(16, 246);
+            this.txtJobDesc.Location = new System.Drawing.Point(12, 287);
             this.txtJobDesc.Multiline = true;
             this.txtJobDesc.Name = "txtJobDesc";
             this.txtJobDesc.Size = new System.Drawing.Size(397, 78);
@@ -337,7 +339,7 @@ namespace FixIt.WinUI.Forms.Job
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(16, 223);
+            this.label18.Location = new System.Drawing.Point(12, 264);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(155, 20);
             this.label18.TabIndex = 32;
@@ -345,7 +347,7 @@ namespace FixIt.WinUI.Forms.Job
             // 
             // txtPaymentDate
             // 
-            this.txtPaymentDate.Location = new System.Drawing.Point(599, 471);
+            this.txtPaymentDate.Location = new System.Drawing.Point(598, 512);
             this.txtPaymentDate.Name = "txtPaymentDate";
             this.txtPaymentDate.Size = new System.Drawing.Size(258, 27);
             this.txtPaymentDate.TabIndex = 34;
@@ -353,17 +355,39 @@ namespace FixIt.WinUI.Forms.Job
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(463, 474);
+            this.label19.Location = new System.Drawing.Point(462, 515);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(103, 20);
             this.label19.TabIndex = 33;
             this.label19.Text = "Datum uplate:";
             // 
+            // btnEditJob
+            // 
+            this.btnEditJob.Location = new System.Drawing.Point(12, 21);
+            this.btnEditJob.Name = "btnEditJob";
+            this.btnEditJob.Size = new System.Drawing.Size(175, 29);
+            this.btnEditJob.TabIndex = 35;
+            this.btnEditJob.Text = "Uredi posao";
+            this.btnEditJob.UseVisualStyleBackColor = true;
+            this.btnEditJob.Click += new System.EventHandler(this.btnEditJob_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(193, 21);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(139, 29);
+            this.button1.TabIndex = 36;
+            this.button1.Text = "Osvježi";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmJobDetails
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(893, 538);
+            this.ClientSize = new System.Drawing.Size(893, 576);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnEditJob);
             this.Controls.Add(this.txtPaymentDate);
             this.Controls.Add(this.label19);
             this.Controls.Add(this.label18);
@@ -443,5 +467,7 @@ namespace FixIt.WinUI.Forms.Job
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtPaymentDate;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Button btnEditJob;
+        private System.Windows.Forms.Button button1;
     }
 }

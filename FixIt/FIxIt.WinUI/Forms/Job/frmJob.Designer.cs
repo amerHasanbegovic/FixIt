@@ -44,6 +44,7 @@ namespace FixIt.WinUI.Forms.Job
             this.Paid = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.CreatedAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.JobStatus = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -192,11 +193,22 @@ namespace FixIt.WinUI.Forms.Job
             this.JobStatus.Name = "JobStatus";
             this.JobStatus.Width = 125;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(13, 564);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(167, 29);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Osvježi";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmJob
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1088, 669);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.cbFinishedJobs);
@@ -230,5 +242,6 @@ namespace FixIt.WinUI.Forms.Job
         private System.Windows.Forms.DataGridViewCheckBoxColumn Paid;
         private System.Windows.Forms.DataGridViewTextBoxColumn CreatedAt;
         private System.Windows.Forms.DataGridViewTextBoxColumn JobStatus;
+        private System.Windows.Forms.Button button1;
     }
 }

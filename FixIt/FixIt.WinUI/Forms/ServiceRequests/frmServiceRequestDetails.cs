@@ -90,11 +90,6 @@ namespace FixIt.WinUI.Forms.ServiceRequests
                         jobInsertModel.EmployeeId = id;
 
                     await _jobService.Insert<JobInsertModel>(jobInsertModel);
-                    ServiceRequestUpdateModel serviceRequestUpdateModel = new ServiceRequestUpdateModel()
-                    {
-                        Processed = true
-                    };
-                    await _serviceRequestService.Update<ServiceRequestUpdateModel>(request.Id, serviceRequestUpdateModel);
                     MessageBox.Show("Uspješno ste obradili zahtjev!");
                     this.Close();
                 }

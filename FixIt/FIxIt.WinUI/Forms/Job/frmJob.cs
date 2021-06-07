@@ -80,5 +80,10 @@ namespace FixIt.WinUI.Forms.Job
             var form = new frmJobDetails(job);
             form.Show();
         }
+
+        private async void button1_Click(object sender, System.EventArgs e)
+        {
+            await LoadData();
+        }
     }
 }
