@@ -90,7 +90,7 @@ namespace FixIt
             services.AddScoped<IBaseCRUDService<JobStatusViewModel, object, object, object>, BaseCRUDService<JobStatus, JobStatusViewModel, object, object, object>>();
             services.AddScoped<IBaseCRUDService<ServiceRatingViewModel, ServiceRatingInsertModel, ServiceRatingUpdateModel, object>, BaseCRUDService<ServiceRating, ServiceRatingViewModel, ServiceRatingInsertModel, ServiceRatingUpdateModel, object>>();
             services.AddScoped<IBaseCRUDService<PaymentViewModel, PaymentInsertModel, object, object>, BaseCRUDService<Payment, PaymentViewModel, PaymentInsertModel, object, object>>();
-            services.AddScoped<IBaseCRUDService<ServiceRequestViewModel, ServiceRequestInsertModel, object, object>, BaseCRUDService<ServiceRequest, ServiceRequestViewModel, ServiceRequestInsertModel, object, object>>();
+            services.AddScoped<IBaseCRUDService<ServiceRequestViewModel, ServiceRequestInsertModel, ServiceRequestUpdateModel, object>, BaseCRUDService<ServiceRequest, ServiceRequestViewModel, ServiceRequestInsertModel, ServiceRequestUpdateModel, object>>();
             services.AddScoped<IBaseCRUDService<JobViewModel, JobInsertModel, object, JobSearchModel>, BaseCRUDService<Job, JobViewModel, JobInsertModel, object, JobSearchModel>>();
 
             services.AddScoped<IEmployeeService, EmployeeService>();

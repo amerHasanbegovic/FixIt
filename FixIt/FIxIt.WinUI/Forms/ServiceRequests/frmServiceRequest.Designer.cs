@@ -31,14 +31,15 @@ namespace FixIt.WinUI.Forms.ServiceRequests
         {
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.Id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.UserFullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ServiceName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PaymentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DateRequested = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Processed = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,40 +61,15 @@ namespace FixIt.WinUI.Forms.ServiceRequests
             this.UserFullName,
             this.ServiceName,
             this.PaymentName,
-            this.DateRequested});
+            this.DateRequested,
+            this.Processed});
             this.dataGridView1.Location = new System.Drawing.Point(12, 197);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(1064, 298);
+            this.dataGridView1.Size = new System.Drawing.Size(1064, 399);
             this.dataGridView1.TabIndex = 3;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(12, 159);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(235, 28);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Pristigli zahtjevi za usluge";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(13, 502);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(486, 20);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Klikom na zahjtev možete vidjeti detalje samog zahtjeva i kreirati posao";
-            // 
-            // label4
-            // 
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label4.Location = new System.Drawing.Point(-3, 67);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(1095, 2);
-            this.label4.TabIndex = 6;
+            this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
             // 
             // Id
             // 
@@ -135,6 +111,41 @@ namespace FixIt.WinUI.Forms.ServiceRequests
             this.DateRequested.MinimumWidth = 6;
             this.DateRequested.Name = "DateRequested";
             // 
+            // Processed
+            // 
+            this.Processed.DataPropertyName = "Processed";
+            this.Processed.HeaderText = "Obrađen";
+            this.Processed.MinimumWidth = 6;
+            this.Processed.Name = "Processed";
+            this.Processed.Width = 125;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.Location = new System.Drawing.Point(12, 159);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(235, 28);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Pristigli zahtjevi za usluge";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(12, 608);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(486, 20);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Klikom na zahjtev možete vidjeti detalje samog zahtjeva i kreirati posao";
+            // 
+            // label4
+            // 
+            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label4.Location = new System.Drawing.Point(-3, 67);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(1095, 2);
+            this.label4.TabIndex = 6;
+            // 
             // frmServiceRequest
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -166,5 +177,6 @@ namespace FixIt.WinUI.Forms.ServiceRequests
         private System.Windows.Forms.DataGridViewTextBoxColumn ServiceName;
         private System.Windows.Forms.DataGridViewTextBoxColumn PaymentName;
         private System.Windows.Forms.DataGridViewTextBoxColumn DateRequested;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn Processed;
     }
 }

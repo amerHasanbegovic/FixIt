@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FixIt.Services", "FixIt.Ser
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FixIt.Models", "FixIt.Models\FixIt.Models.csproj", "{E2A127B2-4735-4141-B595-DB14AA0DC0C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FixIt.WinUI", "FixIt.WinUI\FixIt.WinUI.csproj", "{1743A980-E8E1-4CE6-8ED2-E045612AEAB5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FixIt.WinUI", "FixIt.WinUI\FixIt.WinUI.csproj", "{1743A980-E8E1-4CE6-8ED2-E045612AEAB5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

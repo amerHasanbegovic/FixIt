@@ -65,6 +65,7 @@ namespace FixIt.Models
             //Service request
             CreateMap<ServiceRequest, ServiceRequestViewModel>();
             CreateMap<ServiceRequestInsertModel, ServiceRequest>();
+            CreateMap<ServiceRequestUpdateModel, ServiceRequest>();
 
             //job
             CreateMap<Job, JobViewModel>();

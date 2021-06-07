@@ -14,6 +14,7 @@ namespace FixIt.WinUI.Forms.ServiceRequests
         {
             InitializeComponent();
             dataGridView1.AutoGenerateColumns = false;
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
         private async void frmServiceRequest_Load(object sender, EventArgs e)
@@ -30,6 +31,13 @@ namespace FixIt.WinUI.Forms.ServiceRequests
         {
             var list = await _serviceRequestService.Get<IEnumerable<ServiceRequestViewModel>>();
             dataGridView1.DataSource = list;
+        }
+
+        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var request = dataGridView1.SelectedRows[0].DataBoundItem as ServiceRequestViewModel;
+            var form = new frmServiceRequestDetails(request);
+            form.Show();
         }
     }
 }

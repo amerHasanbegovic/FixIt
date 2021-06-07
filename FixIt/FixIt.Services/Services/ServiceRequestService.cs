@@ -4,13 +4,12 @@ using FixIt.Data.Models;
 using FixIt.Models.Models.ServiceRequest;
 using FixIt.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 
 namespace FixIt.Services.Services
 {
-    public class ServiceRequestService : BaseCRUDService<ServiceRequest, ServiceRequestViewModel, ServiceRequestInsertModel, object, object>, IServiceRequestService
+    public class ServiceRequestService : BaseCRUDService<ServiceRequest, ServiceRequestViewModel, ServiceRequestInsertModel, ServiceRequestUpdateModel, object>, IServiceRequestService
     {
         public ServiceRequestService(ApplicationDbContext applicationDbContext, IMapper mapper) : base(applicationDbContext, mapper)
         {

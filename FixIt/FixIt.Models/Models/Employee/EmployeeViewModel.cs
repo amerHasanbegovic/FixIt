@@ -22,5 +22,7 @@ namespace FixIt.Models.Models.Employee
         public DateTime BirthDate { get; set; }
         public int SexId { get; set; }
         public virtual SexViewModel Sex { get; set; }
+
+        public string EmployeeFullNameAndProfession => $"{Firstname} {Lastname} - {Profession?.Name}";
     }
 }

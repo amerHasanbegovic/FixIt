@@ -16,6 +16,7 @@ namespace FixIt.Models.Models.ServiceRequest
         public int PaymentId { get; set; }
         public virtual PaymentViewModel Payment { get; set; }
         public string JobDescription { get; set; }
+        public bool? Processed { get; set; }
 
         public string UserFullName => $"{User?.Firstname} {User?.Lastname}";
         public string ServiceName => Service?.Name;
