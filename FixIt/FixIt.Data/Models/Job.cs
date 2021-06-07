@@ -13,6 +13,7 @@ namespace FixIt.Data.Models
         public int JobStatusId { get; set; }
         public virtual JobStatus Status { get; set; }
         public DateTime CreatedAt { get; set; }
+        public DateTime? FinishedDate { get; set; }
         public bool? Paid { get; set; }
     }
 }
