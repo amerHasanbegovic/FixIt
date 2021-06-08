@@ -36,6 +36,7 @@ namespace FixIt.Services.Services
             if (model?.RegisterDateFrom != null && model?.RegisterDateTo != null)
                 res = res.Where(x => x.MemberSince >= model.RegisterDateFrom && x.MemberSince <= model.RegisterDateTo);
 
+            res = res.Where(x => x.Email != null);
             var list = res.ToList();
             return _mapper.Map<IEnumerable<UserViewModel>>(list);
         }
