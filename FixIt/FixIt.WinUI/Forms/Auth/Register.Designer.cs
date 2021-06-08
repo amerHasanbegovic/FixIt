@@ -137,7 +137,6 @@ namespace FixIt.WinUI.Forms.Auth
             this.Controls.Add(this.label1);
             this.Name = "Register";
             this.Text = "Register";
-            this.Load += new System.EventHandler(this.Register_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

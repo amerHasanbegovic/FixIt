@@ -120,6 +120,7 @@ namespace FixIt.WinUI.Forms.Report
             this.btnServiceReport.TabIndex = 10;
             this.btnServiceReport.Text = "Printaj";
             this.btnServiceReport.UseVisualStyleBackColor = true;
+            this.btnServiceReport.Click += new System.EventHandler(this.btnServiceReport_Click);
             // 
             // label6
             // 

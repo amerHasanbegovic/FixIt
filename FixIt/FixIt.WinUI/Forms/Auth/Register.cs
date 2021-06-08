@@ -13,11 +13,6 @@ namespace FixIt.WinUI.Forms.Auth
             InitializeComponent();
         }
 
-        private void Register_Load(object sender, System.EventArgs e)
-        {
-
-        }
-
         private async void btnLogin_Click(object sender, System.EventArgs e)
         {
             if (Validation())

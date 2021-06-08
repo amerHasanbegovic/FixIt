@@ -1,9 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace FixIt.WinUI.Forms.Report
@@ -13,6 +8,11 @@ namespace FixIt.WinUI.Forms.Report
         public frmReport()
         {
             InitializeComponent();
+        }
+
+        private void btnServiceReport_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
