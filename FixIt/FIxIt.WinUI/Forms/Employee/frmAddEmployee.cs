@@ -106,9 +106,9 @@ namespace FixIt.WinUI.Forms.Employee
             txtAddress.Text = employee.Address;
             if (employee.Photo.Length > 0)
                 pbImage.Image = GetEmployeeImage(employee.Photo);
-            cmbCity.SelectedIndex = employee.CityId;
-            cbSex.SelectedIndex = employee.SexId;
-            cbProfession.SelectedIndex = employee.ProfessionId;
+            cmbCity.SelectedValue = employee.CityId;
+            cbSex.SelectedValue = employee.SexId;
+            cbProfession.SelectedValue = employee.ProfessionId;
             dateTimePicker1.Value = employee.BirthDate;
         }
 
@@ -156,8 +156,8 @@ namespace FixIt.WinUI.Forms.Employee
                         Address = txtAddress.Text,
                         Biography = txtBio.Text,
                         BirthDate = dateTimePicker1.Value,
-                        CityId = cmbCity.SelectedIndex,
-                        ProfessionId = cbProfession.SelectedIndex,
+                        CityId = int.Parse(cmbCity.SelectedValue.ToString()),
+                        ProfessionId = int.Parse(cbProfession.SelectedValue.ToString()),
                         Firstname = txtName.Text,
                         Lastname = txtLastName.Text,
                         PhoneNumber = txtPhone.Text,
@@ -177,8 +177,8 @@ namespace FixIt.WinUI.Forms.Employee
                         Address = txtAddress.Text,
                         Biography = txtBio.Text,
                         BirthDate = dateTimePicker1.Value,
-                        CityId = cmbCity.SelectedIndex,
-                        ProfessionId = cbProfession.SelectedIndex,
+                        CityId = int.Parse(cmbCity.SelectedValue.ToString()),
+                        ProfessionId = int.Parse(cbProfession.SelectedValue.ToString()),
                         Firstname = txtName.Text,
                         Lastname = txtLastName.Text,
                         HireDate = DateTime.Now,
