@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System;
+using System.Collections.Generic;
 
 namespace FixIt.Data.Models
 {
@@ -14,5 +15,7 @@ namespace FixIt.Data.Models
         public virtual City City { get; set; }
         public int? SexId { get; set; }
         public virtual Sex Sex { get; set; }
+
+        public virtual IEnumerable<ServiceRequest> ServiceRequests { get; set; }
     }
 }

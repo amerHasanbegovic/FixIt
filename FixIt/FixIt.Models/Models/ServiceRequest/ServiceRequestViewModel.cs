@@ -21,5 +21,6 @@ namespace FixIt.Models.Models.ServiceRequest
         public string UserFullName => $"{User?.Firstname} {User?.Lastname}";
         public string ServiceName => Service?.Name;
         public string PaymentTypeName => Payment?.PaymentType?.Name;
+        public string ServicePrice => Service?.Price.ToString() + "KM";
     }
 }

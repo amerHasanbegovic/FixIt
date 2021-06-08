@@ -46,6 +46,8 @@ namespace FixIt.Services.Services
             var res = _applicationDbContext.Set<User>()
                 .Include(x => x.City)
                 .Include(x => x.Sex)
+                .Include(x => x.ServiceRequests).ThenInclude(x => x.Service)
+                .Include(x => x.ServiceRequests).ThenInclude(x => x.Payment).ThenInclude(x => x.PaymentType)
                 .FirstOrDefault(x => x.Id == id);
             return _mapper.Map<UserViewModel>(res);
         }

@@ -1,6 +1,8 @@
 ﻿using FixIt.Models.Models.City;
+using FixIt.Models.Models.ServiceRequest;
 using FixIt.Models.Models.Sex;
 using System;
+using System.Collections.Generic;
 
 namespace FixIt.Models.Models.User
 {
@@ -15,5 +17,7 @@ namespace FixIt.Models.Models.User
         public string Email { get; set; }
         public virtual CityViewModel City { get; set; }
         public virtual SexViewModel Sex { get; set; }
+
+        public virtual IEnumerable<ServiceRequestViewModel> ServiceRequests { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using FixIt.Models.Models.User;
 using FixIt.WinUI.API;
+using FixIt.WinUI.Forms.Users;
 using FixIt.WinUI.Helper;
 using System;
 using System.Collections.Generic;
@@ -41,10 +42,10 @@ namespace FixIt.WinUI.Forms.Service
 
             var list = await _userService.Get<IEnumerable<UserViewModel>>(userSearchModel);
             foreach (var x in list)
-                DisplayPanel(x.Firstname, x.Lastname, x.Photo, x.MemberSince);
+                DisplayPanel(x.Id, x.Firstname, x.Lastname, x.Photo, x.MemberSince);
         }
 
-        private void DisplayPanel(string firstName, string lastName, byte[] photo, DateTime memberSince)
+        private void DisplayPanel(string id, string firstName, string lastName, byte[] photo, DateTime memberSince)
         {
             Panel p = new Panel();
             p.BorderStyle = BorderStyle.FixedSingle;
@@ -83,7 +84,7 @@ namespace FixIt.WinUI.Forms.Service
             details.Height = 40;
             details.Width = 100;
             details.Text = "Detalji";
-            //details.Click += new System.EventHandler(this.btn_Click)
+            details.Click += (sender, e) => GetUser(id);
 
 
             p.Controls.Add(pbx);
@@ -91,6 +92,23 @@ namespace FixIt.WinUI.Forms.Service
             p.Controls.Add(profession);
             p.Controls.Add(details);
             flowLayoutPanel1.Controls.Add(p);
+        }
+
+        private async void GetUser(string id)
+        {
+            var user = await _userService.GetById<UserViewModel>(id);
+            var form = new frmUserDetails(user);
+            LoadForm(form);
+        }
+
+        private void LoadForm(Form form)
+        {
+            form.TopLevel = false;
+            form.Dock = DockStyle.Fill;
+            form.FormBorderStyle = FormBorderStyle.None;
+            this.Controls.Clear();
+            this.Controls.Add(form);
+            form.Show();
         }
 
         private async void textBox1_TextChanged(object sender, EventArgs e)
