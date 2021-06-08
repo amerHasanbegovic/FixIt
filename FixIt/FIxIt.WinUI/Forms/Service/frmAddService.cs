@@ -61,9 +61,9 @@ namespace FixIt.WinUI.Forms.Service
             };
             panel2.Controls.Add(heading);
             textBox1.Text = service.Name;
-            textBox2.Text = service.Price.ToString();
+            textBox2.Text = service.Price.ToString() + "KM";
             textBox3.Text = service.Description;
-            cbTypes.SelectedIndex = service.ServiceTypeId;
+            cbTypes.SelectedValue = service.ServiceTypeId;
 
             Label rating = new Label
             {
