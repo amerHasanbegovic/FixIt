@@ -92,25 +92,27 @@ namespace FixIt.WinUI.Forms.Service
         private async void textBox1_TextChanged(object sender, EventArgs e)
         {
             flowLayoutPanel1.Controls.Clear();
-            await LoadUsers(dtpFrom.Value, dtpTo.Value);
+            await LoadUsers();
         }
 
         private async void dtpFrom_ValueChanged(object sender, EventArgs e)
         {
-            if (dtpFrom.Value != default)
-            {
-                flowLayoutPanel1.Controls.Clear();
-                await LoadUsers(dtpFrom.Value, default);
-            }
-        }
-
-        private async void dtpTo_ValueChanged(object sender, EventArgs e)
-        {
-            if (dtpTo.Value != null)
+            if (dtpFrom.Value != default && dtpTo.Value != default)
             {
                 flowLayoutPanel1.Controls.Clear();
                 await LoadUsers(dtpFrom.Value, dtpTo.Value);
             }
+            else await LoadUsers(dtpFrom.Value, default);
+        }
+
+        private async void dtpTo_ValueChanged(object sender, EventArgs e)
+        {
+            if (dtpTo.Value != default && dtpFrom.Value != default)
+            {
+                flowLayoutPanel1.Controls.Clear();
+                await LoadUsers(dtpFrom.Value, dtpTo.Value);
+            }
+            else await LoadUsers(default, dtpTo.Value);
         }
 
         private async void btnShowAll_Click(object sender, EventArgs e)
