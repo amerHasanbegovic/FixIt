@@ -1,6 +1,7 @@
 ﻿using FixIt.Models;
 using FixIt.WinUI.Properties;
 using Flurl.Http;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +14,9 @@ namespace FixIt.WinUI.API
         private readonly string _resource;
         public string endpoint = $"{Resources.ApiUrl}";
 
+        public static string token { get; set; }
+        public static DateTime expiration { get; set; }
+
         public APIService(string resource)
         {
             _resource = resource;
@@ -24,7 +28,7 @@ namespace FixIt.WinUI.API
             if (searchModel != null)
                 query = await searchModel?.ToQueryString();
 
-            var list = await $"{endpoint}/{_resource}?{query}".GetJsonAsync<T>();
+            var list = await $"{endpoint}/{_resource}?{query}".WithOAuthBearerToken(token).GetJsonAsync<T>();
 
             return list;
         }
@@ -32,7 +36,7 @@ namespace FixIt.WinUI.API
         public async Task<T> GetById<T>(object id)
         {
             var url = $"{endpoint}/{_resource}/{id}";
-            return await url.GetJsonAsync<T>();
+            return await url.WithOAuthBearerToken(token).GetJsonAsync<T>();
         }
 
         public async Task<T> Insert<T>(object request)
@@ -41,7 +45,7 @@ namespace FixIt.WinUI.API
 
             try
             {
-                return await url.PostJsonAsync(request).ReceiveJson<T>();
+                return await url.WithOAuthBearerToken(token).PostJsonAsync(request).ReceiveJson<T>();
             }
             catch (FlurlHttpException ex)
             {
@@ -65,7 +69,7 @@ namespace FixIt.WinUI.API
             {
                 var url = $"{endpoint}/{_resource}/{id}";
 
-                return await url.PutJsonAsync(model).ReceiveJson<T>();
+                return await url.WithOAuthBearerToken(token).PutJsonAsync(model).ReceiveJson<T>();
             }
             catch (FlurlHttpException ex)
             {
@@ -88,7 +92,7 @@ namespace FixIt.WinUI.API
             try
             {
                 var url = $"{endpoint}/{_resource}/{id}";
-                return await url.DeleteAsync().ReceiveJson<T>();
+                return await url.WithOAuthBearerToken(token).DeleteAsync().ReceiveJson<T>();
             }
             catch (FlurlHttpException ex)
             {

@@ -1,4 +1,6 @@
-﻿using FixIt.WinUI.Forms.Employee;
+﻿using FixIt.WinUI.API;
+using FixIt.WinUI.Forms.Auth;
+using FixIt.WinUI.Forms.Employee;
 using FixIt.WinUI.Forms.Job;
 using FixIt.WinUI.Forms.Report;
 using FixIt.WinUI.Forms.Service;
@@ -16,6 +18,7 @@ namespace FixIt.WinUI
 
         private void Main_Load(object sender, System.EventArgs e)
         {
+            this.ControlBox = false;
             var form = new frmServiceRequest();
             LoadForm(form);
         }
@@ -64,6 +67,14 @@ namespace FixIt.WinUI
         {
             var form = new frmReport();
             LoadForm(form);
+        }
+
+        private void btnLogout_Click(object sender, System.EventArgs e)
+        {
+            APIService.token = null;
+            this.Close();
+            var form = new Login();
+            form.Show();
         }
     }
 }

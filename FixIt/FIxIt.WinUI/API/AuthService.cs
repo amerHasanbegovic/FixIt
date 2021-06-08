@@ -21,17 +21,14 @@ namespace FixIt.WinUI.API
         {
             try
             {
-                return await $"{endpoint}/{_resource}/login".PostJsonAsync(loginModel).ReceiveJson<T>();
+                return await $"{endpoint}/{_resource}/login-admin".PostJsonAsync(loginModel).ReceiveJson<T>();
             }
             catch (FlurlHttpException ex)
             {
-                var errors = await ex.GetResponseJsonAsync<Dictionary<string, string[]>>();
+                var errors = await ex.GetResponseJsonAsync<Dictionary<string, string>>();
 
                 var stringBuilder = new StringBuilder();
-                foreach (var error in errors)
-                {
-                    stringBuilder.AppendLine($"{error.Key}, ${string.Join(",", error.Value)}");
-                }
+                    stringBuilder.AppendLine("Pogrešno korisničko ime ili password!");
 
                 MessageBox.Show(stringBuilder.ToString(), "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return default(T);

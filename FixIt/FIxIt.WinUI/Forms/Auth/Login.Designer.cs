@@ -29,6 +29,7 @@ namespace FixIt.WinUI.Forms.Auth
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -37,13 +38,15 @@ namespace FixIt.WinUI.Forms.Auth
             this.label4 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(154, 128);
+            this.label1.Location = new System.Drawing.Point(147, 128);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(117, 46);
             this.label1.TabIndex = 0;
@@ -81,9 +84,9 @@ namespace FixIt.WinUI.Forms.Auth
             // 
             this.textBox2.Location = new System.Drawing.Point(35, 303);
             this.textBox2.Name = "textBox2";
+            this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(343, 27);
             this.textBox2.TabIndex = 5;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label4
             // 
@@ -104,6 +107,7 @@ namespace FixIt.WinUI.Forms.Auth
             this.linkLabel1.TabIndex = 6;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Nemate račun? Registrujte se";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // btnLogin
             // 
@@ -111,8 +115,13 @@ namespace FixIt.WinUI.Forms.Auth
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(343, 34);
             this.btnLogin.TabIndex = 7;
-            this.btnLogin.Text = "Prijava";
+            this.btnLogin.Text = "Prijavi se";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // Login
             // 
@@ -131,6 +140,7 @@ namespace FixIt.WinUI.Forms.Auth
             this.Name = "Login";
             this.Text = "FixIt";
             this.Load += new System.EventHandler(this.Login_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -146,5 +156,6 @@ namespace FixIt.WinUI.Forms.Auth
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
