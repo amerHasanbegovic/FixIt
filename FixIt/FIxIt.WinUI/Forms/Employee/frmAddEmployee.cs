@@ -3,6 +3,7 @@ using FixIt.Models.Models.Employee;
 using FixIt.Models.Models.Profession;
 using FixIt.Models.Models.Sex;
 using FixIt.WinUI.API;
+using FixIt.WinUI.Helper;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -163,7 +164,7 @@ namespace FixIt.WinUI.Forms.Employee
                         SexId = cbSex.SelectedIndex
                     };
                     if (pbImage.Image != null)
-                        employeeUpdateModel.Photo = ImageToByte(pbImage.Image);
+                        employeeUpdateModel.Photo = ImageHelper.FromImageToByte(pbImage.Image);
 
                     await _employeeService.Update<EmployeeViewModel>(employee.Id, employeeUpdateModel);
                     MessageBox.Show("Uspješno ste uredili podatke o uposleniku!");
@@ -185,7 +186,7 @@ namespace FixIt.WinUI.Forms.Employee
                         SexId = cbSex.SelectedIndex
                     };
                     if (pbImage.Image != null)
-                        employeeInsertModel.Photo = ImageToByte(pbImage.Image);
+                        employeeInsertModel.Photo = ImageHelper.FromImageToByte(pbImage.Image);
 
                     await _employeeService.Insert<EmployeeViewModel>(employeeInsertModel);
                     MessageBox.Show("Uspješno ste dodali uposlenika!");
@@ -197,15 +198,6 @@ namespace FixIt.WinUI.Forms.Employee
                     this.Controls.Add(form);
                     form.Show();
                 }
-            }
-        }
-
-        private byte[] ImageToByte(Image image)
-        {
-            using (var ms = new MemoryStream())
-            {
-                image.Save(ms, image.RawFormat);
-                return ms.ToArray();
             }
         }
 

@@ -1,6 +1,7 @@
 ﻿using FixIt.Models.Models.Employee;
 using FixIt.Models.Models.Profession;
 using FixIt.WinUI.API;
+using FixIt.WinUI.Helper;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -54,7 +55,10 @@ namespace FixIt.WinUI.Forms.Employee
             
             //picture box
             PictureBox pbx = new PictureBox();
-            //pbx.Image = 
+            if(photo.Length > 0)
+            {
+                pbx.Image = ImageHelper.FromByteToImage(photo);
+            }
             pbx.BorderStyle = BorderStyle.FixedSingle;
             pbx.Left = 10;
             pbx.Top = 10;
@@ -96,12 +100,7 @@ namespace FixIt.WinUI.Forms.Employee
         {
             var employee = await _employeeService.GetById<EmployeeViewModel>(id);
             var form = new frmAddEmployee(employee);
-            form.TopLevel = false;
-            form.Dock = DockStyle.Fill;
-            form.FormBorderStyle = FormBorderStyle.None;
-            this.Controls.Clear();
-            this.Controls.Add(form);
-            form.Show();
+            LoadForm(form);
         }
 
         private async Task LoadProfessions()
@@ -139,6 +138,11 @@ namespace FixIt.WinUI.Forms.Employee
         private void btnAddEmployee_Click(object sender, EventArgs e)
         {
             var form = new frmAddEmployee();
+            LoadForm(form);
+        }
+
+        private void LoadForm(Form form)
+        {
             form.TopLevel = false;
             form.Dock = DockStyle.Fill;
             form.FormBorderStyle = FormBorderStyle.None;

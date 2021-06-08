@@ -1,5 +1,6 @@
 ﻿using FixIt.Models.Models.User;
 using FixIt.WinUI.API;
+using FixIt.WinUI.Helper;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -52,7 +53,10 @@ namespace FixIt.WinUI.Forms.Service
 
             //picture box
             PictureBox pbx = new PictureBox();
-            //pbx.Image = 
+            if (photo.Length > 0)
+            {
+                pbx.Image = ImageHelper.FromByteToImage(photo);
+            }
             pbx.BorderStyle = BorderStyle.FixedSingle;
             pbx.Left = 10;
             pbx.Top = 10;
