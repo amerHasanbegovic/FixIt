@@ -116,6 +116,13 @@ namespace FixIt.WinUI.Forms.Employee
         private async void textBox1_TextChanged(object sender, EventArgs e)
         {
             flowLayoutPanel1.Controls.Clear();
+            var profid = cmbProfession.SelectedValue;
+            if (int.TryParse(profid.ToString(), out int id))
+            {
+                flowLayoutPanel1.Controls.Clear();
+                await LoadEmployees(id);
+            }
+            else
             await LoadEmployees();
         }
 
