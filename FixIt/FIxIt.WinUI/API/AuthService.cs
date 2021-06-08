@@ -28,7 +28,25 @@ namespace FixIt.WinUI.API
                 var errors = await ex.GetResponseJsonAsync<Dictionary<string, string>>();
 
                 var stringBuilder = new StringBuilder();
-                    stringBuilder.AppendLine("Pogrešno korisničko ime ili password!");
+                stringBuilder.AppendLine("Pogrešno korisničko ime ili password!");
+
+                MessageBox.Show(stringBuilder.ToString(), "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return default(T);
+            }
+        }
+        public async Task<T> Register<T>(object registerModel)
+        {
+            try
+            {
+                return await $"{endpoint}/{_resource}/register-admin".PostJsonAsync(registerModel).ReceiveJson<T>();
+            }
+            catch (FlurlHttpException ex)
+            {
+                var errors = await ex.GetResponseJsonAsync<Dictionary<string, string>>();
+
+                var stringBuilder = new StringBuilder();
+                foreach (var x in errors)
+                    stringBuilder.AppendLine($"{x.Value}");
 
                 MessageBox.Show(stringBuilder.ToString(), "Greška", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return default(T);

@@ -29,6 +29,7 @@ namespace FixIt.WinUI.Forms.Auth
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
@@ -37,6 +38,8 @@ namespace FixIt.WinUI.Forms.Auth
             this.label4 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -68,6 +71,7 @@ namespace FixIt.WinUI.Forms.Auth
             this.btnLogin.TabIndex = 13;
             this.btnLogin.Text = "Registruj se";
             this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // linkLabel1
             // 
@@ -114,6 +118,10 @@ namespace FixIt.WinUI.Forms.Auth
             this.label3.TabIndex = 8;
             this.label3.Text = "Korisničko ime";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
@@ -129,6 +137,8 @@ namespace FixIt.WinUI.Forms.Auth
             this.Controls.Add(this.label1);
             this.Name = "Register";
             this.Text = "Register";
+            this.Load += new System.EventHandler(this.Register_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -144,5 +154,6 @@ namespace FixIt.WinUI.Forms.Auth
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }
