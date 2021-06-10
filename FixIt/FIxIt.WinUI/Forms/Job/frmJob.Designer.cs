@@ -51,16 +51,16 @@ namespace FixIt.WinUI.Forms.Job
             // label2
             // 
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label2.Location = new System.Drawing.Point(-3, 124);
+            this.label2.Location = new System.Drawing.Point(-3, 111);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1095, 2);
+            this.label2.Size = new System.Drawing.Size(1232, 2);
             this.label2.TabIndex = 5;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(12, 19);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.label1.Location = new System.Drawing.Point(14, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(124, 46);
             this.label1.TabIndex = 4;
@@ -68,19 +68,23 @@ namespace FixIt.WinUI.Forms.Job
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 81);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.textBox1.Location = new System.Drawing.Point(14, 73);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.PlaceholderText = "Pretraga poslova";
-            this.textBox1.Size = new System.Drawing.Size(1064, 27);
+            this.textBox1.Size = new System.Drawing.Size(1062, 30);
             this.textBox1.TabIndex = 3;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // cbActiveJobs
             // 
             this.cbActiveJobs.AutoSize = true;
-            this.cbActiveJobs.Location = new System.Drawing.Point(12, 143);
+            this.cbActiveJobs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.cbActiveJobs.Location = new System.Drawing.Point(14, 128);
+            this.cbActiveJobs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbActiveJobs.Name = "cbActiveJobs";
-            this.cbActiveJobs.Size = new System.Drawing.Size(76, 24);
+            this.cbActiveJobs.Size = new System.Drawing.Size(72, 22);
             this.cbActiveJobs.TabIndex = 6;
             this.cbActiveJobs.Text = "Aktivni";
             this.cbActiveJobs.UseVisualStyleBackColor = true;
@@ -89,9 +93,11 @@ namespace FixIt.WinUI.Forms.Job
             // cbFinishedJobs
             // 
             this.cbFinishedJobs.AutoSize = true;
-            this.cbFinishedJobs.Location = new System.Drawing.Point(94, 143);
+            this.cbFinishedJobs.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.cbFinishedJobs.Location = new System.Drawing.Point(106, 128);
+            this.cbFinishedJobs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbFinishedJobs.Name = "cbFinishedJobs";
-            this.cbFinishedJobs.Size = new System.Drawing.Size(86, 24);
+            this.cbFinishedJobs.Size = new System.Drawing.Size(86, 22);
             this.cbFinishedJobs.TabIndex = 7;
             this.cbFinishedJobs.Text = "Završeni";
             this.cbFinishedJobs.UseVisualStyleBackColor = true;
@@ -100,9 +106,10 @@ namespace FixIt.WinUI.Forms.Job
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 181);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.label3.Location = new System.Drawing.Point(14, 163);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(116, 20);
+            this.label3.Size = new System.Drawing.Size(114, 18);
             this.label3.TabIndex = 9;
             this.label3.Text = "Pregled poslova";
             // 
@@ -118,11 +125,12 @@ namespace FixIt.WinUI.Forms.Job
             this.Paid,
             this.CreatedAt,
             this.JobStatus});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 213);
+            this.dataGridView1.Location = new System.Drawing.Point(14, 191);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 29;
-            this.dataGridView1.Size = new System.Drawing.Size(1064, 345);
+            this.dataGridView1.Size = new System.Drawing.Size(1062, 412);
             this.dataGridView1.TabIndex = 8;
             this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
             // 
@@ -133,7 +141,7 @@ namespace FixIt.WinUI.Forms.Job
             this.Id.HeaderText = "Redni br.";
             this.Id.MinimumWidth = 6;
             this.Id.Name = "Id";
-            this.Id.Width = 97;
+            this.Id.Width = 89;
             // 
             // Service
             // 
@@ -166,7 +174,7 @@ namespace FixIt.WinUI.Forms.Job
             this.Price.HeaderText = "Cijena";
             this.Price.MinimumWidth = 6;
             this.Price.Name = "Price";
-            this.Price.Width = 79;
+            this.Price.Width = 78;
             // 
             // Paid
             // 
@@ -175,7 +183,7 @@ namespace FixIt.WinUI.Forms.Job
             this.Paid.HeaderText = "Plaćen";
             this.Paid.MinimumWidth = 6;
             this.Paid.Name = "Paid";
-            this.Paid.Width = 58;
+            this.Paid.Width = 59;
             // 
             // CreatedAt
             // 
@@ -195,9 +203,11 @@ namespace FixIt.WinUI.Forms.Job
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(13, 564);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.button1.Location = new System.Drawing.Point(12, 622);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(167, 29);
+            this.button1.Size = new System.Drawing.Size(188, 36);
             this.button1.TabIndex = 10;
             this.button1.Text = "Osvježi";
             this.button1.UseVisualStyleBackColor = true;
@@ -205,7 +215,7 @@ namespace FixIt.WinUI.Forms.Job
             // 
             // frmJob
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1088, 669);
             this.Controls.Add(this.button1);
@@ -216,6 +226,8 @@ namespace FixIt.WinUI.Forms.Job
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmJob";
             this.Text = "frmJob";
             this.Load += new System.EventHandler(this.frmJob_Load);

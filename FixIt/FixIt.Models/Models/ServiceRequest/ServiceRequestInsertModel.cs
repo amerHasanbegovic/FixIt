@@ -6,8 +6,8 @@ namespace FixIt.Models.Models.ServiceRequest
     {
         public DateTime RequestDate { get; set; }
         public int ServiceId { get; set; }
-        public string UserId { get; set; }
+        public string? UserId { get; set; }
         public int PaymentId { get; set; }
-        public string JobDescription { get; set; }
+        public string? JobDescription { get; set; }
     }
 }

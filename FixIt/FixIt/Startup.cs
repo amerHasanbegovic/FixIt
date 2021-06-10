@@ -1,5 +1,3 @@
-using FixIt.Data;
-using FixIt.Data.Models;
 using FixIt.Models.Models.User;
 using FixIt.Models.Models.Service;
 using FixIt.Models.Models.ServiceType;
@@ -25,6 +23,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using FixIt.Database.Models;
+using FixIt.Database;
 
 namespace FixIt
 {

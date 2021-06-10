@@ -45,17 +45,18 @@ namespace FixIt.WinUI.Forms.Job
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 87);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.label1.Location = new System.Drawing.Point(12, 70);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 20);
+            this.label1.Size = new System.Drawing.Size(82, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Uposlenik: ";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(12, 23);
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.label2.Location = new System.Drawing.Point(12, 18);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(119, 28);
             this.label2.TabIndex = 1;
@@ -64,52 +65,62 @@ namespace FixIt.WinUI.Forms.Job
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 135);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.label3.Location = new System.Drawing.Point(12, 108);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 20);
+            this.label3.Size = new System.Drawing.Size(54, 18);
             this.label3.TabIndex = 2;
             this.label3.Text = "Status:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 186);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.label4.Location = new System.Drawing.Point(13, 149);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(55, 20);
+            this.label4.Size = new System.Drawing.Size(57, 18);
             this.label4.TabIndex = 3;
             this.label4.Text = "Plaćen:";
             // 
             // comboBox1
             // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(106, 84);
+            this.comboBox1.Location = new System.Drawing.Point(106, 67);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(324, 28);
+            this.comboBox1.Size = new System.Drawing.Size(324, 26);
             this.comboBox1.TabIndex = 4;
             // 
             // comboBox2
             // 
+            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(106, 132);
+            this.comboBox2.Location = new System.Drawing.Point(106, 106);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(324, 28);
+            this.comboBox2.Size = new System.Drawing.Size(324, 26);
             this.comboBox2.TabIndex = 5;
             // 
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Location = new System.Drawing.Point(106, 185);
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.checkBox1.Location = new System.Drawing.Point(106, 148);
+            this.checkBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(50, 24);
+            this.checkBox1.Size = new System.Drawing.Size(49, 22);
             this.checkBox1.TabIndex = 6;
             this.checkBox1.Text = "Da";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(271, 253);
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnSave.Location = new System.Drawing.Point(271, 193);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(159, 29);
+            this.btnSave.Size = new System.Drawing.Size(159, 32);
             this.btnSave.TabIndex = 7;
             this.btnSave.Text = "Sačuvaj";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -121,9 +132,9 @@ namespace FixIt.WinUI.Forms.Job
             // 
             // frmEditJob
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(461, 299);
+            this.ClientSize = new System.Drawing.Size(461, 239);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.comboBox2);
@@ -132,6 +143,7 @@ namespace FixIt.WinUI.Forms.Job
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmEditJob";
             this.Text = "Uredi posao";
             this.Load += new System.EventHandler(this.frmEditJob_Load);

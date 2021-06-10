@@ -1,4 +1,4 @@
-﻿using FixIt.Data.Models;
+﻿using FixIt.Database.Models;
 using FixIt.Models.Models.Auth;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;

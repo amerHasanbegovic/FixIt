@@ -6,13 +6,9 @@ namespace FixIt.Models.Models.Payment
     {
         public double Total { get; set; }
         public int PaymentTypeId { get; set; }
-#nullable enable
         public string? FullName { get; set; }
-#nullable enable
         public string? CreditCardNumber { get; set; }
-#nullable enable
         public string? CVV { get; set; }
-#nullable enable
         public DateTime PaymentDate { get; set; }
     }
 }

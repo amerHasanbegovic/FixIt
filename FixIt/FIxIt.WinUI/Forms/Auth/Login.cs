@@ -37,7 +37,6 @@ namespace FixIt.WinUI.Forms.Auth
                 if(response != null)
                 {
                     APIService.token = response.token;
-                    APIService.expiration = response.expiration;
                     var form = new Main();
                     form.Show();
                     this.Hide();

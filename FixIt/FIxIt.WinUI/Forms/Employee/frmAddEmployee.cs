@@ -254,5 +254,15 @@ namespace FixIt.WinUI.Forms.Employee
                 txtPath.Text = fileName;
             }
         }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtLastName_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

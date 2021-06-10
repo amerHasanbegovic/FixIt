@@ -41,8 +41,8 @@ namespace FixIt.WinUI.Forms.Employee
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(12, 23);
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 20F);
+            this.label1.Location = new System.Drawing.Point(12, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(174, 46);
             this.label1.TabIndex = 3;
@@ -50,26 +50,30 @@ namespace FixIt.WinUI.Forms.Employee
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(12, 85);
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.textBox1.Location = new System.Drawing.Point(12, 57);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.PlaceholderText = "Pretraga uposlenika po imenu i prezimenu";
-            this.textBox1.Size = new System.Drawing.Size(1064, 27);
+            this.textBox1.Size = new System.Drawing.Size(1064, 33);
             this.textBox1.TabIndex = 2;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label2
             // 
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label2.Location = new System.Drawing.Point(-3, 126);
+            this.label2.Location = new System.Drawing.Point(-3, 101);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(1095, 2);
             this.label2.TabIndex = 4;
             // 
             // btnAddEmployee
             // 
-            this.btnAddEmployee.Location = new System.Drawing.Point(12, 146);
+            this.btnAddEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.btnAddEmployee.Location = new System.Drawing.Point(12, 117);
+            this.btnAddEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddEmployee.Name = "btnAddEmployee";
-            this.btnAddEmployee.Size = new System.Drawing.Size(244, 29);
+            this.btnAddEmployee.Size = new System.Drawing.Size(244, 35);
             this.btnAddEmployee.TabIndex = 5;
             this.btnAddEmployee.Text = "Dodaj novog uposlenika";
             this.btnAddEmployee.UseVisualStyleBackColor = true;
@@ -78,31 +82,34 @@ namespace FixIt.WinUI.Forms.Employee
             // cmbProfession
             // 
             this.cmbProfession.FormattingEnabled = true;
-            this.cmbProfession.Location = new System.Drawing.Point(925, 147);
+            this.cmbProfession.Location = new System.Drawing.Point(925, 118);
+            this.cmbProfession.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbProfession.Name = "cmbProfession";
-            this.cmbProfession.Size = new System.Drawing.Size(151, 28);
+            this.cmbProfession.Size = new System.Drawing.Size(151, 24);
             this.cmbProfession.TabIndex = 6;
             this.cmbProfession.SelectedIndexChanged += new System.EventHandler(this.cmbProfession_SelectedIndexChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(791, 151);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.label3.Location = new System.Drawing.Point(791, 121);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(128, 20);
+            this.label3.Size = new System.Drawing.Size(124, 18);
             this.label3.TabIndex = 8;
             this.label3.Text = "Odaberi profesiju:";
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 205);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 164);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1064, 452);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1064, 494);
             this.flowLayoutPanel1.TabIndex = 9;
             // 
             // frmEmployee
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1088, 669);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -112,6 +119,7 @@ namespace FixIt.WinUI.Forms.Employee
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmEmployee";
             this.Text = "frmEmployee";
             this.Load += new System.EventHandler(this.frmEmployee_Load);
