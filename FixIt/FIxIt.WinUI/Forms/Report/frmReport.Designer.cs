@@ -180,6 +180,7 @@ namespace FixIt.WinUI.Forms.Report
             this.btnJobReport.TabIndex = 16;
             this.btnJobReport.Text = "Printaj";
             this.btnJobReport.UseVisualStyleBackColor = true;
+            this.btnJobReport.Click += new System.EventHandler(this.btnJobReport_Click);
             // 
             // cmbEmployee
             // 
@@ -244,6 +245,7 @@ namespace FixIt.WinUI.Forms.Report
             this.button1.TabIndex = 23;
             this.button1.Text = "Printaj";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmReport
             // 
@@ -275,6 +277,7 @@ namespace FixIt.WinUI.Forms.Report
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmReport";
             this.Text = "frmReport";
+            this.Load += new System.EventHandler(this.frmReport_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace FixIt.Database.Models
 {
@@ -13,5 +14,7 @@ namespace FixIt.Database.Models
         public int ServiceTypeId { get; set; }
         public virtual ServiceType ServiceType { get; set; }
         public int TimesRequested { get; set; }
+
+        public virtual IEnumerable<ServiceRequest> ServiceRequests { get; set; }
     }
 }

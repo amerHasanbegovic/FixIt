@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace FixIt.Database.Models
 {
@@ -19,5 +20,7 @@ namespace FixIt.Database.Models
         public DateTime BirthDate { get; set; }
         public int SexId { get; set; }
         public virtual Sex Sex { get; set; }
+
+        public virtual IEnumerable<Job> Jobs { get; set; }
     }
 }

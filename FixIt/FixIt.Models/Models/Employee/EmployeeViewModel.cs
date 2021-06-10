@@ -1,7 +1,9 @@
 ﻿using FixIt.Models.Models.City;
+using FixIt.Models.Models.Job;
 using FixIt.Models.Models.Profession;
 using FixIt.Models.Models.Sex;
 using System;
+using System.Collections.Generic;
 
 namespace FixIt.Models.Models.Employee
 {
@@ -24,5 +26,9 @@ namespace FixIt.Models.Models.Employee
         public virtual SexViewModel? Sex { get; set; }
 
         public string EmployeeFullNameAndProfession => $"{Firstname} {Lastname} - {Profession?.Name}";
+        public string EmployeeFullName => $"{Firstname} {Lastname}";
+
+        public virtual IEnumerable<JobViewModel>? Jobs { get; set; }
+
     }
 }

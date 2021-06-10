@@ -21,7 +21,10 @@ namespace FixIt.Services.Services
             if (!string.IsNullOrEmpty(model.Name))
                 query = query.Where(x => x.Name.ToLower().Contains(model.Name.ToLower()));
 
-            var res = query.Include(x => x.ServiceType).ToList();
+            var res = query
+                .Include(x => x.ServiceType)
+                .Include(x => x.ServiceRequests)
+                .ToList();
             return _mapper.Map<IEnumerable<ServiceViewModel>>(res);
         }
         public override ServiceViewModel GetById(int id)

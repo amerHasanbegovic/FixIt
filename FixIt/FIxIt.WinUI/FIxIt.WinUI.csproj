@@ -7,6 +7,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Forms\Report\EmployeeReport\EmployeeReport.rdlc" />
+    <None Remove="Forms\Report\JobReport\JobReport.rdlc" />
+    <None Remove="Forms\Report\ServiceReport\serviceReport.rdlc" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Forms\Report\EmployeeReport\EmployeeReport.rdlc" />
+    <EmbeddedResource Include="Forms\Report\JobReport\JobReport.rdlc" />
+    <EmbeddedResource Include="Forms\Report\ServiceReport\serviceReport.rdlc" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Flurl" Version="3.0.2" />
     <PackageReference Include="Flurl.Http" Version="3.2.0" />
     <PackageReference Include="Microsoft.ReportingServices.ReportViewerControl.Winforms" Version="150.1449.0" />
@@ -21,9 +33,25 @@
     <Reference Include="Microsoft.ReportViewer.WinForms">
       <HintPath>C:\Users\amkoo\.nuget\packages\microsoft.reportingservices.reportviewercontrol.winforms\150.1449.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
+    <Reference Include="System.Data.DataSetExtensions" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Forms\Report\EmployeeReport\dsEmployee.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>dsEmployee.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Forms\Report\JobReport\dsJob.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>dsJob.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Forms\Report\ServiceReport\dsServices.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>dsServices.xsd</DependentUpon>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -31,11 +59,6 @@
     </Compile>
     <Compile Update="Forms\Users\frmUsers.cs">
       <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Properties\Settings.Designer.cs">
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
   </ItemGroup>
 
@@ -47,9 +70,21 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    <Folder Include="Properties\DataSources\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Forms\Report\EmployeeReport\dsEmployee.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsEmployee.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Forms\Report\JobReport\dsJob.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsJob.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Forms\Report\ServiceReport\dsServices.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsServices.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
 

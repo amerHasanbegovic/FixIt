@@ -34,7 +34,9 @@ namespace FixIt.Services.Services
             if (model?.ProfessionId != 0)
                 query = query.Where(x => x.ProfessionId == model.ProfessionId);
 
-            var res = query.Include(x => x.Profession).ToList();
+            var res = query
+                .Include(x => x.Profession)
+                .ToList();
 
             return _mapper.Map<IEnumerable<EmployeeViewModel>>(res);
         }
@@ -44,6 +46,8 @@ namespace FixIt.Services.Services
                 .Include(x => x.City)
                 .Include(x => x.Profession)
                 .Include(x => x.Sex)
+                .Include(x => x.Jobs).ThenInclude(x => x.ServiceRequest).ThenInclude(x => x.Service)
+                .Include(x => x.Jobs).ThenInclude(x => x.Status)
                 .FirstOrDefault(x => x.Id == id);
             return _mapper.Map<EmployeeViewModel>(res);
         }

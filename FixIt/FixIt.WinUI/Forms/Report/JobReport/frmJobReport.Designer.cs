@@ -1,7 +1,7 @@
 ﻿
-namespace FixIt.WinUI.Forms.Report.ServiceReport
+namespace FixIt.WinUI.Forms.Report.JobReport
 {
-    partial class ServiceReport
+    partial class frmJobReport
     {
         /// <summary>
         /// Required designer variable.
@@ -34,21 +34,23 @@ namespace FixIt.WinUI.Forms.Report.ServiceReport
             // 
             // reportViewer1
             // 
-            this.reportViewer1.Location = new System.Drawing.Point(61, 50);
+            this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "FixIt.WinUI.Forms.Report.JobReport.JobReport.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(0, 0);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(396, 246);
+            this.reportViewer1.Size = new System.Drawing.Size(1628, 737);
             this.reportViewer1.TabIndex = 0;
             // 
-            // ServiceReport
+            // frmJobReport
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1156, 719);
+            this.ClientSize = new System.Drawing.Size(1628, 737);
             this.Controls.Add(this.reportViewer1);
-            this.Name = "ServiceReport";
-            this.Text = "ServiceReport";
-            this.Load += new System.EventHandler(this.ServiceReport_Load);
+            this.Name = "frmJobReport";
+            this.Text = "Izvještaj o poslovima";
+            this.Load += new System.EventHandler(this.frmJobReport_Load);
             this.ResumeLayout(false);
 
         }

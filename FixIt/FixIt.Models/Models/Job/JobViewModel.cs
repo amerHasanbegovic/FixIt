@@ -23,6 +23,8 @@ namespace FixIt.Models.Models.Job
         public string? ServiceName => ServiceRequest?.Service?.Name;
         public string UserFullName => $"{ServiceRequest?.User?.Firstname} {ServiceRequest?.User?.Lastname}";
         public string ServicePrice => $"{ServiceRequest?.Service?.Price.ToString()} KM";
+        public string Price => $"{ServiceRequest?.Service?.Price.ToString()}";
+
         public string? JobStatus => Status?.Status;
     }
 }
