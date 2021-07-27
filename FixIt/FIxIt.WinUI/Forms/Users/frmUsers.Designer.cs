@@ -45,11 +45,11 @@ namespace FixIt.WinUI.Forms.Service
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.textBox1.Location = new System.Drawing.Point(12, 66);
+            this.textBox1.Location = new System.Drawing.Point(14, 74);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(1064, 27);
+            this.textBox1.Size = new System.Drawing.Size(1062, 30);
             this.textBox1.TabIndex = 0;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -57,7 +57,7 @@ namespace FixIt.WinUI.Forms.Service
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.label1.Location = new System.Drawing.Point(12, 16);
+            this.label1.Location = new System.Drawing.Point(14, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(121, 46);
             this.label1.TabIndex = 1;
@@ -66,18 +66,18 @@ namespace FixIt.WinUI.Forms.Service
             // label2
             // 
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label2.Location = new System.Drawing.Point(-3, 100);
+            this.label2.Location = new System.Drawing.Point(-3, 112);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1095, 2);
+            this.label2.Size = new System.Drawing.Size(1080, 2);
             this.label2.TabIndex = 2;
             // 
             // btnShowAll
             // 
             this.btnShowAll.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.btnShowAll.Location = new System.Drawing.Point(12, 142);
+            this.btnShowAll.Location = new System.Drawing.Point(14, 160);
             this.btnShowAll.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnShowAll.Name = "btnShowAll";
-            this.btnShowAll.Size = new System.Drawing.Size(164, 28);
+            this.btnShowAll.Size = new System.Drawing.Size(184, 32);
             this.btnShowAll.TabIndex = 3;
             this.btnShowAll.Text = "Svi klijenti";
             this.btnShowAll.UseVisualStyleBackColor = true;
@@ -86,20 +86,20 @@ namespace FixIt.WinUI.Forms.Service
             // dtpFrom
             // 
             this.dtpFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.dtpFrom.Location = new System.Drawing.Point(522, 148);
+            this.dtpFrom.Location = new System.Drawing.Point(427, 162);
             this.dtpFrom.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpFrom.Name = "dtpFrom";
-            this.dtpFrom.Size = new System.Drawing.Size(250, 24);
+            this.dtpFrom.Size = new System.Drawing.Size(281, 24);
             this.dtpFrom.TabIndex = 6;
             this.dtpFrom.ValueChanged += new System.EventHandler(this.dtpFrom_ValueChanged);
             // 
             // dtpTo
             // 
             this.dtpTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.dtpTo.Location = new System.Drawing.Point(826, 148);
+            this.dtpTo.Location = new System.Drawing.Point(769, 162);
             this.dtpTo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtpTo.Name = "dtpTo";
-            this.dtpTo.Size = new System.Drawing.Size(250, 24);
+            this.dtpTo.Size = new System.Drawing.Size(281, 24);
             this.dtpTo.TabIndex = 7;
             this.dtpTo.ValueChanged += new System.EventHandler(this.dtpTo_ValueChanged);
             // 
@@ -107,7 +107,7 @@ namespace FixIt.WinUI.Forms.Service
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label4.Location = new System.Drawing.Point(484, 152);
+            this.label4.Location = new System.Drawing.Point(384, 167);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(32, 18);
             this.label4.TabIndex = 8;
@@ -117,7 +117,7 @@ namespace FixIt.WinUI.Forms.Service
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label5.Location = new System.Drawing.Point(788, 152);
+            this.label5.Location = new System.Drawing.Point(726, 167);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(32, 18);
             this.label5.TabIndex = 9;
@@ -127,7 +127,7 @@ namespace FixIt.WinUI.Forms.Service
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label6.Location = new System.Drawing.Point(522, 122);
+            this.label6.Location = new System.Drawing.Point(427, 133);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(273, 18);
             this.label6.TabIndex = 10;
@@ -135,17 +135,17 @@ namespace FixIt.WinUI.Forms.Service
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 194);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(14, 218);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1064, 464);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1036, 429);
             this.flowLayoutPanel1.TabIndex = 11;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label3.Location = new System.Drawing.Point(12, 122);
+            this.label3.Location = new System.Drawing.Point(14, 137);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(89, 18);
             this.label3.TabIndex = 12;
@@ -153,7 +153,7 @@ namespace FixIt.WinUI.Forms.Service
             // 
             // frmUsers
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1088, 669);
             this.Controls.Add(this.label3);
@@ -167,6 +167,7 @@ namespace FixIt.WinUI.Forms.Service
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MinimizeBox = false;
             this.Name = "frmUsers";

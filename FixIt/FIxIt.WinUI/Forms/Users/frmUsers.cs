@@ -58,6 +58,7 @@ namespace FixIt.WinUI.Forms.Service
             {
                 pbx.Image = ImageHelper.FromByteToImage(photo);
             }
+            pbx.SizeMode = PictureBoxSizeMode.Zoom;
             pbx.BorderStyle = BorderStyle.FixedSingle;
             pbx.Left = 10;
             pbx.Top = 10;

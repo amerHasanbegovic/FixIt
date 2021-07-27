@@ -42,7 +42,7 @@ namespace FixIt.WinUI.Forms.Employee
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 20F);
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(14, 10);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(174, 46);
             this.label1.TabIndex = 3;
@@ -51,29 +51,29 @@ namespace FixIt.WinUI.Forms.Employee
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.textBox1.Location = new System.Drawing.Point(12, 57);
+            this.textBox1.Location = new System.Drawing.Point(14, 64);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(1064, 33);
+            this.textBox1.Size = new System.Drawing.Size(1043, 37);
             this.textBox1.TabIndex = 2;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label2
             // 
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label2.Location = new System.Drawing.Point(-3, 101);
+            this.label2.Location = new System.Drawing.Point(-3, 114);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1095, 2);
+            this.label2.Size = new System.Drawing.Size(1065, 2);
             this.label2.TabIndex = 4;
             // 
             // btnAddEmployee
             // 
             this.btnAddEmployee.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.btnAddEmployee.Location = new System.Drawing.Point(12, 117);
+            this.btnAddEmployee.Location = new System.Drawing.Point(14, 132);
             this.btnAddEmployee.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddEmployee.Name = "btnAddEmployee";
-            this.btnAddEmployee.Size = new System.Drawing.Size(244, 35);
+            this.btnAddEmployee.Size = new System.Drawing.Size(274, 39);
             this.btnAddEmployee.TabIndex = 5;
             this.btnAddEmployee.Text = "Dodaj novog uposlenika";
             this.btnAddEmployee.UseVisualStyleBackColor = true;
@@ -82,10 +82,10 @@ namespace FixIt.WinUI.Forms.Employee
             // cmbProfession
             // 
             this.cmbProfession.FormattingEnabled = true;
-            this.cmbProfession.Location = new System.Drawing.Point(925, 118);
+            this.cmbProfession.Location = new System.Drawing.Point(886, 133);
             this.cmbProfession.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cmbProfession.Name = "cmbProfession";
-            this.cmbProfession.Size = new System.Drawing.Size(151, 24);
+            this.cmbProfession.Size = new System.Drawing.Size(169, 26);
             this.cmbProfession.TabIndex = 6;
             this.cmbProfession.SelectedIndexChanged += new System.EventHandler(this.cmbProfession_SelectedIndexChanged);
             // 
@@ -93,7 +93,7 @@ namespace FixIt.WinUI.Forms.Employee
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label3.Location = new System.Drawing.Point(791, 121);
+            this.label3.Location = new System.Drawing.Point(756, 136);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(124, 18);
             this.label3.TabIndex = 8;
@@ -101,15 +101,15 @@ namespace FixIt.WinUI.Forms.Employee
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(12, 164);
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(14, 184);
             this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(1064, 494);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1043, 474);
             this.flowLayoutPanel1.TabIndex = 9;
             // 
             // frmEmployee
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1088, 669);
             this.Controls.Add(this.flowLayoutPanel1);
@@ -119,6 +119,7 @@ namespace FixIt.WinUI.Forms.Employee
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "frmEmployee";
             this.Text = "frmEmployee";

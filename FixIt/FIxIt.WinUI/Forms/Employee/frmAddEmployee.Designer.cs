@@ -64,7 +64,7 @@ namespace FixIt.WinUI.Forms.Employee
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.btnSave.Location = new System.Drawing.Point(982, 624);
+            this.btnSave.Location = new System.Drawing.Point(742, 624);
             this.btnSave.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(94, 34);
@@ -87,7 +87,7 @@ namespace FixIt.WinUI.Forms.Employee
             // label2
             // 
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label2.Location = new System.Drawing.Point(-3, 110);
+            this.label2.Location = new System.Drawing.Point(-3, 115);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(1095, 2);
             this.label2.TabIndex = 5;
