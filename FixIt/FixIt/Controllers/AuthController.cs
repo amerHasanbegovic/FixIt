@@ -33,7 +33,8 @@ namespace FixIt.Controllers
         {
             var userExists = await _userManager.FindByNameAsync(model.UserName);
             if (userExists != null)
-                return StatusCode(StatusCodes.Status500InternalServerError, new ResponseModel { Status = "Error", Message = "User already exists!" });
+                return StatusCode(StatusCodes.Status500InternalServerError, new ResponseModel { Status = "Greška", Message = "Korisnik sa tim korisničkim imenom već postoji!" });
+            //return StatusCode(StatusCodes.Status500InternalServerError, new ResponseModel { Status = "Error", Message = "User already exists!" });
 
             var user = new User()
             {
@@ -46,8 +47,9 @@ namespace FixIt.Controllers
             };
             var result = await _userManager.CreateAsync(user, model.Password);
             if (!result.Succeeded)
-                return StatusCode(StatusCodes.Status500InternalServerError, new ResponseModel { Status = "Error", 
-                    Message = "User creation failed! Please check user details and try again." });
+                return StatusCode(StatusCodes.Status500InternalServerError, new ResponseModel { Status = "Greška", Message = "Molimo provjerite detalje prijave i pokušajte ponovo!" });
+            //return StatusCode(StatusCodes.Status500InternalServerError, new ResponseModel { Status = "Error", 
+            //        Message = "User creation failed! Please check user details and try again." });
 
             if (!await _roleManager.RoleExistsAsync(UserRoles.user))
                 await _roleManager.CreateAsync(new IdentityRole(UserRoles.user));
@@ -59,7 +61,8 @@ namespace FixIt.Controllers
                 await _userManager.AddToRoleAsync(user, UserRoles.user);
             }
 
-            return Ok(new ResponseModel { Status = "Success", Message = "User created successfully!" });
+            //return Ok(new ResponseModel { Status = "Success", Message = "User created successfully!" });
+            return Ok(new ResponseModel { Status = "Success", Message = "Uspješno ste se registrovali!" });
         }
 
         [HttpPost]

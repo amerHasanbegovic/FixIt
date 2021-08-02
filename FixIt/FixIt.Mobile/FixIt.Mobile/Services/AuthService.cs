@@ -52,6 +52,8 @@ namespace FixIt.Mobile.Services
                 var stringBuilder = new StringBuilder();
                 foreach (var x in errors)
                     stringBuilder.AppendLine($"{x.Value}");
+                
+                await Application.Current.MainPage.DisplayAlert(null, stringBuilder.ToString(), "Pokušajte ponovo");
 
                 return default(T);
             }
