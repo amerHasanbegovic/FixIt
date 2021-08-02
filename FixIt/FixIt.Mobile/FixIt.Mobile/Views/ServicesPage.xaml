@@ -5,28 +5,54 @@
              xmlns:local="clr-namespace:FixIt.Mobile.ViewModels"
              x:Class="FixIt.Mobile.Views.ServicesPage">
     <ContentPage.Content>
-        <RefreshView x:DataType="local:ServicesViewModel" Command="{Binding LoadServicesCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
-            <CollectionView x:Name="ItemsListView"
+        <StackLayout>
+            <SearchBar Placeholder="Unesite naziv usluge.." Margin="20, 5, 20, 0"/>
+            <Rectangle VerticalOptions="StartAndExpand" HeightRequest="1" Margin="0, 0, 0, 3" Stroke="Black" />
+            <RefreshView x:DataType="local:ServicesViewModel" Command="{Binding LoadServicesCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+                <CollectionView x:Name="ServicesListView"
                 ItemsSource="{Binding Services}"
                 SelectionMode="None">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <StackLayout Padding="10" x:DataType="model:ServiceViewModel">
-                            <Label Text="{Binding Name}" 
-                            LineBreakMode="NoWrap" 
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Padding="20, 10, 20, 0" x:DataType="model:ServiceViewModel">
+                                <Frame BorderColor="LightGray" BackgroundColor="WhiteSmoke">
+                                    <StackLayout>
+                                        <Label Text="{Binding Name}" 
+                            LineBreakMode="NoWrap"
                             Style="{DynamicResource ListItemTextStyle}" 
-                            FontSize="16" />
-                            <StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer 
+                            FontSize="20" />
+
+                                        <Label Text="{Binding Description}" 
+                            LineBreakMode="WordWrap"                
+                            Style="{DynamicResource ListItemTextStyle}" 
+                            Font="Light, 14" />
+
+                                        <Label>
+                                            <Label.FormattedText>
+                                                <FormattedString>
+                                                    <Span Text="{Binding Price}" 
+                                                      Style="{DynamicResource ListItemTextStyle}" 
+                                                      Font="Light, 16"></Span>
+                                                    <Span Text=" KM"></Span>
+                                                </FormattedString>
+                                            </Label.FormattedText>
+                                        </Label>
+
+                                        <Button Font="Bold, 14" BackgroundColor="DimGray" Margin="300, 0, 0, 0" Text="Detalji"></Button>
+                                    </StackLayout>
+                                </Frame>
+                                <StackLayout.GestureRecognizers>
+                                    <TapGestureRecognizer 
                                 NumberOfTapsRequired="1"
                                 Command="{Binding Source={RelativeSource AncestorType={x:Type local:ServicesViewModel}}, Path=ItemTapped}"		
                                 CommandParameter="{Binding .}">
-                                </TapGestureRecognizer>
-                            </StackLayout.GestureRecognizers>
-                        </StackLayout>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
-        </RefreshView>
+                                    </TapGestureRecognizer>
+                                </StackLayout.GestureRecognizers>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </RefreshView>
+        </StackLayout>
     </ContentPage.Content>
 </ContentPage>
