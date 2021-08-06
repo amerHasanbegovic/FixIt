@@ -1,4 +1,5 @@
 ﻿using FixIt.Mobile.Services;
+using FixIt.Mobile.Views;
 using FixIt.Models.Models.Service;
 using Flurl.Http;
 using System;
@@ -15,16 +16,15 @@ namespace FixIt.Mobile.ViewModels
         private APIService _apiService = new APIService("Service");
         public ObservableCollection<ServiceViewModel> Services { get; }
         public Command LoadServicesCommand { get; }
-        public Command AddItemCommand { get; }
         public Command<ServiceViewModel> ServiceTapped { get; }
+
+        public string Id { get => Id; }
 
         public ServicesViewModel()
         {
             Title = "Usluge";
             Services = new ObservableCollection<ServiceViewModel>();
             LoadServicesCommand = new Command(async () => await ExecuteLoadServicesCommand());
-
-            //ServiceTapped = new Command<ServiceViewModel>(OnItemSelected);
         }
 
         private async Task ExecuteLoadServicesCommand()
