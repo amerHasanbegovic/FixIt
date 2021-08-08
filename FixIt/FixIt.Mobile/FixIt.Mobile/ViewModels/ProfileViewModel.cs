@@ -13,13 +13,13 @@ namespace FixIt.Mobile.ViewModels
     public class ProfileViewModel : BaseViewModel
     {
         private AuthService _authService = new AuthService("Auth");
-        public UserViewModel Profile { get; set; }
+        public ObservableCollection<UserViewModel> Profile { get; set; }
         public Command LoadProfileCommand { get; }
 
         public ProfileViewModel()
         {
             Title = "Profile";
-            Profile = new UserViewModel();
+            Profile = new ObservableCollection<UserViewModel>();
             LoadProfileCommand = new Command(async () => await ExecuteLoadProfileCommand());
         }
 
@@ -28,9 +28,8 @@ namespace FixIt.Mobile.ViewModels
             IsBusy = true;
             try
             {
-                //Profile.Clear();
                 var profile = await _authService.GetCurrentUser<UserViewModel>();
-                Profile = profile;
+                Profile.Add(profile);
             }
             catch (Exception ex)
             {

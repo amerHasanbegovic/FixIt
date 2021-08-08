@@ -1,22 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:viewmodels="clr-namespace:FixIt.Mobile.ViewModels" 
-             x:DataType="viewmodels:ProfileViewModel">
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:FixIt.Mobile.ViewModels" xmlns:model="clr-namespace:FixIt.Models.Models.User;assembly=FixIt.Models"
+             x:Class="FixIt.Mobile.Views.ProfilePage">
     <ContentPage.Content>
-        <RefreshView Command="{Binding LoadProfileCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
-        <CollectionView>
-            <CollectionView.ItemTemplate>
-                <DataTemplate>
-                    <StackLayout>
-                        <Label Text="{Binding Profile.Firstname}"
+        <RefreshView x:DataType="viewmodels:ProfileViewModel" 
+                     Command="{Binding LoadProfileCommand}" 
+                     IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+            <CollectionView x:Name="ProfileListView"
+                ItemsSource="{Binding Profile}" 
+                SelectionMode="Single">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Label Text="{Binding Firstname}" x:DataType="model:UserViewModel"
                         VerticalOptions="CenterAndExpand" 
                         HorizontalOptions="CenterAndExpand" />
-                <Label />
-            </StackLayout>
-                </DataTemplate>
-            </CollectionView.ItemTemplate>
-        </CollectionView>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </RefreshView>
     </ContentPage.Content>
 </ContentPage>
