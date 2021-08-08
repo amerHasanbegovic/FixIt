@@ -58,5 +58,24 @@ namespace FixIt.Mobile.Services
                 return default(T);
             }
         }
+        public async Task<T> GetCurrentUser<T>()
+        {
+            try
+            {
+                return await $"{endpoint}/{_resource}/GetCurrentUser".WithOAuthBearerToken(APIService.token).GetJsonAsync<T>();
+            }
+            catch (FlurlHttpException ex)
+            {
+                var errors = await ex.GetResponseJsonAsync<Dictionary<string, string>>();
+
+                var stringBuilder = new StringBuilder();
+                foreach (var x in errors)
+                    stringBuilder.AppendLine($"{x.Value}");
+
+                await Application.Current.MainPage.DisplayAlert(null, stringBuilder.ToString(), "OK");
+
+                return default(T);
+            }
+        }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using FixIt.Database.Models;
 using FixIt.Models.Models.Auth;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -82,7 +83,7 @@ namespace FixIt.Controllers
             var result = await _userManager.CreateAsync(user, model.Password);
             if (!result.Succeeded)
                 return StatusCode(StatusCodes.Status500InternalServerError, new ResponseModel { Status = "Greška", Message = "Molimo provjerite detalje prijave i pokušajte ponovo!" });
-                //return StatusCode(StatusCodes.Status500InternalServerError, new ResponseModel { Status = "Error", Message = "Admin user creation failed! Please check user details and try again." });
+            //return StatusCode(StatusCodes.Status500InternalServerError, new ResponseModel { Status = "Error", Message = "Admin user creation failed! Please check user details and try again." });
 
             if (!await _roleManager.RoleExistsAsync(UserRoles.admin))
                 await _roleManager.CreateAsync(new IdentityRole(UserRoles.admin));
@@ -105,13 +106,13 @@ namespace FixIt.Controllers
             if (user != null && await _userManager.CheckPasswordAsync(user, model.Password))
             {
                 var userRoles = await _userManager.GetRolesAsync(user);
-                if(userRoles.Count > 0 && userRoles[0] == "admin")
+                if (userRoles.Count > 0 && userRoles[0] == "admin")
                 {
                     var authClaims = new List<Claim>
-                {
-                    new Claim(ClaimTypes.Name, user.UserName),
-                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                };
+                    {
+                        new Claim(ClaimTypes.Name, user.UserName),
+                        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                    };
 
                     foreach (var userRole in userRoles)
                     {
@@ -123,7 +124,7 @@ namespace FixIt.Controllers
                     var token = new JwtSecurityToken(
                         issuer: _configuration["JWT:ValidIssuer"],
                         audience: _configuration["JWT:ValidAudience"],
-                        expires: DateTime.Now.AddHours(24),
+                        expires: DateTime.Now.AddHours(1),
                         claims: authClaims,
                         signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
                         );
@@ -149,22 +150,22 @@ namespace FixIt.Controllers
                 if (userRoles.Count > 0 && userRoles[0] == "user")
                 {
                     var authClaims = new List<Claim>
-                {
-                    new Claim(ClaimTypes.Name, user.UserName),
-                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                };
+                    {
+                        new Claim(ClaimTypes.Name, user.UserName),
+                        new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                    };
 
                     foreach (var userRole in userRoles)
                     {
                         authClaims.Add(new Claim(ClaimTypes.Role, userRole));
                     }
-
+                    
                     var authSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"]));
 
                     var token = new JwtSecurityToken(
                         issuer: _configuration["JWT:ValidIssuer"],
                         audience: _configuration["JWT:ValidAudience"],
-                        expires: DateTime.Now.AddHours(24),
+                        expires: DateTime.Now.AddHours(1),
                         claims: authClaims,
                         signingCredentials: new SigningCredentials(authSigningKey, SecurityAlgorithms.HmacSha256)
                         );
@@ -178,6 +179,21 @@ namespace FixIt.Controllers
                 return Unauthorized();
             }
             return Unauthorized();
+        }
+
+        [HttpGet("GetCurrentUser")]
+        [Authorize]
+        public async Task<User> GetCurrentUser()
+        {
+            try
+            {
+                var user = await _userManager.FindByNameAsync(User.Identity?.Name);
+                return user;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
     }
 }

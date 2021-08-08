@@ -25,6 +25,8 @@ using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using FixIt.Database.Models;
 using FixIt.Database;
+using Microsoft.OpenApi.Models;
+using System.Security.Claims;
 
 namespace FixIt
 {
@@ -41,7 +43,18 @@ namespace FixIt
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddSwaggerGen();
+            services.AddSwaggerGen(swagger => {
+                swagger.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
+                {
+                    Name = "Authorization",
+                    Type = SecuritySchemeType.ApiKey,
+                    Scheme = "Bearer",
+                    BearerFormat = "JWT",
+                    In = ParameterLocation.Header,
+                    Description = "Enter 'Bearer' [space] and then your valid token in the text input below.\r\n\r\nExample: \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\"",
+                });
+                //c.AddSecurityDefinition("Bearer", new ApiKeyScheme { In = "header", Description = "Please Enter Authentication Token", Name = "Authorization", Type = "SampleApiKey" });
+            });
             services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("FixIt")));
 
             services.AddControllers().AddNewtonsoftJson(options =>
@@ -65,13 +78,15 @@ namespace FixIt
                 {
                     ValidateIssuer = false,
                     ValidateAudience = false,
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JWT:Secret"]))
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JWT:Secret"])),
+                    ValidateIssuerSigningKey = true
                 };
             });
             
             //password config for identity
             services.Configure<IdentityOptions>(options =>
             {
+                options.ClaimsIdentity.UserNameClaimType = ClaimTypes.Name;
                 options.Password.RequiredLength = 4;
                 options.Password.RequireNonAlphanumeric = false;
                 options.Password.RequireUppercase = false;
@@ -128,9 +143,9 @@ namespace FixIt
 
             app.UseRouting();
 
-            app.UseAuthorization();
-
             app.UseAuthentication();
+
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
