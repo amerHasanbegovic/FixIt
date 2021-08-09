@@ -1,12 +1,53 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:FixIt.Mobile.ViewModels" 
+             xmlns:model="clr-namespace:FixIt.Models.Models.ServiceRequest;assembly=FixIt.Models"
              x:Class="FixIt.Mobile.Views.HistoryPage">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <RefreshView x:DataType="local:HistoryViewModel" Command="{Binding LoadHistoryCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+            <CollectionView x:Name="ServicesListView"
+                ItemsSource="{Binding History}" 
+                SelectionMode="Single">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="20, 10, 20, 0" x:DataType="model:ServiceRequestViewModel">
+                            <Frame BorderColor="LightGray" BackgroundColor="WhiteSmoke">
+                                <StackLayout>
+                                    <Label Text="{Binding ServiceName}" 
+                            LineBreakMode="NoWrap"
+                            Style="{DynamicResource ListItemTextStyle}" 
+                            FontSize="20" />
+
+                                    <Label Text="{Binding JobDescription}" 
+                            LineBreakMode="WordWrap"                
+                            Style="{DynamicResource ListItemTextStyle}" 
+                            Font="Light, 14" />
+
+                                    <Label>
+                                        <Label.FormattedText>
+                                            <FormattedString>
+                                                <Span Text="{Binding ServicePrice}" 
+                                                      Style="{DynamicResource ListItemTextStyle}" 
+                                                      Font="Light, 16"></Span>
+                                                <Span Text=" KM"></Span>
+                                            </FormattedString>
+                                        </Label.FormattedText>
+                                    </Label>
+
+                                </StackLayout>
+                            </Frame>
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer 
+                                NumberOfTapsRequired="1"
+                                Command="{Binding Source={RelativeSource AncestorType={x:Type local:ServicesViewModel}}, Path=ServiceTapped}"		
+                                CommandParameter="{Binding .}">
+                                </TapGestureRecognizer>
+                            </StackLayout.GestureRecognizers>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </RefreshView>
     </ContentPage.Content>
 </ContentPage>

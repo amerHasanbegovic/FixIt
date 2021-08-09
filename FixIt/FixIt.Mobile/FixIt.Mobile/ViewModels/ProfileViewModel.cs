@@ -28,6 +28,7 @@ namespace FixIt.Mobile.ViewModels
             IsBusy = true;
             try
             {
+                Profile.Clear();
                 var profile = await _authService.GetCurrentUser<UserViewModel>();
                 Profile.Add(profile);
             }
