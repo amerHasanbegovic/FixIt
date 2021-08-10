@@ -9,14 +9,15 @@
         <StackLayout>
             <SearchBar Placeholder="Unesite naziv usluge.." Margin="20, 5, 20, 0" TextChanged="SearchBar_TextChanged"/>
             <Rectangle VerticalOptions="StartAndExpand" HeightRequest="1" Margin="0, 0, 0, 3" Stroke="Black" />
-            <RefreshView x:DataType="local:ServicesViewModel" Command="{Binding LoadServicesCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+            <RefreshView x:DataType="local:ServicesViewModel" Command="{Binding LoadServicesCommand}" 
+                         IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
                 <CollectionView x:Name="ServicesListView" SelectionChanged="ServicesListView_SelectionChanged"
                 ItemsSource="{Binding Services}" 
                 SelectionMode="Single">
                     <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <StackLayout Padding="20, 10, 20, 0" x:DataType="model:ServiceViewModel">
-                                <Frame BorderColor="LightGray" BackgroundColor="WhiteSmoke">
+                            <StackLayout Margin="20, 10, 20, 0" Padding="20, 10, 20, 0" x:DataType="model:ServiceViewModel">
+                                <Frame BorderColor="LightGray" BackgroundColor="WhiteSmoke" CornerRadius="0">
                                     <StackLayout>
                                         <Label Text="{Binding Name}" 
                             LineBreakMode="NoWrap"

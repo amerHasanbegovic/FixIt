@@ -40,5 +40,10 @@ namespace FixIt.Mobile.Views
             };
             ServicesListView.ItemsSource = await _apiService.Get<IEnumerable<ServiceViewModel>>(model);
         }
+
+        private void ServicesListView_Focused(object sender, FocusEventArgs e)
+        {
+
+        }
     }
 }
