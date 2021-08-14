@@ -61,7 +61,7 @@ namespace FixIt.Mobile.Services
 
         }
 
-        public async Task<T> Update<T>(int id, object model)
+        public async Task<T> Update<T>(string id, object model)
         {
             try
             {

@@ -1,20 +1,90 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:FixIt.Mobile.ViewModels" xmlns:model="clr-namespace:FixIt.Models.Models.User;assembly=FixIt.Models"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:viewmodels="clr-namespace:FixIt.Mobile.ViewModels" 
+             xmlns:model="clr-namespace:FixIt.Models.Models.User;assembly=FixIt.Models" xmlns:converters="clr-namespace:FixIt.Mobile.Helper"
              x:Class="FixIt.Mobile.Views.ProfilePage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ImageConverter x:Key="imgConv"></converters:ImageConverter>
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <RefreshView x:DataType="viewmodels:ProfileViewModel" 
                      Command="{Binding LoadProfileCommand}" 
                      IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
-            <CollectionView x:Name="ProfileListView"
+            <CollectionView x:Name="ProfileListView" Margin="20, 10, 20, 0"
                 ItemsSource="{Binding Profile}" 
-                SelectionMode="Single">
+                SelectionMode="None">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout>
-                            <Label Text="{Binding Firstname}" x:DataType="model:UserViewModel"
-                        VerticalOptions="CenterAndExpand" 
-                        HorizontalOptions="CenterAndExpand" />
+                            <Frame BorderColor="Black" CornerRadius="0" HorizontalOptions="Start" WidthRequest="200" HeightRequest="300" Margin="0, 0, 0, 20">
+                                <StackLayout HorizontalOptions="Start">
+                                    <Image Source="{Binding Photo, Converter={StaticResource imgConv}}" 
+                                           x:DataType="model:UserViewModel" HeightRequest="300" WidthRequest="200"/>
+                                </StackLayout>
+                            </Frame>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Ime: "></Span>
+                                        <Span Text="{Binding Firstname}" x:DataType="model:UserViewModel"
+                                                      Style="{DynamicResource ListItemTextStyle}" 
+                                                      Font="Bold, 16"></Span>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Prezime: "></Span>
+                                        <Span Text="{Binding Lastname}" x:DataType="model:UserViewModel"
+                                                      Style="{DynamicResource ListItemTextStyle}" 
+                                                      Font="Bold, 16"></Span>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Email: "></Span>
+                                        <Span Text="{Binding Email}" x:DataType="model:UserViewModel"
+                                                      Style="{DynamicResource ListItemTextStyle}" 
+                                                      Font="Bold, 16"></Span>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Adresa: "></Span>
+                                        <Span Text="{Binding Address}" x:DataType="model:UserViewModel"
+                                                      Style="{DynamicResource ListItemTextStyle}" 
+                                                      Font="Bold, 16"></Span>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Grad: "></Span>
+                                        <Span Text="{Binding City.Name}" x:DataType="model:UserViewModel"
+                                                      Style="{DynamicResource ListItemTextStyle}" 
+                                                      Font="Bold, 16"></Span>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Label>
+                                <Label.FormattedText>
+                                    <FormattedString>
+                                        <Span Text="Spol: "></Span>
+                                        <Span Text="{Binding Sex.Name}" x:DataType="model:UserViewModel"
+                                                      Style="{DynamicResource ListItemTextStyle}" 
+                                                      Font="Bold, 16"></Span>
+                                    </FormattedString>
+                                </Label.FormattedText>
+                            </Label>
+                            <Button Text="Uredi profil" Clicked="Button_Clicked_1" HorizontalOptions="Start" />
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

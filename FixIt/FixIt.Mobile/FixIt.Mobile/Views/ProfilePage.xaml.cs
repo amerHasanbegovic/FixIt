@@ -1,4 +1,6 @@
 ﻿using FixIt.Mobile.ViewModels;
+using Plugin.FilePicker;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -17,6 +19,11 @@ namespace FixIt.Mobile.Views
         {
             base.OnAppearing();
             model.OnAppearing();
+        }
+
+        private void Button_Clicked_1(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new EditProfilePage());
         }
     }
 }

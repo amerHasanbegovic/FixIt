@@ -13,6 +13,7 @@ namespace FixIt.Mobile.ViewModels
     public class ProfileViewModel : BaseViewModel
     {
         private AuthService _authService = new AuthService("Auth");
+        private APIService _apiService = new APIService("User");
         public ObservableCollection<UserViewModel> Profile { get; set; }
         public Command LoadProfileCommand { get; }
 
@@ -30,7 +31,8 @@ namespace FixIt.Mobile.ViewModels
             {
                 Profile.Clear();
                 var profile = await _authService.GetCurrentUser<UserViewModel>();
-                Profile.Add(profile);
+                var user = await _apiService.GetById<UserViewModel>(profile.Id);
+                Profile.Add(user);
             }
             catch (Exception ex)
             {

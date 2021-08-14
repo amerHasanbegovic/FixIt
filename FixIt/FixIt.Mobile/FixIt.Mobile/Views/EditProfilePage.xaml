@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:FixIt.Mobile.ViewModels" 
+             xmlns:model="clr-namespace:FixIt.Models.Models.City;assembly=FixIt.Models" 
+             xmlns:model1="clr-namespace:FixIt.Models.Models.Sex;assembly=FixIt.Models" xmlns:local="clr-namespace:FixIt.Mobile.Helper"
+             x:DataType="viewmodels:EditProfileViewModel"
+             x:Class="FixIt.Mobile.Views.EditProfilePage"
+             Title="Uredi profil">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <local:ImageConverter x:Key="imgConv"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Margin="20, 10, 20, 0" VerticalOptions="CenterAndExpand">
+                <Label Text="Vaš profil" FontAttributes="Bold"  FontSize="Title" HorizontalOptions="Start" Margin="0, 0, 0, 10"/>
+                <StackLayout>
+                    <!--ucitati sliku, postaviti opciju da se promijeni-->
+                    <Frame BorderColor="Black" CornerRadius="0" WidthRequest="200" HorizontalOptions="Start">
+                        <StackLayout HorizontalOptions="Start">
+                            <Image HeightRequest="300" WidthRequest="200" Source="{Binding Image, Converter={StaticResource imgConv}}"/>
+                        </StackLayout>
+                    </Frame>
+                    <Button Text="Odaberi sliku" Margin="0, 0, 0, 20" WidthRequest="240" HorizontalOptions="Start" Clicked="Button_Clicked"/>
+                    
+                    <Label Text="Ime:" FontAttributes="Bold"/>
+                    <Entry Text="{Binding FirstName}" />
+                    <Label Text="Prezime:" FontAttributes="Bold"/>
+                    <Entry Text="{Binding LastName}" />
+                    <Label Text="Adresa:" FontAttributes="Bold"/>
+                    <Entry Text="{Binding Address}" />
+
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Vaš grad: " FontAttributes="Bold"></Span>
+                                <Span Text="{Binding UserCity}"
+                                      Style="{DynamicResource ListItemTextStyle}" FontAttributes="None"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Text="Odaberite novi grad:" FontSize="10" />
+                    <Picker x:Name="cityPicker" BindingContextChanged="cityPicker_BindingContextChanged"
+                            ItemDisplayBinding="{Binding Name}" x:DataType="model:CityViewModel"
+                            SelectedIndexChanged="cityPicker_SelectedIndexChanged"/>
+
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Vaš spol: " FontAttributes="Bold"></Span>
+                                <Span Text="{Binding UserSex}"
+                                      Style="{DynamicResource ListItemTextStyle}" FontAttributes="None"/>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Text="Odaberite novi spol:" FontSize="10" />
+                    <Picker x:Name="sexPicker" BindingContextChanged="sexPicker_BindingContextChanged"
+                            ItemDisplayBinding="{Binding Name}" x:DataType="model1:SexViewModel"
+                            SelectedIndexChanged="sexPicker_SelectedIndexChanged"/>
+
+                    <Button BackgroundColor="DodgerBlue" BorderColor="Transparent"
+                            HorizontalOptions="FillAndExpand" Text="Sačuvaj" Font="Bold,17" Margin="0, 10, 0, 20"
+                            Command="{Binding SaveChangesCommand}" />
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
