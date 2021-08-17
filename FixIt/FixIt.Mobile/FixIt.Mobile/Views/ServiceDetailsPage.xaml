@@ -44,6 +44,7 @@
                     </Label.FormattedText>
                 </Label>
             </StackLayout>
+            <Button Text="Pošalji zahtjev" Clicked="Button_Clicked" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

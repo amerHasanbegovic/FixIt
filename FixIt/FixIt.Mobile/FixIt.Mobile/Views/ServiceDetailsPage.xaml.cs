@@ -21,5 +21,10 @@ namespace FixIt.Mobile.Views
             InitializeComponent();
             BindingContext = model = new ServiceDetailsViewModel() { Service = service };
         }
+
+        private async void Button_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new ServiceRequestPage(model.Service));
+        }
     }
 }

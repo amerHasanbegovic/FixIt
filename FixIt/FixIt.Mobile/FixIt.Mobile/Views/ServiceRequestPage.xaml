@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:FixIt.Mobile.ViewModels" 
+             x:DataType="viewmodels:ServiceRequestsViewModel"
+             x:Class="FixIt.Mobile.Views.ServiceRequestPage">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                <StackLayout Padding="20, 30, 20, 0" BackgroundColor="WhiteSmoke">
+                    <Label Text="{Binding Service.Name}"
+                    VerticalOptions="Start" 
+                    HorizontalOptions="Start" Font="Bold, 20" FontSize="Large"/>
+                    <Label Text="{Binding Service.ServiceTypeName}"
+                    VerticalOptions="Start" 
+                    HorizontalOptions="Start" FontSize="Small" Margin="0, 0, 0, 30" />
+                    <Rectangle HorizontalOptions="FillAndExpand" HeightRequest="1" Stroke="Black" />
+                </StackLayout>
+
+                <StackLayout Padding="20, 30, 20, 0">
+
+                    <Label Font="Light, 18" Text="Opis usluge:" />
+                    <Label Text="{Binding Service.Description}"
+                VerticalOptions="Start" 
+                HorizontalOptions="Start" Font="Bold, 18"/>
+
+                    <Label Margin="0, 20, 0, 20">
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Cijena: " Font="Light, 18"/>
+                                <Span Text="{Binding Service.Price}" 
+                              Style="{DynamicResource ListItemTextStyle}" 
+                              Font="Bold, 18"></Span>
+                                <Span Text=" KM" Font="Bold, 18"></Span>
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+                <!--test-->
+                <!--<Label Text="Odaberite način plaćanja:" Font="Bold, 14"/>-->
+                <!--<RefreshView Command="{Binding LoadDataCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
+                    <CollectionView ItemsSource="{Binding PaymentTypes}" SelectionMode="Single">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <StackLayout Padding="20, 0, 20, 0" Margin="0, 0, 0, 0">
+                                    
+                    <RadioButton Content="{Binding PaymentTypes[0].Name}" CheckedChanged="RadioButton_CheckedChanged"/>
+                                    <RadioButton Content="{Binding PaymentTypes[1].Name}"/>
+                                </StackLayout>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </RefreshView>-->
+                <!--test-->
+
+                <StackLayout Margin="20, 10, 20, 0">
+                    <!--<RadioButton Content="{Binding OnlinePayment.Name}"/>
+                    <RadioButton Content="{Binding RegularPayment.Name}"  Margin="0, 0, 0, 20"  CheckedChanged="RadioButton_CheckedChanged"/>-->
+                    <RadioButton Content="{Binding PaymentTypes[0].Name}" CheckedChanged="RadioButton_CheckedChanged_1"/>
+                    <RadioButton Content="{Binding PaymentTypes[1].Name}" CheckedChanged="RadioButton_CheckedChanged"/>
+                </StackLayout>
+
+                <StackLayout Padding="20, 10, 20, 0" Margin="0, 0, 0, 0">
+                    <Label Text="Unesite dodatni opis posla uz Vaš zahtjev: (opcionalno)" Font="Bold, 15"/>
+                    <Editor Placeholder="Dodatni opis" HeightRequest="100" Text="{Binding JobDescription}"/>
+                </StackLayout>
+                <StackLayout Padding="20, 30, 20, 0" Margin="0, 0, 0, 30">
+                    <Label Text="Broj računa:" FontAttributes="Bold"/>
+                    <Entry Placeholder="xxx-xxx-xxx" x:Name="accEntry" Text="{Binding CardNumber}"/>
+                    <Label Text="Ime i prezime na kartici:" FontAttributes="Bold"/>
+                    <Entry Placeholder="Ime i prezime" x:Name="nameEntry" Text="{Binding FullName}"/>
+                    <Label Text="CVV:" FontAttributes="Bold"/>
+                    <Entry Placeholder="CVV" x:Name="cvvEntry" Text="{Binding CVV}"/>
+                    <Label Text="Datum važenja kartice:" FontAttributes="Bold"/>
+                    <DatePicker x:Name="datePicker" Date="{Binding CardDate}"/>
+                </StackLayout>
+                <StackLayout Padding="20, 0, 20, 0" Margin="0, 0, 0, 40">
+                    <Button Text="Potvrdi zahtjev" Command="{Binding SendRequestCommand}"/>
+                </StackLayout>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

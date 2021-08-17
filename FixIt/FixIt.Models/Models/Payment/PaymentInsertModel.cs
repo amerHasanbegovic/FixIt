@@ -9,6 +9,7 @@ namespace FixIt.Models.Models.Payment
         public string? FullName { get; set; }
         public string? CreditCardNumber { get; set; }
         public string? CVV { get; set; }
+        public DateTime? CardExpirationDate { get; set; }
         public DateTime PaymentDate { get; set; }
     }
 }
