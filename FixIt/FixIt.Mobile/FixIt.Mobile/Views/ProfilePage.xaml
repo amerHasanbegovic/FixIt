@@ -84,7 +84,16 @@
                                     </FormattedString>
                                 </Label.FormattedText>
                             </Label>
-                            <Button Text="Uredi profil" Clicked="Button_Clicked_1" HorizontalOptions="Start" />
+                            <StackLayout>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Button Grid.Column="0" Text="Uredi profil" Clicked="Button_Clicked_1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
+                                    <Button Grid.Column="1" Text="Odjava" HorizontalOptions="FillAndExpand" Clicked="Button_Clicked" VerticalOptions="FillAndExpand"/>
+                                </Grid>
+                            </StackLayout>
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
