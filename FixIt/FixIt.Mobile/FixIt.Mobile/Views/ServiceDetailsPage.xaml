@@ -17,7 +17,8 @@
             </StackLayout>
 
             <StackLayout Padding="20, 30, 20, 0">
-                <rating:SfRating Value="{Binding Service.Rating}" ItemCount="5" Margin="0, 10, 0, 10" Precision="Standard" ItemSize="20" ReadOnly="True">
+                <rating:SfRating Value="{Binding Service.Rating}" ItemCount="5" Margin="0, 10, 0, 10" 
+                                 Precision="Standard" ItemSize="20" ValueChanged="SfRating_ValueChanged">
                     <rating:SfRating.RatingSettings>
                         <rating:SfRatingSettings RatedFill="Yellow" UnRatedFill="White" RatedStrokeWidth="1" UnRatedStrokeWidth="1"/>
                     </rating:SfRating.RatingSettings>
