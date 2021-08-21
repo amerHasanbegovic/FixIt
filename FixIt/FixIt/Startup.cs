@@ -118,7 +118,7 @@ namespace FixIt
             services.AddScoped<IServiceRequestService, ServiceRequestService>();
             services.AddScoped<IServiceRatingService, ServiceRatingService>();
 
-
+            services.AddScoped<IRecommendService<ServiceViewModel>, RecommendService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

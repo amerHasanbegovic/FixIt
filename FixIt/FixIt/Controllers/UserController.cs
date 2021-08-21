@@ -1,7 +1,9 @@
-﻿using FixIt.Models.Models.User;
+﻿using FixIt.Models.Models.Service;
+using FixIt.Models.Models.User;
 using FixIt.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace FixIt.Controllers
 {
@@ -10,9 +12,11 @@ namespace FixIt.Controllers
     public class UserController
     {
         protected readonly IUserService _service;
-        public UserController(IUserService service)
+        protected readonly IRecommendService<ServiceViewModel> _recommendService;
+        public UserController(IUserService service, IRecommendService<ServiceViewModel> recommendService)
         {
             _service = service;
+            _recommendService = recommendService;
         }
 
         [HttpGet]
@@ -26,11 +30,17 @@ namespace FixIt.Controllers
         {
             return _service.GetById(id);
         }
-        
+
         [HttpPut("{id}")]
         public UserViewModel Update(string id, UserUpdateModel model)
         {
             return _service.Update(id, model);
+        }
+
+        [HttpGet("{id}/recommend")]
+        public async Task<IEnumerable<ServiceViewModel>> Recommend(string id)
+        {
+            return await _recommendService.Recommend(id);
         }
     }
 }

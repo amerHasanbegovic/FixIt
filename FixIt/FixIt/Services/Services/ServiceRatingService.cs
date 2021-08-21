@@ -27,7 +27,8 @@ namespace FixIt.Services.Services
             var service = _applicationDbContext.Set<Service>().Find(entity.ServiceId);
             
             //if user has already rated the service
-            var exists = _applicationDbContext.Set<ServiceRating>().FirstOrDefault(x => x.UserId == entity.UserId && x.ServiceId == service.Id);
+            var exists = _applicationDbContext.Set<ServiceRating>()
+                .FirstOrDefault(x => x.UserId == entity.UserId && x.ServiceId == service.Id);
             if (exists != null)
             {
                 exists.Rating = rating;

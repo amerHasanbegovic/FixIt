@@ -106,6 +106,12 @@ namespace FixIt.Mobile.Services
                 return default(T);
             }
         }
+
+        public async Task<T> GetRecommendedServicesForUser<T>(string userId)
+        {
+            var list = await $"{endpoint}/{_resource}/{userId}/recommend".WithOAuthBearerToken(token).GetJsonAsync<T>();
+            return list;
+        }
     }
 }
 
