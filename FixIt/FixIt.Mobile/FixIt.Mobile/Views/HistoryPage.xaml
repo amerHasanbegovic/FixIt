@@ -2,17 +2,18 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:local="clr-namespace:FixIt.Mobile.ViewModels" 
-             xmlns:model="clr-namespace:FixIt.Models.Models.ServiceRequest;assembly=FixIt.Models"
+             xmlns:model="clr-namespace:FixIt.Models.Models.ServiceRequest;assembly=FixIt.Models" 
+             xmlns:sfGrid="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
              x:Class="FixIt.Mobile.Views.HistoryPage">
     <ContentPage.Content>
         <RefreshView x:DataType="local:HistoryViewModel" Command="{Binding LoadHistoryCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
-            <CollectionView x:Name="ServicesListView"
+            <!--<CollectionView x:Name="ServicesListView"
                 ItemsSource="{Binding History}" 
                 SelectionMode="Single">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <StackLayout Padding="20, 10, 20, 0" x:DataType="model:ServiceRequestViewModel">
-                            <Frame BorderColor="LightGray" BackgroundColor="WhiteSmoke">
+                    --><!--<Frame BorderColor="LightGray" BackgroundColor="WhiteSmoke">
                                 <StackLayout>
                                     <Label Text="{Binding ServiceName}" 
                             LineBreakMode="NoWrap"
@@ -43,11 +44,24 @@
                                 Command="{Binding Source={RelativeSource AncestorType={x:Type local:ServicesViewModel}}, Path=ServiceTapped}"		
                                 CommandParameter="{Binding .}">
                                 </TapGestureRecognizer>
-                            </StackLayout.GestureRecognizers>
+                            </StackLayout.GestureRecognizers>-->
+                   <!--ItemsSource="{Binding Service}"--><!--
                         </StackLayout>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
-            </CollectionView>
+            </CollectionView>-->
+            <StackLayout Margin="30, 50, 0, 0">
+                <sfGrid:SfDataGrid x:Name="dataGrid"
+                   AutoGenerateColumns="False" ItemsSource="{Binding History}" ColumnSizer="Star" SelectionUnit="Row" 
+                                   SelectionMode="Single" SelectionChanged="dataGrid_SelectionChanged">
+                <sfGrid:SfDataGrid.Columns>
+                    <sfGrid:GridTextColumn HeaderText="Usluga" MappingName="ServiceName" />
+                    <sfGrid:GridTextColumn HeaderText="Cijena" MappingName="ServicePrice" />
+                    <sfGrid:GridTextColumn HeaderText="Način plaćanja" MappingName="PaymentTypeName" />
+                    <sfGrid:GridTextColumn HeaderText="Datum zahtjeva" MappingName="RequestDateFormated" />
+                </sfGrid:SfDataGrid.Columns>
+            </sfGrid:SfDataGrid>
+            </StackLayout>
         </RefreshView>
     </ContentPage.Content>
 </ContentPage>

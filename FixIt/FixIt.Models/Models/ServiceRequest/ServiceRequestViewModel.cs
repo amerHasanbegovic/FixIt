@@ -22,5 +22,6 @@ namespace FixIt.Models.Models.ServiceRequest
         public string? ServiceName => Service?.Name;
         public string? PaymentTypeName => Payment?.PaymentType?.Name;
         public string ServicePrice => Service?.Price.ToString() + "KM";
+        public string RequestDateFormated => RequestDate.ToString("dd/MM/yyyy");
     }
 }
