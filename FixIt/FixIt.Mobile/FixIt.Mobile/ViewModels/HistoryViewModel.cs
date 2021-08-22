@@ -18,6 +18,12 @@ namespace FixIt.Mobile.ViewModels
         public ObservableCollection<ServiceRequestViewModel> History { get; set; }
         public Command LoadHistoryCommand { get; }
 
+        private string _notFound;
+        public string NotFound
+        {
+            get { return _notFound; }
+            set { SetProperty(ref _notFound, value); }
+        }
         public HistoryViewModel()
         {
             Title = "Historija";
@@ -39,6 +45,8 @@ namespace FixIt.Mobile.ViewModels
                         {
                             History.Add(h);
                         }
+                if (History.Count == 0)
+                    NotFound = "Još uvijek niste poslali nijedan zahtjev.";
             }
             catch (Exception ex)
             {

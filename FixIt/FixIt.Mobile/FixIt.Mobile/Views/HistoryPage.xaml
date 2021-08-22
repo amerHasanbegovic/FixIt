@@ -2,55 +2,16 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:local="clr-namespace:FixIt.Mobile.ViewModels" 
-             xmlns:model="clr-namespace:FixIt.Models.Models.ServiceRequest;assembly=FixIt.Models" 
              xmlns:sfGrid="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
              x:Class="FixIt.Mobile.Views.HistoryPage">
     <ContentPage.Content>
         <RefreshView x:DataType="local:HistoryViewModel" Command="{Binding LoadHistoryCommand}" IsRefreshing="{Binding IsBusy, Mode=TwoWay}">
-            <!--<CollectionView x:Name="ServicesListView"
-                ItemsSource="{Binding History}" 
-                SelectionMode="Single">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <StackLayout Padding="20, 10, 20, 0" x:DataType="model:ServiceRequestViewModel">
-                    --><!--<Frame BorderColor="LightGray" BackgroundColor="WhiteSmoke">
-                                <StackLayout>
-                                    <Label Text="{Binding ServiceName}" 
-                            LineBreakMode="NoWrap"
-                            Style="{DynamicResource ListItemTextStyle}" 
-                            FontSize="20" />
-
-                                    <Label Text="{Binding JobDescription}" 
-                            LineBreakMode="WordWrap"                
-                            Style="{DynamicResource ListItemTextStyle}" 
-                            Font="Light, 14" />
-
-                                    <Label>
-                                        <Label.FormattedText>
-                                            <FormattedString>
-                                                <Span Text="{Binding ServicePrice}" 
-                                                      Style="{DynamicResource ListItemTextStyle}" 
-                                                      Font="Light, 16"></Span>
-                                                <Span Text=" KM"></Span>
-                                            </FormattedString>
-                                        </Label.FormattedText>
-                                    </Label>
-
-                                </StackLayout>
-                            </Frame>
-                            <StackLayout.GestureRecognizers>
-                                <TapGestureRecognizer 
-                                NumberOfTapsRequired="1"
-                                Command="{Binding Source={RelativeSource AncestorType={x:Type local:ServicesViewModel}}, Path=ServiceTapped}"		
-                                CommandParameter="{Binding .}">
-                                </TapGestureRecognizer>
-                            </StackLayout.GestureRecognizers>-->
-                   <!--ItemsSource="{Binding Service}"--><!--
-                        </StackLayout>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>-->
-            <StackLayout Margin="30, 50, 0, 0">
+            <StackLayout>
+                <StackLayout>
+                    <Label Text="Historija korištenih usluga" HorizontalOptions="Start" Font="Bold, 20" Padding="20, 30, 0, 0"/>
+                    <Label Text="U tabeli ispod se nalazi lista usluga koje ste koristili" Font="10" Padding="20, 0, 0, 0"/>
+                </StackLayout>
+            <StackLayout Margin="0, 0, 0, 0" Padding="20, 10, 20, 0">
                 <sfGrid:SfDataGrid x:Name="dataGrid"
                    AutoGenerateColumns="False" ItemsSource="{Binding History}" ColumnSizer="Star" SelectionUnit="Row" 
                                    SelectionMode="Single" SelectionChanged="dataGrid_SelectionChanged">
@@ -61,6 +22,8 @@
                     <sfGrid:GridTextColumn HeaderText="Datum zahtjeva" MappingName="RequestDateFormated" />
                 </sfGrid:SfDataGrid.Columns>
             </sfGrid:SfDataGrid>
+            </StackLayout>
+                <Label Text="{Binding NotFound}" HorizontalOptions="CenterAndExpand" FontAttributes="Italic" Font="Bold, 15"/>
             </StackLayout>
         </RefreshView>
     </ContentPage.Content>
