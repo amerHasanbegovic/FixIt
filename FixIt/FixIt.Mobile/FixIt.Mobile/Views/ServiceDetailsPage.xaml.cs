@@ -25,6 +25,7 @@ namespace FixIt.Mobile.Views
         {
             InitializeComponent();
             BindingContext = model = new ServiceDetailsViewModel() { Service = service };
+            Title = model.Service.Name.ToString();
         }
 
         private async void Button_Clicked(object sender, EventArgs e)
