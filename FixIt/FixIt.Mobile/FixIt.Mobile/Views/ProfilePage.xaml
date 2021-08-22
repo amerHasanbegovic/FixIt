@@ -24,74 +24,79 @@
                                            x:DataType="model:UserViewModel" HeightRequest="300" WidthRequest="200"/>
                                 </StackLayout>
                             </Frame>
-                            <Label>
-                                <Label.FormattedText>
-                                    <FormattedString>
-                                        <Span Text="Ime: "></Span>
-                                        <Span Text="{Binding Firstname}" x:DataType="model:UserViewModel"
-                                                      Style="{DynamicResource ListItemTextStyle}" 
-                                                      Font="Bold, 16"></Span>
-                                    </FormattedString>
-                                </Label.FormattedText>
-                            </Label>
-                            <Label>
-                                <Label.FormattedText>
-                                    <FormattedString>
-                                        <Span Text="Prezime: "></Span>
-                                        <Span Text="{Binding Lastname}" x:DataType="model:UserViewModel"
-                                                      Style="{DynamicResource ListItemTextStyle}" 
-                                                      Font="Bold, 16"></Span>
-                                    </FormattedString>
-                                </Label.FormattedText>
-                            </Label>
-                            <Label>
-                                <Label.FormattedText>
-                                    <FormattedString>
-                                        <Span Text="Email: "></Span>
-                                        <Span Text="{Binding Email}" x:DataType="model:UserViewModel"
-                                                      Style="{DynamicResource ListItemTextStyle}" 
-                                                      Font="Bold, 16"></Span>
-                                    </FormattedString>
-                                </Label.FormattedText>
-                            </Label>
-                            <Label>
-                                <Label.FormattedText>
-                                    <FormattedString>
-                                        <Span Text="Adresa: "></Span>
-                                        <Span Text="{Binding Address}" x:DataType="model:UserViewModel"
-                                                      Style="{DynamicResource ListItemTextStyle}" 
-                                                      Font="Bold, 16"></Span>
-                                    </FormattedString>
-                                </Label.FormattedText>
-                            </Label>
-                            <Label>
-                                <Label.FormattedText>
-                                    <FormattedString>
-                                        <Span Text="Grad: "></Span>
-                                        <Span Text="{Binding City.Name}" x:DataType="model:UserViewModel"
-                                                      Style="{DynamicResource ListItemTextStyle}" 
-                                                      Font="Bold, 16"></Span>
-                                    </FormattedString>
-                                </Label.FormattedText>
-                            </Label>
-                            <Label>
-                                <Label.FormattedText>
-                                    <FormattedString>
-                                        <Span Text="Spol: "></Span>
-                                        <Span Text="{Binding Sex.Name}" x:DataType="model:UserViewModel"
-                                                      Style="{DynamicResource ListItemTextStyle}" 
-                                                      Font="Bold, 16"></Span>
-                                    </FormattedString>
-                                </Label.FormattedText>
-                            </Label>
-                            <StackLayout>
+                            <Grid>
+                                <Image Source="profile.png" HorizontalOptions="Start"/>
+                                <Label Margin="40, 5, 0, 0">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{Binding Firstname}" x:DataType="model:UserViewModel"
+                                              Style="{DynamicResource ListItemTextStyle}" 
+                                              Font="Bold, 16"></Span>
+                                            <Span Text=" " />
+                                            <Span Text="{Binding Lastname}" x:DataType="model:UserViewModel"
+                                                  Style="{DynamicResource ListItemTextStyle}" 
+                                                  Font="Bold, 16"></Span>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </Grid>
+                            <Grid>
+                                <Image Source="email.png" WidthRequest="25" HeightRequest="25" HorizontalOptions="Start"/>
+                                <Label Margin="40, 0, 0, 0">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{Binding Email}" x:DataType="model:UserViewModel"
+                                              Style="{DynamicResource ListItemTextStyle}" 
+                                              Font="Bold, 16"></Span>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </Grid>
+                            <Grid>
+                                <Image Source="home.png" WidthRequest="25" HeightRequest="25" HorizontalOptions="Start"/>
+                                <Label Margin="40, 0, 0, 0">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{Binding Address}" x:DataType="model:UserViewModel"
+                                              Style="{DynamicResource ListItemTextStyle}" 
+                                              Font="Bold, 16"></Span>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </Grid>
+
+                            <Grid>
+                                <Image Source="location.jpg" WidthRequest="25" HeightRequest="25" HorizontalOptions="Start"/>
+                                <Label Margin="40, 0, 0, 0">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{Binding City.Name}" x:DataType="model:UserViewModel"
+                                              Style="{DynamicResource ListItemTextStyle}" 
+                                              Font="Bold, 16"></Span>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </Grid>
+                            <Grid>
+                                <Image Source="gender.png" WidthRequest="25" HeightRequest="25" HorizontalOptions="Start"/>
+                                <Label Margin="40, 0, 0, 0">
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span Text="{Binding Sex.Name}" x:DataType="model:UserViewModel"
+                                              Style="{DynamicResource ListItemTextStyle}" 
+                                              Font="Bold, 16"></Span>
+                                        </FormattedString>
+                                    </Label.FormattedText>
+                                </Label>
+                            </Grid>
+                            <StackLayout Margin="0, 20, 0, 0">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
-                                    <Button Grid.Column="0" Text="Uredi profil" Clicked="Button_Clicked_1" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"/>
-                                    <Button Grid.Column="1" Text="Odjava" HorizontalOptions="FillAndExpand" Clicked="Button_Clicked" VerticalOptions="FillAndExpand"/>
+                                    <Button Grid.Column="0" Text="Uredi profil" Clicked="Button_Clicked_1" HorizontalOptions="FillAndExpand"/>
+                                    <Button Grid.Column="1" Text="Odjava" HorizontalOptions="FillAndExpand" Clicked="Button_Clicked"/>
                                 </Grid>
                             </StackLayout>
                         </StackLayout>

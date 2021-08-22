@@ -104,9 +104,12 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="email.png" />
+    <Content Include="gender.png" />
     <Content Include="hammer.png" />
     <Content Include="history.png" />
     <Content Include="home.png" />
+    <Content Include="location.jpg" />
     <Content Include="profile.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LargeTile.scale-100.png" />
