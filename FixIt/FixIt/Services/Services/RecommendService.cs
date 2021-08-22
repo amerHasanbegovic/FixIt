@@ -49,23 +49,21 @@ namespace FixIt.Services.Services
                     }
 
                     double similarity = GetSimilarity(reviewList1, reviewList2);
-                    if (similarity > 0.99)
+                    if (similarity > 0.5)
                     {
                         var service = await _applicationDbContext.Services
                             .Include(x => x.ServiceType)
                             .Where(x => x.Id == review.Key)
                             .FirstOrDefaultAsync();
 
-                        foreach (var ser in recommendedServices)
-                            if (service.Id != ser.Item2.Id)
-                                recommendedServices.Add(new Tuple<double, Service>(similarity, service));
+                        recommendedServices.Add(new Tuple<double, Service>(similarity, service));
                     }
                     reviewList1.Clear();
                     reviewList2.Clear();
                 }
             }
 
-            var query = recommendedServices.OrderBy(x => x.Item1).Select(x => x.Item2).AsQueryable();
+            var query = recommendedServices.Distinct().Take(3).OrderBy(x => x.Item1).Select(x => x.Item2).AsQueryable();
             var result = query.ToList();
             return _mapper.Map<List<ServiceViewModel>>(result);
         }
