@@ -31,24 +31,5 @@ namespace FixIt.Mobile.Views
         {
             await Navigation.PushAsync(new ServiceRequestPage(model.Service));
         }
-
-        private async void SfRating_ValueChanged(object sender, Syncfusion.SfRating.XForms.ValueEventArgs e)
-        {
-            var rating = (int)e.Value;
-            var user = await _authService.GetCurrentUser<UserViewModel>();
-            if(user != null)
-            {
-                ServiceRatingInsertModel ratingModel = new ServiceRatingInsertModel()
-                {
-                    Rating = rating,
-                    RatingDate = DateTime.Now,
-                    ServiceId = model.Service.Id,
-                    UserId = user.Id
-                };
-                await _apiService.Insert<ServiceRatingInsertModel>(ratingModel);
-                await DisplayAlert("", "Hvala Vam što ste ocijenili uslugu!", "OK");
-                await Navigation.PopAsync();
-            }
-        }
     }
 }
