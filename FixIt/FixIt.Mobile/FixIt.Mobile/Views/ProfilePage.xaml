@@ -95,8 +95,11 @@
                                         <ColumnDefinition Width="*" />
                                         <ColumnDefinition Width="*" />
                                     </Grid.ColumnDefinitions>
-                                    <Button Grid.Column="0" Text="Uredi profil" Clicked="Button_Clicked_1" HorizontalOptions="FillAndExpand"/>
-                                    <Button Grid.Column="1" Text="Odjava" HorizontalOptions="FillAndExpand" Clicked="Button_Clicked"/>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="35"/>
+                                    </Grid.RowDefinitions>
+                                    <Button Grid.Column="0" Grid.Row="0" MinimumHeightRequest="35" Text="Uredi profil" Clicked="Button_Clicked_1" HorizontalOptions="FillAndExpand"/>
+                                    <Button Grid.Column="1" Grid.Row="0" Text="Odjava" MinimumHeightRequest="35" HorizontalOptions="FillAndExpand" Clicked="Button_Clicked"/>
                                 </Grid>
                             </StackLayout>
                         </StackLayout>
