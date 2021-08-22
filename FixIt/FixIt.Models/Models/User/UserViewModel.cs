@@ -15,6 +15,7 @@ namespace FixIt.Models.Models.User
         public DateTime MemberSince { get; set; }
         public string? Address { get; set; }
         public string? Email { get; set; }
+        public string? UserName { get; set; }
         public virtual CityViewModel? City { get; set; }
         public virtual SexViewModel? Sex { get; set; }
 

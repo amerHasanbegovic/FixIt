@@ -19,6 +19,18 @@ namespace FixIt.Mobile.ViewModels
         public ObservableCollection<ServiceViewModel> RecommendedServices { get; }
         public Command LoadRecommendedServicesCommand { get; }
 
+        private string _userName;
+        public string UserName
+        {
+            get { return _userName; }
+            set { SetProperty(ref _userName, value); }
+        }
+        private string _recommendedHeading;
+        public string RecommendedHeading
+        {
+            get { return _recommendedHeading; }
+            set { SetProperty(ref _recommendedHeading, value); }
+        }
         public HomeViewModel()
         {
             RecommendedServices = new ObservableCollection<ServiceViewModel>();
@@ -34,6 +46,7 @@ namespace FixIt.Mobile.ViewModels
                 var user = await _authService.GetCurrentUser<UserViewModel>();
                 if (user != null)
                 {
+                    UserName = user.UserName;
                     var services = await _apiService.GetRecommendedServicesForUser<List<ServiceViewModel>>(user.Id);
                     if(services.Count > 0)
                     foreach (var service in services)
@@ -41,6 +54,8 @@ namespace FixIt.Mobile.ViewModels
                         RecommendedServices.Add(service);
                     }
                 }
+                if (RecommendedServices.Count > 0)
+                    RecommendedHeading = "Preporučene usluge";
             }
             catch (Exception ex)
             {

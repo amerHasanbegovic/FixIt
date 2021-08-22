@@ -1,4 +1,5 @@
 ﻿using FixIt.Mobile.ViewModels;
+using FixIt.Models.Models.Service;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,15 @@ namespace FixIt.Mobile.Views
         {
             base.OnAppearing();
             _model.OnAppearing();
+        }
+
+        private async void ServicesListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (e.CurrentSelection != null && e.CurrentSelection.Count > 0)
+            {
+                ServiceViewModel service = e.CurrentSelection[0] as ServiceViewModel;
+                await Navigation.PushAsync(new ServiceDetailsPage(service));
+            }
         }
     }
 }
