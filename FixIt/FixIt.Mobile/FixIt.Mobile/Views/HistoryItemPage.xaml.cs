@@ -23,7 +23,7 @@ namespace FixIt.Mobile.Views
         public HistoryItemPage(ServiceRequestViewModel serviceRequest)
         {
             InitializeComponent();
-            BindingContext = model = new HistoryItemViewModel() { ServiceRequest = serviceRequest };
+            BindingContext = model = new HistoryItemViewModel(serviceRequest) { ServiceRequest = serviceRequest };
         }
 
         private async void SfRating_ValueChanged(object sender, Syncfusion.SfRating.XForms.ValueEventArgs e)

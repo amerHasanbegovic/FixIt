@@ -66,5 +66,16 @@ namespace FixIt.Services.Services
             entity.Processed = true;
             _applicationDbContext.Update(entity);
         }
+
+        public JobViewModel GetByServiceRequestId(int id)
+        {
+            var res = _applicationDbContext.Set<Job>()
+                .Include(x => x.Employee)
+                .Include(x => x.Status)
+                .Include(x => x.ServiceRequest).ThenInclude(x => x.Payment).ThenInclude(x => x.PaymentType)
+                .FirstOrDefault(x => x.ServiceRequestId == id);
+
+            return _mapper.Map<JobViewModel>(res);
+        }
     }
 }

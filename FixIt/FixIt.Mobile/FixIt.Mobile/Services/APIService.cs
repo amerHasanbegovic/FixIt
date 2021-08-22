@@ -112,6 +112,12 @@ namespace FixIt.Mobile.Services
             var list = await $"{endpoint}/{_resource}/{userId}/recommend".WithOAuthBearerToken(token).GetJsonAsync<T>();
             return list;
         }
+
+        public async Task<T> GetJobByServiceRequestId<T>(int id)
+        {
+            var result = await $"{endpoint}/{_resource}/serviceRequest/{id}".WithOAuthBearerToken(token).GetJsonAsync<T>();
+            return result;
+        }
     }
 }
 

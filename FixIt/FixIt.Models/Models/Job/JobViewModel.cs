@@ -24,8 +24,8 @@ namespace FixIt.Models.Models.Job
         public string UserFullName => $"{ServiceRequest?.User?.Firstname} {ServiceRequest?.User?.Lastname}";
         public string ServicePrice => $"{ServiceRequest?.Service?.Price.ToString()} KM";
         public string Price => $"{ServiceRequest?.Service?.Price.ToString()}";
-
         public string? JobStatus => Status?.Status;
+        public string? FinishedDateFormated => FinishedDate.ToString("dd/MM/yyyy");
     }
 }
 

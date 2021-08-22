@@ -13,32 +13,60 @@
                 <Rectangle HorizontalOptions="FillAndExpand" HeightRequest="1" Stroke="Black" />
             </StackLayout>
 
-            <StackLayout Padding="20, 30, 20, 0">
-                <rating:SfRating Value="{Binding ServiceRequest.Service.Rating}" ItemCount="5" Margin="0, 10, 0, 10" 
+            <StackLayout Padding="20, 15, 20, 0">
+                <rating:SfRating Value="{Binding ServiceRequest.Service.Rating}" ItemCount="5" Margin="0, 10, 0, 30" 
                                  Precision="Standard" ItemSize="20" ValueChanged="SfRating_ValueChanged">
                     <rating:SfRating.RatingSettings>
                         <rating:SfRatingSettings RatedFill="Yellow" UnRatedFill="White" RatedStrokeWidth="1" UnRatedStrokeWidth="1"/>
                     </rating:SfRating.RatingSettings>
                 </rating:SfRating>
 
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Label Text="Datum zahtjeva:" FontAttributes="Bold"/>
+                        <Label Text="{Binding ServiceRequest.RequestDateFormated}" Margin="0, 20"/>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Label Text="Datum završetka:" FontAttributes="Bold"/>
+                        <Label Text="{Binding Job.FinishedDateFormated}" Margin="0, 20"/>
+                    </Grid>
+                </Grid>
 
-                <Label Font="Light, 18" Text="Opis usluge:" />
-                <!--<Frame BorderColor="Gray" Margin="0, 0, 20, 0" CornerRadius="2">-->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Label Text="Način plaćanje:" FontAttributes="Bold"/>
+                        <Label Text="{Binding ServiceRequest.PaymentTypeName}" Margin="0, 20"/>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Label Text="Cijena:" FontAttributes="Bold"/>
+                        <Label Text="{Binding ServiceRequest.ServicePrice}" Margin="0, 20"/>
+                    </Grid>
+                </Grid>
+                
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid Grid.Column="0">
+                        <Label Text="Uposlenik:" FontAttributes="Bold"/>
+                        <Label Text="{Binding Job.EmployeeFullName}" Margin="0, 20"/>
+                    </Grid>
+                </Grid>
+
+                <Label Font="Bold, 16" Margin="0, 0, 0, 5" Text="Opis usluge:" />
                 <Label Text="{Binding ServiceRequest.Service.Description}"
                 VerticalOptions="Start" 
                 HorizontalOptions="Start" FontSize="16"/>
-                <!--</Frame>-->
-
-                <Label Margin="0, 20, 0, 0">
-                    <Label.FormattedText>
-                        <FormattedString>
-                            <Span Text="Cijena: " Font="Light, 18"/>
-                            <Span Text="{Binding ServiceRequest.ServicePrice}" 
-                              Style="{DynamicResource ListItemTextStyle}" 
-                              Font="Bold, 18"></Span>
-                        </FormattedString>
-                    </Label.FormattedText>
-                </Label>
+                
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
