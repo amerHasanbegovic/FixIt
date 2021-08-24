@@ -22,24 +22,7 @@ namespace FixIt.Mobile.ViewModels
         private AuthService _authService = new AuthService("Auth");
         private APIService _requestService = new APIService("ServiceRequest");
         public ServiceViewModel Service { get; set; }
-        //public List<PaymentTypeViewModel> PaymentTypes { get; set; }
-
-        //request model
-        //public int ServiceId { get; set; }
-        //public string? UserId { get; set; }
-        //public int PaymentId { get; set; }
-        //public string? JobDescription { get; set; }
-
-        //payment model
-        //public double Total { get; set; }
-        //public int PaymentTypeId { get; set; }
-        //public string? FullName { get; set; }
-        //public string? CreditCardNumber { get; set; }
-        //public string? CVV { get; set; }
-        //public DateTime PaymentDate { get; set; }
-
-        //cetiri propertija
-        //commanda za button
+      
         public Command LoadDataCommand { get; set; }
         public Command SendRequestCommand { get; set; }
 
