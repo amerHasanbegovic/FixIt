@@ -124,7 +124,6 @@ namespace FixIt.WinUI.Forms.Employee
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(289, 24);
             this.txtName.TabIndex = 8;
-            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // lblfirstName
             // 
@@ -154,7 +153,6 @@ namespace FixIt.WinUI.Forms.Employee
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(289, 24);
             this.txtLastName.TabIndex = 10;
-            this.txtLastName.TextChanged += new System.EventHandler(this.txtLastName_TextChanged);
             // 
             // cbProfession
             // 
