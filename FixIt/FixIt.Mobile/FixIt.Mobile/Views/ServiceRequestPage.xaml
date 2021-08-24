@@ -54,6 +54,7 @@
                 <!--test-->
 
                 <StackLayout Margin="20, 10, 20, 0">
+                    <Label Text="Odaberite način plaćanja:" Font="Bold, 14"/>
                     <!--<RadioButton Content="{Binding OnlinePayment.Name}"/>
                     <RadioButton Content="{Binding RegularPayment.Name}"  Margin="0, 0, 0, 20"  CheckedChanged="RadioButton_CheckedChanged"/>-->
                     <RadioButton Content="{Binding PaymentTypes[0].Name}" CheckedChanged="RadioButton_CheckedChanged_1"/>
@@ -66,7 +67,7 @@
                 </StackLayout>
                 <StackLayout Padding="20, 30, 20, 0" Margin="0, 0, 0, 30">
                     <Label Text="Broj računa:" FontAttributes="Bold"/>
-                    <Entry Placeholder="xxx-xxx-xxx" x:Name="accEntry" Text="{Binding CardNumber}"/>
+                    <Entry Placeholder="xxx-xxx-xxx-xxxx" x:Name="accEntry" Text="{Binding CardNumber}"/>
                     <Label Text="Ime i prezime na kartici:" FontAttributes="Bold"/>
                     <Entry Placeholder="Ime i prezime" x:Name="nameEntry" Text="{Binding FullName}"/>
                     <Label Text="CVV:" FontAttributes="Bold"/>
