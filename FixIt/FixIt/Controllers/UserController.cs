@@ -1,6 +1,7 @@
 ﻿using FixIt.Models.Models.Service;
 using FixIt.Models.Models.User;
 using FixIt.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -9,6 +10,7 @@ namespace FixIt.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class UserController
     {
         protected readonly IUserService _service;

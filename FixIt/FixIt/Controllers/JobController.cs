@@ -1,6 +1,7 @@
 ﻿using FixIt.Database;
 using FixIt.Models.Models.Job;
 using FixIt.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FixIt.Controllers
@@ -15,6 +16,7 @@ namespace FixIt.Controllers
             jobService = service;
         }
 
+        [Authorize]
         [HttpGet("serviceRequest/{id}")]
         public JobViewModel GetByServiceRequestId(int id)
         {

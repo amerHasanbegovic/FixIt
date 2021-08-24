@@ -43,7 +43,8 @@ namespace FixIt
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddSwaggerGen(swagger => {
+            services.AddSwaggerGen(swagger =>
+            {
                 swagger.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
                 {
                     Name = "Authorization",
@@ -52,6 +53,19 @@ namespace FixIt
                     BearerFormat = "JWT",
                     In = ParameterLocation.Header,
                     Description = "Enter 'Bearer' [space] and then your valid token in the text input below.\r\n\r\nExample: \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9\"",
+                });
+                swagger.AddSecurityRequirement(new OpenApiSecurityRequirement {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            }
+                        },
+                        new string[] { }
+                    }
                 });
                 //c.AddSecurityDefinition("Bearer", new ApiKeyScheme { In = "header", Description = "Please Enter Authentication Token", Name = "Authorization", Type = "SampleApiKey" });
             });
@@ -82,7 +96,7 @@ namespace FixIt
                     ValidateIssuerSigningKey = true
                 };
             });
-            
+
             //password config for identity
             services.Configure<IdentityOptions>(options =>
             {

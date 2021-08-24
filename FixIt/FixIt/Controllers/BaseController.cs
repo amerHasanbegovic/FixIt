@@ -1,4 +1,5 @@
 ﻿using FixIt.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 
@@ -6,6 +7,7 @@ namespace FixIt.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class BaseController<TMap, TInsert, TUpdate, TSearch> : ControllerBase
     {
         protected readonly IBaseCRUDService<TMap, TInsert, TUpdate, TSearch> _service;

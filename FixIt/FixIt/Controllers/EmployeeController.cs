@@ -1,6 +1,7 @@
 ﻿using FixIt.Database;
 using FixIt.Models.Models.Employee;
 using FixIt.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
@@ -16,6 +17,7 @@ namespace FixIt.Controllers
             employeeService = service;
         }
 
+        [Authorize]
         [HttpDelete("{id}")]
         public async Task Delete(int id)
         {
