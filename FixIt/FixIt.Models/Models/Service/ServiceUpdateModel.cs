@@ -1,10 +1,15 @@
-﻿namespace FixIt.Models.Models.Service
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace FixIt.Models.Models.Service
 {
     public class ServiceUpdateModel
     {
+        [Required]
         public string? Name { get; set; }
         public string? Description { get; set; }
+        [Required]
         public double Price { get; set; }
+        [Required]
         public int ServiceTypeId { get; set; }
     }
 }
