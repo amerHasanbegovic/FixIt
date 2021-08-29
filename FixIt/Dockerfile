@@ -10,5 +10,6 @@ RUN dotnet publish "FixIt" -c Release -o /app
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app .
+ADD /Assets Assets/
 
 ENTRYPOINT ["dotnet", "FixIt.dll"]
